@@ -23,6 +23,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
 		head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
 func _physics_process(delta):
 	
