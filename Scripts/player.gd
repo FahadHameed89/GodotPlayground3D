@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var head = $head
 @onready var standing_collision_shape = $standing_collision_shape
 @onready var crouching_collision_shape = $crouching_collision_shape
+@onready var ray_cast_3d = $RayCast3D
 
 
 
@@ -42,7 +43,7 @@ func _physics_process(delta):
 		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
-	else:
+	elif !ray_cast_3d.is_colliding():
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = false
 		head.position.y = lerp(head.position.y, 1.8, delta*lerp_speed)
