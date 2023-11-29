@@ -9,9 +9,13 @@ var current_speed = 5.0
 
 var jump_velocity = 4.5
 
+const mouse_sens = 0.4
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
 	
