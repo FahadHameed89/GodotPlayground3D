@@ -1,33 +1,34 @@
 extends CharacterBody3D
 
+# Player Nodes
 @onready var head = $head
 @onready var standing_collision_shape = $standing_collision_shape
 @onready var crouching_collision_shape = $crouching_collision_shape
 @onready var ray_cast_3d = $RayCast3D
 
-
-
+# Player Speed Variables
 var current_speed = 5.0
-
 @export var walking_speed = 5.0
 @export var sprinting_speed = 10.0
 @export var crouching_speed = 3.0
 
-var jump_velocity = 4.5
-
-const mouse_sens_h = 0.25
-const mouse_sens_v = 0.2
-
+# Player Movement Variables
+@export var jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
-var direction = Vector3.ZERO
+var crouching_depth = -0.5 #How much the height changes when crouching
 
-var crouching_depth = -0.5
+# Player Mouse Input Variables
+
+var direction = Vector3.ZERO #Default starting direction is zero
+const mouse_sens_h = 0.25 #Horizontal mouse sensitivity
+const mouse_sens_v = 0.2 #Vertical mouse sensitivity
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 
 func _input(event):
 	if event is InputEventMouseMotion:
