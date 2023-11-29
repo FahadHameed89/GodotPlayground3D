@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://68r7nnpsg8u2"]
+
+[ext_resource type="Texture2D" uid="uid://ccfisp8mco7xb" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_5cnvg"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5wfhq"]
+panorama = ExtResource("1_5cnvg")
+
+[sub_resource type="Sky" id="Sky_ya78i"]
+sky_material = SubResource("PanoramaSkyMaterial_5wfhq")
+
+[sub_resource type="Environment" id="Environment_p88h5"]
+background_mode = 2
+sky = SubResource("Sky_ya78i")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="world" type="Node3D"]
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_p88h5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
