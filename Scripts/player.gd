@@ -1,6 +1,10 @@
 extends CharacterBody3D
 
 @onready var head = $head
+@onready var standing_collision_shape = $standing_collision_shape
+@onready var crouching_collision_shape = $crouching_collision_shape
+
+
 
 var current_speed = 5.0
 
@@ -36,7 +40,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
 		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta*lerp_speed)
+		standing_collision_shape.disabled = true
+		crouching_collision_shape.disabled = false
 	else:
+		standing_collision_shape.disabled = false
+		crouching_collision_shape.disabled = false
 		head.position.y = lerp(head.position.y, 1.8, delta*lerp_speed)
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprinting_speed
