@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var head = $head
 
 var current_speed = 5.0
 
@@ -9,13 +10,19 @@ var current_speed = 5.0
 
 var jump_velocity = 4.5
 
-const mouse_sens = 0.4
+const mouse_sens_h = 0.25
+const mouse_sens_v = 0.2
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
+		head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 
 func _physics_process(delta):
 	
