@@ -30,11 +30,15 @@ func _input(event):
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("sprint"):
-		current_speed = sprinting_speed
-	else:
-		current_speed = walking_speed
 	
+	if Input.is_action_pressed("crouch"):
+		current_speed = crouching_speed
+	else:
+		if Input.is_action_pressed("sprint"):
+			current_speed = sprinting_speed
+		else:
+			current_speed = walking_speed
+			
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
