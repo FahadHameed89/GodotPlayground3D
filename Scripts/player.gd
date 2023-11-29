@@ -35,9 +35,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
-		head.position.y = 1.8 + crouching_depth
+		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta*lerp_speed)
 	else:
-		head.position.y = 1.8
+		head.position.y = lerp(head.position.y, 1.8, delta*lerp_speed)
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprinting_speed
 		else:
