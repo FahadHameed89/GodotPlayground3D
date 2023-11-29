@@ -12,6 +12,14 @@ var current_speed = 5.0
 @export var sprinting_speed = 10.0
 @export var crouching_speed = 3.0
 
+# States
+
+var walking = false
+var sprinting = false
+var crouching = false
+var free_looking = false
+var sliding = false
+
 # Player Movement Variables
 @export var jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
@@ -46,6 +54,11 @@ func _physics_process(delta):
 		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
+		
+		walking = false
+		sprinting = false
+		crouching = true
+		
 	elif !ray_cast_3d.is_colliding():
 		#Standing
 		standing_collision_shape.disabled = false
@@ -54,10 +67,23 @@ func _physics_process(delta):
 		#Sprinting
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprinting_speed
+			walking = false
+			sprinting = true
+			crouching = false
+			
 		else:
 		#Walking 
 			current_speed = walking_speed
-			
+			walking = true
+			sprinting = false
+			crouching = false
+
+# Handle Free Looking
+	if Input.is_action_pressed("free_look"):
+		free_looking = true
+	else:
+		free_looking = false
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
