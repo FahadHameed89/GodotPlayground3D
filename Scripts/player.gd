@@ -13,6 +13,9 @@ var jump_velocity = 4.5
 const mouse_sens_h = 0.25
 const mouse_sens_v = 0.2
 
+var lerp_speed = 10.0 #used to change the speed of the player
+var direction = Vector3.ZERO
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -43,7 +46,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*lerp_speed)
+	
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
