@@ -32,25 +32,30 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
+		#Mouse Looking Logic
 		rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
 		head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
 func _physics_process(delta):
 	
-	
+	# Movement Handling
+		#Crouching
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
 		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
 	elif !ray_cast_3d.is_colliding():
+		#Standing
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = false
 		head.position.y = lerp(head.position.y, 1.8, delta*lerp_speed)
+		#Sprinting
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprinting_speed
 		else:
+		#Walking 
 			current_speed = walking_speed
 			
 	# Add the gravity.
