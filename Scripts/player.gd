@@ -56,6 +56,8 @@ var lerp_speed = 10.0 #used to change the speed of the player
 var air_lerp_speed = 3.0
 var crouching_depth = -0.4 #How much the height changes when crouching
 var free_look_tilt_amount = -5
+var last_velocity = Vector3.ZERO
+
 # Player Mouse Input Variables
 
 var direction = Vector3.ZERO #Default starting direction is zero
@@ -187,7 +189,11 @@ func _physics_process(delta):
 		sliding = false
 		animation_player.play("jump")
 		
-		
+	#Handle Landing
+	if is_on_floor():
+		if last_velocity.y < 0.0:
+			animation_player.play("landing")
+			print(last_velocity.y)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -209,5 +215,6 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
-
+	last_velocity = velocity
 	move_and_slide()
+
