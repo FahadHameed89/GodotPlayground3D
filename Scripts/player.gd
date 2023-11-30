@@ -28,11 +28,11 @@ var slide_timer = 0.0
 var slide_timer_max = 1.2
 var slide_vector = Vector2.ZERO
 var slide_speed = 12.0
-var slide_jump_velocity = 9.0 #will override jump_velocity while sliding
+var slide_jump_velocity = 7.0 #will override jump_velocity while sliding
 
 # Player Movement Variables
-@export var jump_velocity = 4.5
-@export var base_jump_velocity = 4.5
+@export var jump_velocity = 7.0
+@export var base_jump_velocity = 7.0
 var lerp_speed = 10.0 #used to change the speed of the player
 var crouching_depth = -0.4 #How much the height changes when crouching
 var free_look_tilt_amount = -5
@@ -68,7 +68,8 @@ func _physics_process(delta):
 	# Handle Movement State
 	
 	# Crouching
-	if Input.is_action_pressed("crouch"):
+	
+	if Input.is_action_pressed("crouch") || sliding:
 		current_speed = crouching_speed
 		head.position.y = lerp(head.position.y, crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
@@ -113,7 +114,11 @@ func _physics_process(delta):
 # Handle Free Looking
 	if Input.is_action_pressed("free_look") || sliding:
 		free_looking = true
-		camera_3d.rotation.z = deg_to_rad(neck.rotation.y*free_look_tilt_amount)
+		
+		if sliding:
+			camera_3d.rotation.z = lerp(camera_3d.rotation.z, deg_to_rad(5), delta*lerp_speed)
+		else:
+			camera_3d.rotation.z = deg_to_rad(neck.rotation.y*free_look_tilt_amount)
 	else: 
 		free_looking = false
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta*lerp_speed)
@@ -127,15 +132,20 @@ func _physics_process(delta):
 			sliding = false
 			print ("Slide end")
 			free_looking = false
-			jump_velocity = base_jump_velocity
+			#jump_velocity = base_jump_velocity
 
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		jump_velocity = base_jump_velocity
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
+		sliding = false
+		
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -150,8 +160,8 @@ func _physics_process(delta):
 		velocity.z = direction.z * current_speed
 		
 		if sliding: 
-			velocity.x = direction.x * slide_timer * slide_speed
-			velocity.z = direction.z * slide_timer * slide_speed
+			velocity.x = direction.x * (slide_timer + 0.1) * slide_speed
+			velocity.z = direction.z * (slide_timer + 0.1) * slide_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
