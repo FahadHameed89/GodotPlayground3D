@@ -25,8 +25,10 @@ var sliding = false
 # Slide Variables
 
 var slide_timer = 0.0
-var slide_timer_max = 1.0
-
+var slide_timer_max = 1.2
+var slide_vector = Vector2.ZERO
+var slide_speed = 12.0
+var slide_jump_velocity = 9.0 #will override jump_velocity while sliding
 
 # Player Movement Variables
 @export var jump_velocity = 4.5
@@ -71,9 +73,12 @@ func _physics_process(delta):
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
 		
+	# Handle Slide Begin
 		if sprinting && input_dir != Vector2.ZERO:
 			sliding = true
 			slide_timer = slide_timer_max
+			slide_vector = input_dir
+			free_looking = true
 			print("slide begin")
 		
 		walking = false
@@ -104,7 +109,7 @@ func _physics_process(delta):
 			crouching = false
 
 # Handle Free Looking
-	if Input.is_action_pressed("free_look"):
+	if Input.is_action_pressed("free_look") || sliding:
 		free_looking = true
 		camera_3d.rotation.z = deg_to_rad(neck.rotation.y*free_look_tilt_amount)
 	else: 
@@ -112,13 +117,14 @@ func _physics_process(delta):
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta*lerp_speed)
 		camera_3d.rotation.z = lerp(camera_3d.rotation.z, 0.0, delta*lerp_speed)
 
-	# Handle Sliding (Decrement timer and detect end of slide)
+	# Handle Sliding End (Decrement timer and detect end of slide)
 	
 	if sliding:
 		slide_timer -= delta
 		if slide_timer <= 0:
 			sliding = false
 			print ("Slide end")
+			free_looking = false
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -133,9 +139,16 @@ func _physics_process(delta):
 
 	direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*lerp_speed)
 	
+	if sliding:
+		direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
+		
+		if sliding: 
+			velocity.x = direction.x * slide_timer * slide_speed
+			velocity.z = direction.z * slide_timer * slide_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
