@@ -10,11 +10,14 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var camera_3d = $neck/head/eyes/Camera3D
 
+@onready var animation_player = $neck/head/eyes/AnimationPlayer
+
+
 # Player Speed Variables
 var current_speed = 5.0
-@export var walking_speed = 5.0
-@export var sprinting_speed = 10.0
-@export var crouching_speed = 3.0
+@export var walking_speed = 4.0
+@export var sprinting_speed = 8.0
+@export var crouching_speed = 1.5
 
 # States
 
@@ -133,13 +136,13 @@ func _physics_process(delta):
 		free_looking = true
 		
 		if sliding:
-			camera_3d.rotation.z = lerp(camera_3d.rotation.z, deg_to_rad(5), delta*lerp_speed)
+			eyes.rotation.z = lerp(eyes.rotation.z, deg_to_rad(5), delta*lerp_speed)
 		else:
-			camera_3d.rotation.z = deg_to_rad(neck.rotation.y*free_look_tilt_amount)
+			eyes.rotation.z = deg_to_rad(neck.rotation.y*free_look_tilt_amount)
 	else: 
 		free_looking = false
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta*lerp_speed)
-		camera_3d.rotation.z = lerp(camera_3d.rotation.z, 0.0, delta*lerp_speed)
+		eyes.rotation.z = lerp(eyes.rotation.z, 0.0, delta*lerp_speed)
 
 	# Handle Sliding End (Decrement timer and detect end of slide)
 	
@@ -182,6 +185,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
 		sliding = false
+		animation_player.play("jump")
 		
 		
 
