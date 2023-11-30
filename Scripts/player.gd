@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var standing_collision_shape = $standing_collision_shape
 @onready var crouching_collision_shape = $crouching_collision_shape
 @onready var ray_cast_3d = $RayCast3D
+@onready var camera_3d = $neck/head/Camera3D
 
 # Player Speed Variables
 var current_speed = 5.0
@@ -25,7 +26,7 @@ var sliding = false
 @export var jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
 var crouching_depth = -0.4 #How much the height changes when crouching
-var free_look_tilt_amount = 0.3
+var free_look_tilt_amount = -5
 # Player Mouse Input Variables
 
 var direction = Vector3.ZERO #Default starting direction is zero
@@ -89,9 +90,11 @@ func _physics_process(delta):
 # Handle Free Looking
 	if Input.is_action_pressed("free_look"):
 		free_looking = true
+		camera_3d.rotation.z = deg_to_rad(neck.rotation.y*free_look_tilt_amount)
 	else: 
 		free_looking = false
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta*lerp_speed)
+		camera_3d.rotation.z = lerp(camera_3d.rotation.z, 0.0, delta*lerp_speed)
 
 	# Add the gravity.
 	if not is_on_floor():
