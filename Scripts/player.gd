@@ -32,6 +32,7 @@ var slide_jump_velocity = 9.0 #will override jump_velocity while sliding
 
 # Player Movement Variables
 @export var jump_velocity = 4.5
+@export var base_jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
 var crouching_depth = -0.4 #How much the height changes when crouching
 var free_look_tilt_amount = -5
@@ -78,6 +79,7 @@ func _physics_process(delta):
 			sliding = true
 			slide_timer = slide_timer_max
 			slide_vector = input_dir
+			jump_velocity = slide_jump_velocity
 			free_looking = true
 			print("slide begin")
 		
@@ -125,6 +127,7 @@ func _physics_process(delta):
 			sliding = false
 			print ("Slide end")
 			free_looking = false
+			jump_velocity = base_jump_velocity
 
 	# Add the gravity.
 	if not is_on_floor():
