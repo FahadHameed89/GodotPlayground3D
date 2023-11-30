@@ -86,7 +86,7 @@ func _physics_process(delta):
 	# Crouching
 	
 	if Input.is_action_pressed("crouch") || sliding:
-		current_speed = crouching_speed
+		current_speed = lerp(crouching_speed, crouching_speed, delta*lerp_speed)
 		head.position.y = lerp(head.position.y, crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
@@ -114,7 +114,7 @@ func _physics_process(delta):
 		
 		#Sprinting
 		if Input.is_action_pressed("sprint"):
-			current_speed = sprinting_speed
+			current_speed =  lerp(sprinting_speed, sprinting_speed, delta*lerp_speed)
 			walking = false
 			sprinting = true
 			crouching = false
@@ -122,7 +122,7 @@ func _physics_process(delta):
 			
 		else:
 		#Walking 
-			current_speed = walking_speed
+			current_speed = lerp(walking_speed, walking_speed, delta*lerp_speed)
 			walking = true
 			sprinting = false
 			crouching = false
@@ -191,14 +191,13 @@ func _physics_process(delta):
 	
 	if sliding:
 		direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.y)).normalized()
-	
+		current_speed = (slide_timer + 0.1) * slide_speed
+
 	if direction:
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 		
-		if sliding: 
-			velocity.x = direction.x * (slide_timer + 0.1) * slide_speed
-			velocity.z = direction.z * (slide_timer + 0.1) * slide_speed
+
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
