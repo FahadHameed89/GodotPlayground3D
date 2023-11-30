@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 # Player Nodes
+@onready var neck = $neck
 @onready var head = $neck/head
 @onready var standing_collision_shape = $standing_collision_shape
 @onready var crouching_collision_shape = $crouching_collision_shape
@@ -23,8 +24,8 @@ var sliding = false
 # Player Movement Variables
 @export var jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
-var crouching_depth = -0.2 #How much the height changes when crouching
-
+var crouching_depth = -0.4 #How much the height changes when crouching
+var free_look_tilt_amount = 0.3
 # Player Mouse Input Variables
 
 var direction = Vector3.ZERO #Default starting direction is zero
@@ -40,10 +41,15 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion:
-		#Mouse Looking Logic
-		rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
-		head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
-		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+		#Free Looking Logic
+		if free_looking:
+			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens_h))
+			neck.rotation.y = clamp(neck.rotation.y, deg_to_rad(-140), deg_to_rad(140))
+		else:
+		#Normal Looking Logic
+			rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
+			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
+			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
 func _physics_process(delta):
 	
@@ -85,6 +91,7 @@ func _physics_process(delta):
 		free_looking = true
 	else: 
 		free_looking = false
+		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta*lerp_speed)
 
 	# Add the gravity.
 	if not is_on_floor():
