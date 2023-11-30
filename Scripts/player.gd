@@ -22,6 +22,12 @@ var crouching = false
 var free_looking = false
 var sliding = false
 
+# Slide Variables
+
+var slide_timer = 0.0
+var slide_timer_max = 1.0
+
+
 # Player Movement Variables
 @export var jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
@@ -53,33 +59,43 @@ func _input(event):
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
 func _physics_process(delta):
+	# Getting movement input
+	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	
-	# Movement Handling
-		#Crouching
+	# Handle Movement State
+	
+	# Crouching
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
 		head.position.y = lerp(head.position.y, crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
 		
+		if sprinting && input_dir != Vector2.ZERO:
+			sliding = true
+			slide_timer = slide_timer_max
+			print("slide begin")
+		
 		walking = false
 		sprinting = false
 		crouching = true
-		print_debug("crouch start")
+		#print("crouch start")
 		
 	elif !ray_cast_3d.is_colliding():
 		#Standing
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = true
 		head.position.y = lerp(head.position.y, 0.0, delta*lerp_speed)
-		print_debug("stand")
+		#print("stand")
+		
 		#Sprinting
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprinting_speed
 			walking = false
 			sprinting = true
 			crouching = false
-			print_debug("sprint")
+			#print("sprint")
+			
 		else:
 		#Walking 
 			current_speed = walking_speed
@@ -96,6 +112,14 @@ func _physics_process(delta):
 		neck.rotation.y = lerp(neck.rotation.y, 0.0, delta*lerp_speed)
 		camera_3d.rotation.z = lerp(camera_3d.rotation.z, 0.0, delta*lerp_speed)
 
+	# Handle Sliding (Decrement timer and detect end of slide)
+	
+	if sliding:
+		slide_timer -= delta
+		if slide_timer <= 0:
+			sliding = false
+			print ("Slide end")
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -106,7 +130,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("left", "right", "forward", "backward")
+
 	direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*lerp_speed)
 	
 	if direction:
