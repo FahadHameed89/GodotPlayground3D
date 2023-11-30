@@ -58,19 +58,21 @@ func _physics_process(delta):
 		walking = false
 		sprinting = false
 		crouching = true
+		print_debug("crouch start")
 		
 	elif !ray_cast_3d.is_colliding():
 		#Standing
 		standing_collision_shape.disabled = false
-		crouching_collision_shape.disabled = false
+		crouching_collision_shape.disabled = true
 		head.position.y = lerp(head.position.y, 1.8, delta*lerp_speed)
+		print_debug("stand")
 		#Sprinting
 		if Input.is_action_pressed("sprint"):
 			current_speed = sprinting_speed
 			walking = false
 			sprinting = true
 			crouching = false
-			
+			print_debug("sprint")
 		else:
 		#Walking 
 			current_speed = walking_speed
