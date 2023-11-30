@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # Player Nodes
-@onready var head = $head
+@onready var head = $neck/head
 @onready var standing_collision_shape = $standing_collision_shape
 @onready var crouching_collision_shape = $crouching_collision_shape
 @onready var ray_cast_3d = $RayCast3D
@@ -23,7 +23,7 @@ var sliding = false
 # Player Movement Variables
 @export var jump_velocity = 4.5
 var lerp_speed = 10.0 #used to change the speed of the player
-var crouching_depth = -0.5 #How much the height changes when crouching
+var crouching_depth = -0.2 #How much the height changes when crouching
 
 # Player Mouse Input Variables
 
@@ -51,7 +51,7 @@ func _physics_process(delta):
 		#Crouching
 	if Input.is_action_pressed("crouch"):
 		current_speed = crouching_speed
-		head.position.y = lerp(head.position.y, 1.8 + crouching_depth, delta*lerp_speed)
+		head.position.y = lerp(head.position.y, crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
 		
@@ -64,7 +64,7 @@ func _physics_process(delta):
 		#Standing
 		standing_collision_shape.disabled = false
 		crouching_collision_shape.disabled = true
-		head.position.y = lerp(head.position.y, 1.8, delta*lerp_speed)
+		head.position.y = lerp(head.position.y, 0.0, delta*lerp_speed)
 		print_debug("stand")
 		#Sprinting
 		if Input.is_action_pressed("sprint"):
@@ -83,7 +83,7 @@ func _physics_process(delta):
 # Handle Free Looking
 	if Input.is_action_pressed("free_look"):
 		free_looking = true
-	else:
+	else: 
 		free_looking = false
 
 	# Add the gravity.
