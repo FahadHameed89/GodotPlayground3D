@@ -50,6 +50,7 @@ var head_bobbing_current_intensity = 0.0
 @export var jump_velocity = 7.0
 @export var base_jump_velocity = 7.0
 var lerp_speed = 10.0 #used to change the speed of the player
+var air_lerp_speed = 3.0
 var crouching_depth = -0.4 #How much the height changes when crouching
 var free_look_tilt_amount = -5
 # Player Mouse Input Variables
@@ -186,8 +187,11 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-
-	direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*lerp_speed)
+	if is_on_floor():
+		direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*lerp_speed)
+	else:
+		if input_dir != Vector2.ZERO:
+			direction = lerp(direction, (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized(), delta*air_lerp_speed)
 	
 	if sliding:
 		direction = (transform.basis * Vector3(slide_vector.x, 0, slide_vector.y)).normalized()
