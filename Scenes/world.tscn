@@ -156,6 +156,60 @@ use_collision = true
 size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
 
+[node name="CSGBox3D15" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 0.996694, -0.0812427, 0, 0.0812427, 0.996694, 0, 6.9195, -39.6651)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.04454, -65.0914)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 0.84356, 0.537035, 0, -0.537035, 0.84356, 0, -25.0013, -85.9445)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="stage"]
+transform = Transform3D(0.934298, 0.300724, 0.191449, -0.270546, 0.947839, -0.168543, -0.232148, 0.105673, 0.966923, 0, -25.0013, -100.389)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-0.00595229, -0.126209, 0.907317, -0.310463, 0.734878, 0.108818, -0.507891, -0.447736, -0.0771518, 32.1132, -25.0013, -100.389)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-0.0608061, 0.280961, -0.862832, 0.304508, -0.690678, -0.300977, -0.507891, -0.447736, -0.0771518, 20.1516, -25.0013, -85.4346)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-0.0608061, 0.280961, -0.862832, 0.304508, -0.690678, -0.300977, -0.507891, -0.447736, -0.0771518, 2.82359, -25.0013, -143.266)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="stage"]
+transform = Transform3D(-0.42469, -0.526529, 0.323648, 0.304508, -0.690678, -0.300977, 0.285112, -0.046629, 0.803544, 2.82359, -25.0013, -183.801)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="stage"]
+transform = Transform3D(0.219756, -0.123333, 0.842317, -0.163503, -0.835637, -0.0347998, 0.528536, -0.207225, -0.360985, 2.82359, -25.0013, -231.658)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
 [node name="CSGBox3D3" type="CSGBox3D" parent="stage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -13)
 use_collision = true
@@ -170,6 +224,12 @@ material = SubResource("StandardMaterial3D_fcx0h")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="stage"]
 transform = Transform3D(0.987159, 0.159743, 0, -0.159743, 0.987159, 0, 0, 0, 1, 25.3595, -10.9929, 0.126991)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_fcx0h")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="stage"]
+transform = Transform3D(0.0621011, 0, 0, 0, 5.19586, 0, 0, 0, 0.13799, 45, -23.4574, -10)
 use_collision = true
 size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
@@ -217,6 +277,7 @@ size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
 
 [node name="water" type="Node3D" parent="stage"]
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="stage/water"]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 67.848, -98.3303, 0)
@@ -233,7 +294,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.649, -20.263, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6906, -20.7424, -10.0077)
 script = ExtResource("3_cre28")
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="player"]
