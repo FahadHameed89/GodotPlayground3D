@@ -25,6 +25,33 @@ glow_enabled = true
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2picw"]
 height = 1.2
 
+[sub_resource type="Animation" id="Animation_tfg0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_su1cs"]
 resource_name = "jump"
 length = 0.3
@@ -51,33 +78,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tfg0l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nyre7"]
@@ -186,7 +186,7 @@ size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="stage"]
-transform = Transform3D(-0.129692, 0.438607, -0.59267, -0.103716, 0.672199, 0.44421, 0.317597, 0.398624, -0.0969543, 3.24207, -10.9929, 51.2784)
+transform = Transform3D(-0.130078, 0.439588, -0.591796, -0.103801, 0.670991, 0.445391, 0.317411, 0.399577, -0.0968702, 3.24207, -10.9929, 51.2784)
 use_collision = true
 size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
@@ -207,6 +207,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.649, 0, 0)
 script = ExtResource("3_cre28")
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="player"]
