@@ -16,7 +16,7 @@ uniform float roughness : hint_range(0.0, 1.0) = 0.05;
 
 uniform sampler2D wave_texture;
 uniform float wave_scale = 4.0;
-uniform float height_scale = 0.15;
+uniform float height_scale = 1.15;
 varying float wave_height;
 varying vec3 uv_world_pos;
 
