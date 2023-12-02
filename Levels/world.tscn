@@ -34,12 +34,12 @@ shader_parameter/wave_speed = 0.015
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5wfhq"]
 panorama = ExtResource("4_inqp2")
 
-[sub_resource type="Sky" id="Sky_ya78i"]
+[sub_resource type="Sky" id="Sky_d3kcr"]
 sky_material = SubResource("PanoramaSkyMaterial_5wfhq")
 
 [sub_resource type="Environment" id="Environment_p88h5"]
 background_mode = 2
-sky = SubResource("Sky_ya78i")
+sky = SubResource("Sky_d3kcr")
 tonemap_mode = 2
 glow_enabled = true
 
