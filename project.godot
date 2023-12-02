@@ -14,9 +14,21 @@ config/name="3dplayground"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
+
 [dotnet]
 
 project/assembly_name="3dplayground"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
