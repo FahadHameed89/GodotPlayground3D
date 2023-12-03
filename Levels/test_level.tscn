@@ -13,11 +13,12 @@ panorama = ExtResource("2_m4snh")
 
 [sub_resource type="Sky" id="Sky_ya78i"]
 sky_material = SubResource("PanoramaSkyMaterial_wdyn5")
-radiance_size = 1
+radiance_size = 2
 
 [sub_resource type="Environment" id="Environment_ljgpn"]
 background_mode = 2
 sky = SubResource("Sky_ya78i")
+sky_rotation = Vector3(3.05607, 0, 0)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.0
 tonemap_mode = 2
