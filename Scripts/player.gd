@@ -82,6 +82,8 @@ func pick_object():
 	var collider = interaction_ray.get_collider()
 	if collider != null and collider is RigidBody3D:
 		print("Colliding with a rigid body")
+		picked_object = collider
+		
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
@@ -238,3 +240,7 @@ func _physics_process(delta):
 	last_velocity = velocity
 	move_and_slide()
 
+	if picked_object != null:
+		var a = picked_object.global_transform.origin
+		var b = holding_position.global_transform.origin
+		picked_object.set_linear_velocity((b-a)*pull_force)
