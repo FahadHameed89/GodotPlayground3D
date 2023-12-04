@@ -131,14 +131,14 @@ target_position = Vector3(0, 0, -5)
 [node name="HoldingPosition" type="Marker3D" parent="neck/head/eyes/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="HingeJoint3D" type="HingeJoint3D" parent="neck/head/eyes/Camera3D"]
-node_a = NodePath("../StaticBody3D")
-angular_limit/enable = true
-angular_limit/upper = 0.0872665
-angular_limit/lower = -0.0872665
-
 [node name="StaticBody3D" type="StaticBody3D" parent="neck/head/eyes/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="neck/head/eyes/Camera3D"]
+node_a = NodePath("../StaticBody3D")
+linear_limit_x/enabled = false
+linear_limit_y/enabled = false
+linear_limit_z/enabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes"]
 libraries = {

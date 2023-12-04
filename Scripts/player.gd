@@ -19,13 +19,13 @@ extends CharacterBody3D
 # Grab Mechanic Variables
 @onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay 
 @onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition # Adjust this position 'z' to move object closer or further away
-@onready var hinge_joint_3d = $neck/head/eyes/Camera3D/HingeJoint3D
 @onready var static_body_3d = $neck/head/eyes/Camera3D/StaticBody3D
+@onready var joint = $neck/head/eyes/Camera3D/Generic6DOFJoint3D
 
 
 var picked_object 
 var pull_force = 4 # Adjust this to pull objects with more force
-var rotation_force = 0.05 # Force of object rotation
+var rotation_force = 0.5 # Force of object rotation
 var locked = false # Prevents player walking around when rotating object
 # 
 
@@ -89,23 +89,29 @@ const mouse_sens_v = 0.2 #Vertical mouse sensitivity
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func rotate_object(event):
+	if picked_object != null:
+		if event is InputEventMouseMotion:
+			static_body_3d.rotate_x(deg_to_rad(event.relative.y * rotation_force))
+			static_body_3d.rotate_y(deg_to_rad(event.relative.x * rotation_force))
+
 func pick_object():
 	var collider = interaction_ray.get_collider()
 	if collider != null and collider is RigidBody3D:
 		print("Colliding with a rigid body")
 		picked_object = collider
-		hinge_joint_3d.set_node_b(picked_object.get_path())
+		joint.set_node_b(picked_object.get_path())
 
 func remove_object():
 	if picked_object != null:
 		picked_object = null
-		hinge_joint_3d.set_node_b(hinge_joint_3d.get_path())
+		joint.set_node_b(joint.get_path())
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 
 func _input(event):
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion && !locked:
 		#Free Looking Logic
 		if free_looking:
 			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens_h))
@@ -122,6 +128,12 @@ func _input(event):
 			pick_object()
 		elif picked_object != null:
 			remove_object()
+			
+	if Input.is_action_pressed("right_click"):
+		locked = true
+		rotate_object(event)
+	if Input.is_action_just_released("right_click"):
+		locked = false
 
 func _physics_process(delta):
 	# Getting movement input
