@@ -218,7 +218,10 @@ billboard = 1
 text = "WASD to Move
 Shift to Run
 Ctrl to Crouch
-Alt to Free Look"
+Space to (Double) Jump
+Alt to Free Look
+Left Click to Grab and Release Blocks
+R to Rotate grabbed blocks"
 
 [node name="env" type="Node3D" parent="."]
 

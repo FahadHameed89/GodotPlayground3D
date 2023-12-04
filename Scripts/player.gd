@@ -12,22 +12,22 @@ extends CharacterBody3D
 @onready var animation_player = $neck/head/eyes/AnimationPlayer
 @onready var audio_stream_player_3d = $feet/AudioStreamPlayer3D
 
+@onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition # Adjust this position 'z' to move object closer or further away
+@onready var static_body_3d = $neck/head/eyes/Camera3D/StaticBody3D # Position at which objects are rotated
+@onready var joint = $neck/head/eyes/Camera3D/Generic6DOFJoint3D # For rotating the player
 
 # Raycasts
 @onready var ray_cast_3d = $RayCast3D #Standing Check Raycast (Checks above to see if there is enough room to stand up // if it detects anything 2m above the floor it says you cannot stand up )
+@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay # For interacting with objects
 
 # Grab Mechanic Variables
-@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay 
-@onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition # Adjust this position 'z' to move object closer or further away
-@onready var static_body_3d = $neck/head/eyes/Camera3D/StaticBody3D
-@onready var joint = $neck/head/eyes/Camera3D/Generic6DOFJoint3D
-
 
 var picked_object 
 var pull_force = 4 # Adjust this to pull objects with more force
 var rotation_force = 0.25 # Force of object rotation
 var locked = false # Prevents player walking around when rotating object
-# 
+var throw_force = 5 #How much force is applied when throwing the object 
+
 
 # Player Speed Variables
 var current_speed = 5.0
@@ -135,6 +135,14 @@ func _input(event):
 		rotate_object(event)
 	if Input.is_action_just_released("rotate_object"):
 		locked = false
+		
+	if Input.is_action_just_pressed("throw_object"):
+		if picked_object != null:
+			var throw_direction = picked_object.global_position - global_position
+			picked_object.apply_central_impulse(throw_direction * throw_force)
+			remove_object()
+			
+		
 
 func _physics_process(delta):
 	# Getting movement input
