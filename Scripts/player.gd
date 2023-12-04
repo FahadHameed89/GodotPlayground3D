@@ -45,6 +45,11 @@ var slide_vector = Vector2.ZERO
 var slide_speed = 12.0
 var slide_jump_velocity = 7.0 #will override jump_velocity while sliding - broken lmao
 
+# Jump Variables
+
+@export var max_jumps = 2
+var available_jumps = max_jumps
+
 # Head Bob Vars
 
 const head_bob_sprinting_speed = 22.0
@@ -212,16 +217,18 @@ func _physics_process(delta):
 
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and available_jumps > 0:
 		velocity.y = jump_velocity
 		sliding = false
 		animation_player.play("jump")
+		available_jumps -= 1
 		
 	#Handle Landing
 	if is_on_floor():
 		if last_velocity.y < 0.0:
 			animation_player.play("landing")
 			print(last_velocity.y)
+			available_jumps = max_jumps
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
