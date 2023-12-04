@@ -16,6 +16,12 @@ extends CharacterBody3D
 # Raycasts
 @onready var ray_cast_3d = $RayCast3D #Standing Check Raycast (Checks above to see if there is enough room to stand up // if it detects anything 2m above the floor it says you cannot stand up )
 
+# Grab Mechanic Variables
+@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay
+@onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition
+
+var picked_object 
+var pull_force = 4
 
 # Player Speed Variables
 var current_speed = 5.0
@@ -72,6 +78,11 @@ const mouse_sens_v = 0.2 #Vertical mouse sensitivity
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+func pick_object():
+	var collider = interaction_ray.get_collider()
+	if collider != null and collider is RigidBody3D:
+		print("Colliding with a rigid body")
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 
@@ -86,6 +97,10 @@ func _input(event):
 			rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
 			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+
+	#DEBUG
+	if Input.is_action_just_pressed("left_click"):
+		pick_object()
 
 func _physics_process(delta):
 	# Getting movement input

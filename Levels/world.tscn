@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://68r7nnpsg8u2"]
+[gd_scene load_steps=15 format=3 uid="uid://68r7nnpsg8u2"]
 
 [ext_resource type="Texture2D" uid="uid://cjg8s1k6qsv14" path="res://assets/textures/dev/grids/Dark/texture_07.png" id="1_h4cnm"]
 [ext_resource type="Texture2D" uid="uid://ien1rsl43rvh" path="res://assets/textures/dev/grids/Orange/texture_05.png" id="2_jei86"]
@@ -42,6 +42,10 @@ background_mode = 2
 sky = SubResource("Sky_d3kcr")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac8q6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bpu4d"]
 
 [node name="world" type="Node3D"]
 
@@ -146,7 +150,7 @@ size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="stage"]
-transform = Transform3D(0.0621011, 0, 0, 0, 5.19586, 0, 0, 0, 0.13799, 45, -23.4574, -10)
+transform = Transform3D(0.0621011, 0, 0, 0, 5.19586, 0, 0, 0, 0.13799, 45, -25, -10)
 use_collision = true
 size = Vector3(20, 1, 20)
 material = SubResource("StandardMaterial3D_fcx0h")
@@ -226,3 +230,13 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("5_jw30q")]
+transform = Transform3D(-0.150381, 0, 0.988628, 0, 1, 0, -0.988628, 0, -0.150381, 47.1888, -18.637, -8.68971)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -21.4494, 10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_ac8q6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_bpu4d")
