@@ -129,10 +129,11 @@ func _input(event):
 		elif picked_object != null:
 			remove_object()
 			
-	if Input.is_action_pressed("right_click"):
+	# Handle Object Rotation Inputs and lock out camera rotation during object rotation
+	if Input.is_action_pressed("rotate_object"):
 		locked = true
 		rotate_object(event)
-	if Input.is_action_just_released("right_click"):
+	if Input.is_action_just_released("rotate_object"):
 		locked = false
 
 func _physics_process(delta):
