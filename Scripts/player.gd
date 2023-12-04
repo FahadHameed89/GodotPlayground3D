@@ -83,7 +83,10 @@ func pick_object():
 	if collider != null and collider is RigidBody3D:
 		print("Colliding with a rigid body")
 		picked_object = collider
-		
+
+func remove_object():
+	if picked_object != null:
+		picked_object = null
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
@@ -102,7 +105,10 @@ func _input(event):
 
 	#DEBUG
 	if Input.is_action_just_pressed("left_click"):
-		pick_object()
+		if picked_object == null:
+			pick_object()
+		elif picked_object != null:
+			remove_object()
 
 func _physics_process(delta):
 	# Getting movement input
