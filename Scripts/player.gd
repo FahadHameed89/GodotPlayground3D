@@ -19,9 +19,15 @@ extends CharacterBody3D
 # Grab Mechanic Variables
 @onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay 
 @onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition # Adjust this position 'z' to move object closer or further away
+@onready var hinge_joint_3d = $neck/head/eyes/Camera3D/HingeJoint3D
+@onready var static_body_3d = $neck/head/eyes/Camera3D/StaticBody3D
+
 
 var picked_object 
 var pull_force = 4 # Adjust this to pull objects with more force
+var rotation_force = 0.05 # Force of object rotation
+var locked = false # Prevents player walking around when rotating object
+# 
 
 # Player Speed Variables
 var current_speed = 5.0
@@ -88,10 +94,12 @@ func pick_object():
 	if collider != null and collider is RigidBody3D:
 		print("Colliding with a rigid body")
 		picked_object = collider
+		hinge_joint_3d.set_node_b(picked_object.get_path())
 
 func remove_object():
 	if picked_object != null:
 		picked_object = null
+		hinge_joint_3d.set_node_b(hinge_joint_3d.get_path())
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
