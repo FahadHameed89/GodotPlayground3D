@@ -25,7 +25,7 @@ extends CharacterBody3D
 
 var picked_object 
 var pull_force = 4 # Adjust this to pull objects with more force
-var rotation_force = 0.5 # Force of object rotation
+var rotation_force = 0.25 # Force of object rotation
 var locked = false # Prevents player walking around when rotating object
 # 
 
