@@ -100,6 +100,7 @@ _data = {
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_cqd6y")
+max_jumps = 3
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

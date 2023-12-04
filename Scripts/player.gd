@@ -17,11 +17,11 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D #Standing Check Raycast (Checks above to see if there is enough room to stand up // if it detects anything 2m above the floor it says you cannot stand up )
 
 # Grab Mechanic Variables
-@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay
-@onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition
+@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay 
+@onready var holding_position = $neck/head/eyes/Camera3D/HoldingPosition # Adjust this position 'z' to move object closer or further away
 
 var picked_object 
-var pull_force = 4
+var pull_force = 4 # Adjust this to pull objects with more force
 
 # Player Speed Variables
 var current_speed = 5.0

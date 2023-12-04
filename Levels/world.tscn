@@ -231,6 +231,7 @@ shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("5_jw30q")]
 transform = Transform3D(-0.150381, 0, 0.988628, 0, 1, 0, -0.988628, 0, -0.150381, 47.9905, -21.2576, -10.6897)
+max_jumps = 2
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -21.4494, -10.5747)
