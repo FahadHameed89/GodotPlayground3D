@@ -112,6 +112,8 @@ disabled = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 2, 0)
+debug_shape_custom_color = Color(0.670588, 0, 0, 1)
+debug_shape_thickness = 5
 
 [node name="neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
@@ -127,10 +129,9 @@ libraries = {
 "": SubResource("AnimationLibrary_xsvkv")
 }
 
-[node name="ears" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+[node name="ears" type="Node3D" parent="neck/head"]
 
-[node name="AudioListener3D" type="AudioListener3D" parent="ears"]
+[node name="AudioListener3D" type="AudioListener3D" parent="neck/head/ears"]
 current = true
 
 [node name="feet" type="Node3D" parent="."]

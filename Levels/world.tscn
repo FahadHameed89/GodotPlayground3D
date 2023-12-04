@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ien1rsl43rvh" path="res://assets/textures/dev/grids/Orange/texture_05.png" id="2_jei86"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="3_1mhbh"]
 [ext_resource type="Texture2D" uid="uid://ccfisp8mco7xb" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="4_inqp2"]
-[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://player.tscn" id="5_jw30q"]
+[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="5_jw30q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fcx0h"]
 albedo_texture = ExtResource("1_h4cnm")

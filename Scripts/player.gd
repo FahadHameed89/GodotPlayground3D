@@ -1,16 +1,20 @@
 extends CharacterBody3D
 
 # Player Nodes
-@onready var neck = $neck
-@onready var head = $neck/head
-@onready var eyes = $neck/head/eyes
+@onready var neck = $neck # Controls pivot for free looking
+@onready var head = $neck/head # Container for eyes and ears 
+@onready var eyes = $neck/head/eyes # Container for the camera rig and animation player
 
-@onready var standing_collision_shape = $standing_collision_shape
-@onready var crouching_collision_shape = $crouching_collision_shape
-@onready var ray_cast_3d = $RayCast3D
-@onready var camera_3d = $neck/head/eyes/Camera3D
+@onready var standing_collision_shape = $standing_collision_shape # for detection 
+@onready var crouching_collision_shape = $crouching_collision_shape # for crouching - delete this and change transform of standing_collision_shape instead if you want to refactor
 
+@onready var camera_3d = $neck/head/eyes/Camera3D 
 @onready var animation_player = $neck/head/eyes/AnimationPlayer
+@onready var audio_stream_player_3d = $feet/AudioStreamPlayer3D
+
+
+# Raycasts
+@onready var ray_cast_3d = $RayCast3D #Standing Check Raycast (Checks above to see if there is enough room to stand up // if it detects anything 2m above the floor it says you cannot stand up )
 
 
 # Player Speed Variables
@@ -33,7 +37,7 @@ var slide_timer = 0.0
 var slide_timer_max = 1.2
 var slide_vector = Vector2.ZERO
 var slide_speed = 12.0
-var slide_jump_velocity = 7.0 #will override jump_velocity while sliding
+var slide_jump_velocity = 7.0 #will override jump_velocity while sliding - broken lmao
 
 # Head Bob Vars
 
@@ -173,6 +177,7 @@ func _physics_process(delta):
 		
 		eyes.position.y = lerp(eyes.position.y, head_bobbing_vector.y*(head_bobbing_current_intensity/2.0), delta*lerp_speed)
 		eyes.position.x = lerp(eyes.position.x, head_bobbing_vector.x*(head_bobbing_current_intensity), delta*lerp_speed)
+
 	else:
 		eyes.position.y = lerp(eyes.position.y, 0.0, delta*lerp_speed)
 		eyes.position.x = lerp(eyes.position.x, 0.0, delta*lerp_speed)
