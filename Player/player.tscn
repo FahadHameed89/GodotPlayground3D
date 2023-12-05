@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=13 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cqd6y"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
+[ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gwa3"]
 
@@ -98,6 +99,21 @@ _data = {
 "landing": SubResource("Animation_nyre7")
 }
 
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xjwa5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwpgf"]
+albedo_color = Color(0.0980392, 0.0705882, 0.231373, 1)
+albedo_texture = SubResource("NoiseTexture2D_xjwa5")
+metallic = 0.65
+metallic_specular = 0.39
+roughness = 0.57
+emission_enabled = true
+emission = Color(0.054902, 0.054902, 0.054902, 1)
+emission_energy_multiplier = 0.17
+
+[sub_resource type="BoxMesh" id="BoxMesh_ml6ou"]
+material = SubResource("StandardMaterial3D_fwpgf")
+
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_cqd6y")
 max_jumps = 3
@@ -126,13 +142,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 [node name="Camera3D" type="Camera3D" parent="neck/head/eyes"]
 
 [node name="InteractionRay" type="RayCast3D" parent="neck/head/eyes/Camera3D"]
-target_position = Vector3(0, 0, -5)
+target_position = Vector3(0, 0, -30)
 
 [node name="HoldingPosition" type="Marker3D" parent="neck/head/eyes/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="neck/head/eyes/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="neck/head/eyes/Camera3D"]
 node_a = NodePath("../StaticBody3D")
@@ -150,7 +166,38 @@ libraries = {
 [node name="AudioListener3D" type="AudioListener3D" parent="neck/head/ears"]
 current = true
 
+[node name="righthand" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.925871, -0.377841, 0, 0.377841, 0.925871, 0.5, 1.4, -0.410859)
+
+[node name="Hookshot" type="MeshInstance3D" parent="righthand"]
+transform = Transform3D(0.0451027, 0, 0, 0, 0.0586046, -0.0130937, 0, 0.00125419, 0.611826, -0.0128663, 0.00757194, 0.120996)
+mesh = SubResource("BoxMesh_ml6ou")
+
+[node name="Hook Source" type="Marker3D" parent="righthand/Hookshot"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.19209e-06, 0, 0, 1, 0, 0, -0.51307)
+
+[node name="HookshotController" type="Node" parent="."]
+
 [node name="feet" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="feet"]
 stream = ExtResource("2_a6mf4")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Cursor" type="ColorRect" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(0.211765, 1, 1, 1)
+script = ExtResource("3_wgfkm")
