@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=15 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cqd6y"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
 [ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="4_23ffn"]
+[ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="4_psaxd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gwa3"]
 
@@ -146,10 +147,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 target_position = Vector3(0, 0, -15)
 
 [node name="HoldingPosition" type="Marker3D" parent="neck/head/eyes/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="neck/head/eyes/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="neck/head/eyes/Camera3D"]
 node_a = NodePath("../StaticBody3D")
@@ -203,6 +204,21 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 color = Color(0.211765, 1, 1, 1)
 script = ExtResource("3_wgfkm")
+
+[node name="InventoryInterface" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInventory" parent="HUD/InventoryInterface" instance=ExtResource("4_psaxd")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
 
 [node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body", "hook_source")]
 process_physics_priority = 1
