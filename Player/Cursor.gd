@@ -3,7 +3,7 @@ extends ColorRect
 @onready var cursor = $"."
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if interaction_ray.is_colliding() == true:
 		cursor.color = "36ffff"
 	if interaction_ray.is_colliding() == false:

@@ -26,7 +26,7 @@ var picked_object
 var pull_force = 4 # Adjust this to pull objects with more force
 var rotation_force = 0.25 # Force of object rotation
 var locked = false # Prevents player walking around when rotating object
-var throw_force = 5 #How much force is applied when throwing the object 
+var throw_force = 3.5 #How much force is applied when throwing the object 
 
 
 # Player Speed Variables
