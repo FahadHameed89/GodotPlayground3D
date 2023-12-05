@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=14 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cqd6y"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
+[ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="4_23ffn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gwa3"]
 
@@ -142,7 +143,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 [node name="Camera3D" type="Camera3D" parent="neck/head/eyes"]
 
 [node name="InteractionRay" type="RayCast3D" parent="neck/head/eyes/Camera3D"]
-target_position = Vector3(0, 0, -30)
+target_position = Vector3(0, 0, -15)
 
 [node name="HoldingPosition" type="Marker3D" parent="neck/head/eyes/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
@@ -155,6 +156,9 @@ node_a = NodePath("../StaticBody3D")
 linear_limit_x/enabled = false
 linear_limit_y/enabled = false
 linear_limit_z/enabled = false
+
+[node name="HookRay" type="RayCast3D" parent="neck/head/eyes/Camera3D"]
+target_position = Vector3(0, 0, -30)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes"]
 libraries = {
@@ -175,8 +179,6 @@ mesh = SubResource("BoxMesh_ml6ou")
 
 [node name="Hook Source" type="Marker3D" parent="righthand/Hookshot"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.19209e-06, 0, 0, 1, 0, 0, -0.51307)
-
-[node name="HookshotController" type="Node" parent="."]
 
 [node name="feet" type="Node3D" parent="."]
 
@@ -201,3 +203,13 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 color = Color(0.211765, 1, 1, 1)
 script = ExtResource("3_wgfkm")
+
+[node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body", "hook_source")]
+process_physics_priority = 1
+script = ExtResource("4_23ffn")
+hook_raycast = NodePath("../neck/head/eyes/Camera3D/HookRay")
+player_body = NodePath("..")
+launch_action_name = "launch_hook"
+retract_action_name = "retract_hook"
+pull_speed = 0.4
+hook_source = NodePath("../righthand/Hookshot/Hook Source")
