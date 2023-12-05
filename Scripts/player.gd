@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@export var inventory_data: InventoryData
+
 # Player Nodes
 @onready var neck = $neck # Controls pivot for free looking
 @onready var head = $neck/head # Container for eyes and ears 

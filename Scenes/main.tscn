@@ -1,21 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=9 format=3 uid="uid://j6880u6q7imo"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ggftr"]
-sky_top_color = Color(0.14902, 0.47451, 0.690196, 1)
-sky_horizon_color = Color(0.439216, 0.686275, 0.854902, 1)
-sky_curve = 0.212132
-sky_cover_modulate = Color(0.615686, 0.615686, 0.615686, 1)
+[ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
+[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="2_5hthv"]
+[ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
+[ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 
-[sub_resource type="Sky" id="Sky_rr4hf"]
-sky_material = SubResource("ProceduralSkyMaterial_ggftr")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d6nkm"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Environment" id="Environment_4511q"]
+[sub_resource type="Sky" id="Sky_a3ljo"]
+sky_material = SubResource("ProceduralSkyMaterial_d6nkm")
+
+[sub_resource type="Environment" id="Environment_r2xxn"]
 background_mode = 2
-background_energy_multiplier = 4.49
-sky = SubResource("Sky_rr4hf")
-sky_custom_fov = 33.5
+sky = SubResource("Sky_a3ljo")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="main" type="Node3D"]
+script = ExtResource("1_sgebs")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4511q")
+environment = SubResource("Environment_r2xxn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Ground"]
+rotation_edit_mode = 2
+use_collision = true
+size = Vector3(25, 0.5, 25)
+material = ExtResource("3_mrk2h")
+
+[node name="player" parent="." instance=ExtResource("2_5hthv")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_w80wx")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
