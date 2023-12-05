@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal toggle_inventory()
+var inventory_visible = false
+
 @export var inventory_data: InventoryData
 
 # Player Nodes
@@ -123,6 +126,17 @@ func _input(event):
 			rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
 			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+	
+	if Input.is_action_just_pressed("inventory"):
+		if inventory_visible == true:
+			toggle_inventory.emit()
+			inventory_visible = false
+			locked = false
+		else:
+			toggle_inventory.emit()
+			inventory_visible = true
+			locked = true
+	
 
 	#DEBUG
 	if Input.is_action_just_pressed("left_click"):
