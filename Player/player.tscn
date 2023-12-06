@@ -162,6 +162,10 @@ linear_limit_z/enabled = false
 [node name="HookRay" type="RayCast3D" parent="neck/head/eyes/Camera3D"]
 target_position = Vector3(0, 0, -30)
 
+[node name="HandRay" type="RayCast3D" parent="neck/head/eyes/Camera3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 4
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes"]
 libraries = {
 "": SubResource("AnimationLibrary_xsvkv")
@@ -195,15 +199,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = 1.0
+offset_left = -1.5
+offset_top = -1.5
+offset_right = 1.5
+offset_bottom = 1.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-color = Color(0.211765, 1, 1, 1)
+color = Color(0.121569, 0.482353, 0.776471, 1)
 script = ExtResource("3_wgfkm")
 
 [node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body", "hook_source")]

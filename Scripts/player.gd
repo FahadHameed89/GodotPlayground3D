@@ -23,7 +23,8 @@ var inventory_visible = false
 
 # Raycasts
 @onready var ray_cast_3d = $RayCast3D #Standing Check Raycast (Checks above to see if there is enough room to stand up // if it detects anything 2m above the floor it says you cannot stand up )
-@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay # For interacting with objects
+@onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay # For interacting with objects that can be picked up and held in hand
+@onready var hand_ray = $neck/head/eyes/Camera3D/HandRay # For opening doors, chests, and things like that. 
 
 # Grab Mechanic Variables
 

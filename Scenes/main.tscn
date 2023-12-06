@@ -1,19 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=18 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
 [ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="2_5hthv"]
+[ext_resource type="Texture2D" uid="uid://ccfisp8mco7xb" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_n0qm5"]
 [ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="2_qohbf"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d6nkm"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
+panorama = ExtResource("2_n0qm5")
 
 [sub_resource type="Sky" id="Sky_a3ljo"]
-sky_material = SubResource("ProceduralSkyMaterial_d6nkm")
+sky_material = SubResource("PanoramaSkyMaterial_xmu7k")
 
 [sub_resource type="Environment" id="Environment_r2xxn"]
 background_mode = 2
@@ -23,6 +23,9 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
 albedo_texture = ExtResource("2_qohbf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pkln"]
+albedo_color = Color(0.321569, 0.396078, 0.513726, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_b7fxw"]
 
@@ -47,96 +50,193 @@ environment = SubResource("Environment_r2xxn")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Ground" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="."]
 
-[node name="Floor" type="CSGBox3D" parent="Ground"]
+[node name="Floor" type="CSGBox3D" parent="Level"]
 rotation_edit_mode = 2
 material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
 size = Vector3(30, 0.5, 15)
 material = ExtResource("3_mrk2h")
 
-[node name="Wall" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 20)
+[node name="Ceiling" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, 0, 51.8304, 0)
+rotation_edit_mode = 2
 material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
-size = Vector3(25, 0.5, 25)
+size = Vector3(30, 0.5, 15)
 material = ExtResource("3_mrk2h")
 
-[node name="Backboard" type="CSGBox3D" parent="Ground"]
+[node name="Ceiling2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 121.367, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling3" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 215.424, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling4" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 313.8, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling5" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 409.997, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling6" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 502.573, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling7" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 597.415, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling8" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 691.899, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling9" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 787.807, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Ceiling10" type="CSGBox3D" parent="Level"]
+transform = Transform3D(0.94027, 0.340429, 0, -0.340429, 0.94027, 0, 0, 0, 1, -0.241707, 876.271, 0)
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Wall" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1.20384, 0, 0, 0, -4.37114e-08, -0.800104, 0, 1, -3.49737e-08, 0, 9.28614, 7.46574)
+use_collision = true
+size = Vector3(25, 0.5, 25)
+material = SubResource("StandardMaterial3D_0pkln")
+
+[node name="Wall2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1.20384, 0, 0, 0, -4.37114e-08, -0.800104, 0, 1, -3.49737e-08, 0, 9.28614, -7.78613)
+use_collision = true
+size = Vector3(25, 0.5, 25)
+material = SubResource("StandardMaterial3D_0pkln")
+
+[node name="Wall3" type="CSGBox3D" parent="Level"]
+transform = Transform3D(-2.97809e-08, 1, -3.49736e-08, 0, -4.37114e-08, -0.800104, -0.681308, -4.37114e-08, 1.52875e-15, 14.4487, 9.28614, -0.140257)
+use_collision = true
+size = Vector3(25, 0.5, 25)
+material = SubResource("StandardMaterial3D_0pkln")
+
+[node name="Wall4" type="CSGBox3D" parent="Level"]
+transform = Transform3D(-2.97809e-08, 1, -3.49736e-08, 0, -4.37114e-08, -0.800104, -0.681308, -4.37114e-08, 1.52875e-15, -14.5642, 9.28614, -0.140257)
+use_collision = true
+size = Vector3(25, 0.5, 25)
+material = SubResource("StandardMaterial3D_0pkln")
+
+[node name="Backboard" type="CSGBox3D" parent="Level"]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 12.7402, 3.29269, 0)
 material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
 size = Vector3(1.85, 0.2, 1.2)
 material = ExtResource("3_mrk2h")
 
-[node name="Ball" type="RigidBody3D" parent="Ground"]
+[node name="Ball" type="RigidBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 3.81638)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_b7fxw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_o2ekt")
 
-[node name="Ball2" type="RigidBody3D" parent="Ground"]
+[node name="Ball2" type="RigidBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 3.11752)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_b7fxw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_o2ekt")
 
-[node name="Ball3" type="RigidBody3D" parent="Ground"]
+[node name="Ball3" type="RigidBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 4.51814)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_b7fxw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_o2ekt")
 
-[node name="Ball4" type="RigidBody3D" parent="Ground"]
+[node name="Ball4" type="RigidBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56134, 0.689106, 4.51814)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball4"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_b7fxw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball4"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_o2ekt")
 
-[node name="Ball5" type="RigidBody3D" parent="Ground"]
+[node name="Ball5" type="RigidBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56134, 0.689106, 3.77444)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball5"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_b7fxw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball5"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_o2ekt")
 
-[node name="Ball6" type="RigidBody3D" parent="Ground"]
+[node name="Ball6" type="RigidBody3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56134, 0.689106, 3.07978)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball6"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("SphereShape3D_b7fxw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball6"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball6"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_o2ekt")
 
-[node name="Rim" type="CSGTorus3D" parent="Ground"]
+[node name="Rim" type="CSGTorus3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, 0)
 use_collision = true
 outer_radius = 0.6
