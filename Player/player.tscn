@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://vaufsje4b4d2"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cqd6y"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_fu03a"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
 [ext_resource type="Resource" uid="uid://cd167loy6v83r" path="res://test_inv.tres" id="2_slkwd"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
@@ -118,7 +118,7 @@ material = SubResource("StandardMaterial3D_fwpgf")
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
-script = ExtResource("1_cqd6y")
+script = ExtResource("1_fu03a")
 inventory_data = ExtResource("2_slkwd")
 max_jumps = 3
 
