@@ -4,5 +4,5 @@ class_name ItemDataConsumable
 @export var heal_value: int
 
 func use(target) -> void:
-	# heal the player
-	pass
+	if heal_value != 0:
+		target.heal(heal_value)

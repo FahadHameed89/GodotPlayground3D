@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+var health = 10
+
 # Inventory Variables and Signals
 signal toggle_inventory()
 var inventory_visible = false
@@ -115,6 +117,7 @@ func remove_object():
 		joint.set_node_b(joint.get_path())
 
 func _ready():
+	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 
 func _input(event):
@@ -335,5 +338,9 @@ func interact() -> void:
 
 
 func get_drop_position() -> Vector3:
-	var direction = -camera_3d.global_transform.basis.z
-	return camera_3d.global_position + direction
+	var cam_direction = -camera_3d.global_transform.basis.z
+	return camera_3d.global_position + cam_direction
+
+
+func heal(heal_value: int) -> void:
+	health += heal_value
