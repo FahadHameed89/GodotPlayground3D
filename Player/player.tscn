@@ -117,6 +117,7 @@ emission_energy_multiplier = 0.17
 material = SubResource("StandardMaterial3D_fwpgf")
 
 [node name="player" type="CharacterBody3D"]
+collision_layer = 2
 script = ExtResource("1_cqd6y")
 inventory_data = ExtResource("2_slkwd")
 max_jumps = 3

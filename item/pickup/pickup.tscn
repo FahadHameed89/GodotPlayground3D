@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://e46xstoukamg"]
+
+[ext_resource type="Texture2D" uid="uid://dh4h6devwjjjo" path="res://item/item_atlas.tres" id="1_3gk34"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gh0ll"]
+
+[node name="Pickup" type="RigidBody3D"]
+collision_layer = 0
+gravity_scale = 0.05
+lock_rotation = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+texture_filter = 0
+texture = ExtResource("1_3gk34")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+shape = SubResource("SphereShape3D_gh0ll")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+shape = SubResource("SphereShape3D_gh0ll")

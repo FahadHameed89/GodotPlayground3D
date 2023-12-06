@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=27 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
 [ext_resource type="Resource" uid="uid://s84flyvnjupc" path="res://item/items/blue_book.tres" id="13_xq1xn"]
+[ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
 panorama = ExtResource("2_n0qm5")
@@ -307,3 +308,6 @@ offset_bottom = 64.0
 [node name="Chest" parent="." instance=ExtResource("9_d2lut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
 inventory_data = SubResource("Resource_jtn8m")
+
+[node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
