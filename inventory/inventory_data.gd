@@ -28,6 +28,8 @@ func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	var slot_data = slot_datas[index]
 	if not slot_data:
 		slot_datas[index] = grabbed_slot_data.create_single_slot_data()
+	elif slot_data.can_merge_with(grabbed_slot_data):
+		slot_data.fully_merge_with(grabbed_slot_data.create_single_slot_data())
 	inventory_updated.emit(self)
 	if grabbed_slot_data.quantity > 0: 
 		return grabbed_slot_data
