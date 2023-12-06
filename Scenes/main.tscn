@@ -318,4 +318,5 @@ inventory_data = SubResource("Resource_jtn8m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
 slot_data = SubResource("Resource_enp0p")
 
+[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
