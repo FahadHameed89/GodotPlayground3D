@@ -141,7 +141,7 @@ func _input(event):
 			locked = true
 			rooted = true
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding():
 		if inventory_visible == true:
 			interact()
 			inventory_visible = false
@@ -152,7 +152,10 @@ func _input(event):
 			inventory_visible = true
 			locked = true
 			rooted = true
-		
+	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding() == false:
+		inventory_visible = false
+		locked = false
+		rooted = false
 
 	# Handle Object Pickup 
 	if Input.is_action_just_pressed("grab_object"):
