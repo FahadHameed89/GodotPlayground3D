@@ -332,3 +332,8 @@ func _physics_process(delta):
 func interact() -> void:
 	if hand_ray.is_colliding():
 		hand_ray.get_collider().player_interact()
+
+
+func get_drop_position() -> Vector3:
+	var direction = -camera_3d.global_transform.basis.z
+	return camera_3d.global_position + direction

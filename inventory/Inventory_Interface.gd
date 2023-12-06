@@ -65,5 +65,7 @@ func _on_gui_input(event):
 		match event.button_index:
 			MOUSE_BUTTON_LEFT:
 				drop_slot_data.emit(grabbed_slot_data)
-				print("drop data")
+				grabbed_slot_data = null
+				
+		update_grabbed_slot()
 		
