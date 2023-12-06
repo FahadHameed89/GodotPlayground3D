@@ -36,6 +36,21 @@ func drop_single_slot_data(grabbed_slot_data: SlotData, index: int) -> SlotData:
 	else: 
 		return null
 		
+func use_slot_data(index: int) -> void:
+	var slot_data = slot_datas[index]
+	
+	if not slot_data:
+		return
+	
+	if slot_data.item_data is ItemDataConsumable:
+		slot_data.quantity -= 1
+		if slot_data.quantity < 1:
+			slot_datas[index] = null
+	
+	print(slot_data.item_data.name)
+	
+	inventory_updated.emit(self)
+
 func pick_up_slot_data(slot_data: SlotData) -> bool:
 	
 	for index in slot_datas.size():
@@ -53,5 +68,5 @@ func pick_up_slot_data(slot_data: SlotData) -> bool:
 	return false
 
 func on_slot_clicked(index: int, button:int) -> void:
-	print("Inventory Interact")
+	#print("Inventory Interact")
 	inventory_interact.emit(self, index, button)
