@@ -31,7 +31,8 @@ var inventory_visible = false
 var picked_object 
 var pull_force = 4 # Adjust this to pull objects with more force
 var rotation_force = 0.25 # Force of object rotation
-var locked = false # Prevents player walking around when rotating object
+var locked = false # Prevents player LOOKING around when rotating object
+var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc.
 var throw_force = 3.5 #How much force is applied when throwing the object 
 
 
@@ -133,13 +134,25 @@ func _input(event):
 			toggle_inventory.emit()
 			inventory_visible = false
 			locked = false
+			rooted = false
 		else:
 			toggle_inventory.emit()
 			inventory_visible = true
 			locked = true
+			rooted = true
 	
 	if Input.is_action_just_pressed("interact"):
-		interact()
+		if inventory_visible == true:
+			interact()
+			inventory_visible = false
+			locked = false
+			rooted = false
+		else:
+			interact()
+			inventory_visible = true
+			locked = true
+			rooted = true
+		
 
 	# Handle Object Pickup 
 	if Input.is_action_just_pressed("grab_object"):
@@ -166,7 +179,8 @@ func _input(event):
 func _physics_process(delta):
 	# Getting movement input
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	
+	if rooted:
+		input_dir = Vector2.ZERO
 	# Handle Movement State
 	
 	# Crouching
@@ -310,4 +324,4 @@ func _physics_process(delta):
 
 func interact() -> void:
 	if hand_ray.is_colliding():
-		print("interact with ", hand_ray.get_collider())
+		hand_ray.get_collider().player_interact()

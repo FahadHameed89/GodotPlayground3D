@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=26 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -9,6 +9,10 @@
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
 [ext_resource type="PackedScene" uid="uid://cbsu2ub57fcms" path="res://Objects/chest.tscn" id="9_d2lut"]
+[ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
+[ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
+[ext_resource type="Resource" uid="uid://s84flyvnjupc" path="res://item/items/blue_book.tres" id="13_xq1xn"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
 panorama = ExtResource("2_n0qm5")
@@ -40,6 +44,20 @@ material = SubResource("StandardMaterial3D_t3743")
 albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
 metallic = 1.0
 roughness = 0.0
+
+[sub_resource type="Resource" id="Resource_vp653"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("11_2ifp3")
+quantity = 9
+
+[sub_resource type="Resource" id="Resource_gdeum"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("13_xq1xn")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_jtn8m"]
+script = ExtResource("10_qaor6")
+slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_vp653"), SubResource("Resource_gdeum"), null])
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_sgebs")
@@ -266,6 +284,18 @@ offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 50.0
 
+[node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 296.0
+offset_top = 236.0
+offset_right = 336.0
+offset_bottom = 276.0
+grow_horizontal = 2
+
 [node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("6_ncy21")]
 visible = false
 modulate = Color(1, 1, 1, 0.498039)
@@ -276,3 +306,4 @@ offset_bottom = 64.0
 
 [node name="Chest" parent="." instance=ExtResource("9_d2lut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
+inventory_data = SubResource("Resource_jtn8m")
