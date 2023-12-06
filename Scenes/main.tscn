@@ -291,6 +291,13 @@ offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 50.0
 
+[node name="EquipInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 10.0
+offset_right = 460.0
+offset_bottom = 50.0
+
 [node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
 visible = false
 layout_mode = 1

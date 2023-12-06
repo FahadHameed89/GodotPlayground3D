@@ -8,6 +8,11 @@ signal toggle_inventory()
 var inventory_visible = false
 @export var inventory_data: InventoryData
 
+# Equipment Variables and Signals
+
+@export var equip_inventory_data: InventoryDataEquip
+
+
 # Player Nodes
 @onready var neck = $neck # Controls pivot for free looking
 @onready var head = $neck/head # Container for eyes and ears 
@@ -158,7 +163,7 @@ func _input(event):
 			interact()
 			inventory_visible = true
 			locked = true
-			rooted = true
+			rooted = false
 	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding() == false:
 		inventory_visible = false
 		locked = false

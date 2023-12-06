@@ -1,10 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=17 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_fu03a"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
 [ext_resource type="Resource" uid="uid://cd167loy6v83r" path="res://test_inv.tres" id="2_slkwd"]
+[ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_ojf7j"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
 [ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="4_23ffn"]
+
+[sub_resource type="Resource" id="Resource_7cf2m"]
+script = ExtResource("3_ojf7j")
+slot_datas = Array[Resource("res://inventory/slot_data.gd")]([null, null, null])
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gwa3"]
 
@@ -120,6 +125,7 @@ material = SubResource("StandardMaterial3D_fwpgf")
 collision_layer = 2
 script = ExtResource("1_fu03a")
 inventory_data = ExtResource("2_slkwd")
+equip_inventory_data = SubResource("Resource_7cf2m")
 max_jumps = 3
 
 [node name="standing_collision_shape" type="CollisionShape3D" parent="."]
@@ -208,7 +214,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
-color = Color(0.121569, 0.482353, 0.776471, 1)
+color = Color(1, 0.290196, 0.211765, 1)
 script = ExtResource("3_wgfkm")
 
 [node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body", "hook_source")]
