@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://dal2yluy3em7y"]
+
+[ext_resource type="Script" path="res://item/item_data_consumable.gd" id="1_y6uu2"]
+[ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="2_i8hrj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm3cf"]
+atlas = ExtResource("2_i8hrj")
+region = Rect2(0, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_y6uu2")
+heal_value = 1
+name = "Health Potion"
+description = "Restores 1 HP"
+stackable = true
+texture = SubResource("AtlasTexture_cm3cf")
