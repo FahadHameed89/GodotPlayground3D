@@ -129,6 +129,9 @@ func _input(event):
 			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 	
+	if Input.is_action_just_pressed("dev_reset_scene"):
+		get_tree().reload_current_scene()
+	
 	if Input.is_action_just_pressed("inventory"):
 		if inventory_visible == true:
 			toggle_inventory.emit()
@@ -233,7 +236,6 @@ func _physics_process(delta):
 # Handle Free Looking
 	if Input.is_action_pressed("free_look") || sliding:
 		free_looking = true
-		
 		if sliding:
 			eyes.rotation.z = lerp(eyes.rotation.z, deg_to_rad(5), delta*lerp_speed)
 		else:
@@ -287,12 +289,14 @@ func _physics_process(delta):
 		sliding = false
 		animation_player.play("jump")
 		available_jumps -= 1
+		print("jumps remaining")
+		print(available_jumps)
 		
 	#Handle Landing
 	if is_on_floor():
 		if last_velocity.y < 0.0:
 			animation_player.play("landing")
-			print(last_velocity.y)
+			print("landed on the ground, jumps reset to maximum")
 			available_jumps = max_jumps
 
 	# Get the input direction and handle the movement/deceleration.
