@@ -148,10 +148,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 target_position = Vector3(0, 0, -15)
 
 [node name="HoldingPosition" type="Marker3D" parent="neck/head/eyes/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="neck/head/eyes/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="neck/head/eyes/Camera3D"]
 node_a = NodePath("../StaticBody3D")

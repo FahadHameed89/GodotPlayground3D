@@ -53,11 +53,11 @@ glow_enabled = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jy2ma"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3743"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjoqr"]
 albedo_texture = ExtResource("6_q0eyo")
 
 [sub_resource type="SphereMesh" id="SphereMesh_wup7t"]
-material = SubResource("StandardMaterial3D_t3743")
+material = SubResource("StandardMaterial3D_yjoqr")
 
 [node name="world" type="Node3D"]
 

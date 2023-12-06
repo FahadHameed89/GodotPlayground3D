@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=16 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
 [ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="2_5hthv"]
+[ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="2_qohbf"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
@@ -20,6 +21,22 @@ sky = SubResource("Sky_a3ljo")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
+albedo_texture = ExtResource("2_qohbf")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b7fxw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3743"]
+albedo_texture = ExtResource("2_qohbf")
+
+[sub_resource type="SphereMesh" id="SphereMesh_o2ekt"]
+material = SubResource("StandardMaterial3D_t3743")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
+albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
+metallic = 1.0
+roughness = 0.0
+
 [node name="main" type="Node3D"]
 script = ExtResource("1_sgebs")
 
@@ -34,9 +51,97 @@ shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="Ground"]
 rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Wall" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 20)
+material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
 size = Vector3(25, 0.5, 25)
 material = ExtResource("3_mrk2h")
+
+[node name="Backboard" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 12.7402, 3.29269, 0)
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(1.85, 0.2, 1.2)
+material = ExtResource("3_mrk2h")
+
+[node name="Ball" type="RigidBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 3.81638)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
+
+[node name="Ball2" type="RigidBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 3.11752)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball2"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
+
+[node name="Ball3" type="RigidBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 4.51814)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball3"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
+
+[node name="Ball4" type="RigidBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56134, 0.689106, 4.51814)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball4"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball4"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
+
+[node name="Ball5" type="RigidBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56134, 0.689106, 3.77444)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball5"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball5"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
+
+[node name="Ball6" type="RigidBody3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56134, 0.689106, 3.07978)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/Ball6"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/Ball6"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
+
+[node name="Rim" type="CSGTorus3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3, 0)
+use_collision = true
+outer_radius = 0.6
+sides = 12
+material = SubResource("StandardMaterial3D_47dcr")
 
 [node name="player" parent="." instance=ExtResource("2_5hthv")]
 
