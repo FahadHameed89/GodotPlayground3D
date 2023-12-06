@@ -138,8 +138,8 @@ func _input(event):
 			locked = true
 	
 
-	#DEBUG
-	if Input.is_action_just_pressed("left_click"):
+	# Handle Object Pickup 
+	if Input.is_action_just_pressed("grab_object"):
 		if picked_object == null:
 			pick_object()
 		elif picked_object != null:
