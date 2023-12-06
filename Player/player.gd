@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-var health = 10
+var max_health = 10
+var current_health = 5
 
 # Inventory Variables and Signals
 signal toggle_inventory()
@@ -343,4 +344,9 @@ func get_drop_position() -> Vector3:
 
 
 func heal(heal_value: int) -> void:
-	health += heal_value
+	if current_health == max_health:
+		pass
+	elif current_health + heal_value > max_health:
+		current_health = max_health
+	else:
+		current_health += heal_value
