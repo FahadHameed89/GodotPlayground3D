@@ -1,5 +1,7 @@
 extends Control
 
+signal drop_slot_data(slot_data: SlotData)
+
 var grabbed_slot_data: SlotData
 var external_inventory_owner
 
@@ -53,3 +55,14 @@ func update_grabbed_slot() -> void:
 		grabbed_slot.set_slot_data(grabbed_slot_data)
 	else:
 		grabbed_slot.hide()
+
+
+func _on_gui_input(event):
+	if event is InputEventMouseButton \
+			and event.is_pressed \
+			and grabbed_slot_data:
+		match event.button_index:
+			MOUSE_BUTTON_LEFT:
+				drop_slot_data.emit(grabbed_slot_data)
+				print("drop data")
+		
