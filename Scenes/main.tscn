@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=29 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
+[ext_resource type="PackedScene" uid="uid://dtif53vi34get" path="res://inventory/hotbar_inventory.tscn" id="9_3ayl4"]
 [ext_resource type="PackedScene" uid="uid://cbsu2ub57fcms" path="res://Objects/chest.tscn" id="9_d2lut"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
@@ -309,6 +310,12 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
+
+[node name="HotbarInventory" parent="UI" instance=ExtResource("9_3ayl4")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 90.0
 
 [node name="Chest" parent="." instance=ExtResource("9_d2lut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
