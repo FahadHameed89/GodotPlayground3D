@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
+# Inventory Variables and Signals
 signal toggle_inventory()
 var inventory_visible = false
-
 @export var inventory_data: InventoryData
 
 # Player Nodes
@@ -138,6 +138,8 @@ func _input(event):
 			inventory_visible = true
 			locked = true
 	
+	if Input.is_action_just_pressed("interact"):
+		interact()
 
 	# Handle Object Pickup 
 	if Input.is_action_just_pressed("grab_object"):
@@ -303,3 +305,9 @@ func _physics_process(delta):
 		var a = picked_object.global_transform.origin
 		var b = holding_position.global_transform.origin
 		picked_object.set_linear_velocity((b-a)*pull_force)
+		
+	
+
+func interact() -> void:
+	if hand_ray.is_colliding():
+		print("interact with ", hand_ray.get_collider())

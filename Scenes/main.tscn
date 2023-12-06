@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=19 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
+[ext_resource type="PackedScene" uid="uid://cbsu2ub57fcms" path="res://Objects/chest.tscn" id="9_d2lut"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
 panorama = ExtResource("2_n0qm5")
@@ -272,3 +273,6 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
+
+[node name="Chest" parent="." instance=ExtResource("9_d2lut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
