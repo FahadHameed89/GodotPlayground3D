@@ -11,6 +11,7 @@ region = Rect2(32, 224, 32, 32)
 script = ExtResource("1_ydhnh")
 defense = 1
 name = "Iron Helm"
-description = "A full helmet made from iron"
+description = "A full helmet made from iron
+DEF + 1"
 stackable = false
 texture = SubResource("AtlasTexture_pnrm2")
