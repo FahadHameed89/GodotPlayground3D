@@ -9,7 +9,22 @@ region = Rect2(32, 224, 32, 32)
 
 [resource]
 script = ExtResource("1_ydhnh")
+max_hp = 0
+max_mp = 0
+max_sp = 0
+hp_regen = 0
+mp_regen = 0
+sp_regen = 0
+attack = 0
 defense = 1
+magic_attack = 0
+magic_defense = 0
+evasion = 0
+life_steal = 0
+mana_steal = 0
+minion_attack = 0
+minion_hp = 0
+minion_duration = 0
 name = "Iron Helm"
 description = "A full helmet made from iron
 DEF + 1"
