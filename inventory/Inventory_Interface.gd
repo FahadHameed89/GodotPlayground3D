@@ -73,3 +73,9 @@ func _on_gui_input(event):
 			
 		update_grabbed_slot()
 		
+
+
+func _on_visibility_changed():
+	if not visible and grabbed_slot_data:
+		drop_slot_data.emit(grabbed_slot_data)
+		grabbed_slot_data = null
