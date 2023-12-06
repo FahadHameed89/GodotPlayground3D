@@ -66,6 +66,10 @@ func _on_gui_input(event):
 			MOUSE_BUTTON_LEFT:
 				drop_slot_data.emit(grabbed_slot_data)
 				grabbed_slot_data = null
-				
+			MOUSE_BUTTON_RIGHT:
+				drop_slot_data.emit(grabbed_slot_data.create_single_slot_data())
+				if grabbed_slot_data.quantity < 1:
+					grabbed_slot_data = null
+			
 		update_grabbed_slot()
 		
