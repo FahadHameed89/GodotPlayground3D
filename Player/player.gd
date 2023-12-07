@@ -1,7 +1,35 @@
 extends CharacterBody3D
 
-var max_health = 10
-var current_health = 5
+# HP, MP, SP variables
+@export var max_health = 10 
+@export var current_health = 5
+@export var health_regen = 0
+@export var max_mana = 10
+@export var current_mana = 5
+@export var mana_regen = 0
+@export var max_stamina = 3000
+@export var current_stamina = 3000
+@export var stamina_regen = 1000
+
+@export var max_hunger = 3000
+@export var current_hunger = 3000
+@export var hunger_rate = 60 # Calories burned per hour -> 50 'hours' before Hunger bar is empty
+@export var max_thirst = 2000
+@export var current_thirst = 2000
+@export var thirst_rate = 80 # mL of water burned per hour -> 25 'hours' before Thirst bar is empty
+
+
+@export var attack = 0
+@export var defense = 0
+@export var magic_attack = 0
+@export var magic_defense = 0
+@export var evasion = 0
+@export var life_steal = 0
+@export var mana_steal = 0
+@export var minion_attack = 0
+@export var minion_hp = 0
+@export var minion_duration = 0
+@export var minion_max = 0
 
 # Inventory Variables and Signals
 signal toggle_inventory()
@@ -151,7 +179,7 @@ func _input(event):
 			toggle_inventory.emit()
 			inventory_visible = true
 			locked = true
-			rooted = true
+			rooted = false
 	
 	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding():
 		if inventory_visible == true:

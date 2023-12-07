@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://d3dv2yymc1j7n"]
+
+[ext_resource type="Script" path="res://item/item_data_consumable.gd" id="1_cnu2l"]
+[ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="2_epyrd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p75h2"]
+atlas = ExtResource("2_epyrd")
+region = Rect2(32, 448, 32, 32)
+
+[resource]
+script = ExtResource("1_cnu2l")
+heal_value = 1
+name = "Banana"
+description = "A bright  yellow banana. Tasty and nutritious. 
+Restores 1 HP"
+stackable = true
+texture = SubResource("AtlasTexture_p75h2")

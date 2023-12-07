@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=13 format=3 uid="uid://cd167loy6v83r"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=14 format=3 uid="uid://cd167loy6v83r"]
 
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="1_8h8g8"]
 [ext_resource type="Resource" uid="uid://dal2yluy3em7y" path="res://item/items/health_potion.tres" id="2_6boji"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_xnhwq"]
 [ext_resource type="Resource" uid="uid://i66vl2g64ucq" path="res://item/items/iron_helm.tres" id="4_p7i7q"]
 [ext_resource type="Resource" uid="uid://s84flyvnjupc" path="res://item/items/blue_book.tres" id="4_q2pju"]
+[ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="5_whm11"]
 
 [sub_resource type="Resource" id="Resource_fnm2k"]
 script = ExtResource("3_xnhwq")
 item_data = ExtResource("2_6boji")
-quantity = 7
+quantity = 20
 
 [sub_resource type="Resource" id="Resource_sydk5"]
 script = ExtResource("3_xnhwq")
@@ -19,18 +20,18 @@ quantity = 1
 
 [sub_resource type="Resource" id="Resource_hxqju"]
 script = ExtResource("3_xnhwq")
-item_data = ExtResource("2_is65w")
-quantity = 75
+item_data = ExtResource("5_whm11")
+quantity = 5
 
 [sub_resource type="Resource" id="Resource_pupih"]
 script = ExtResource("3_xnhwq")
 item_data = ExtResource("2_is65w")
-quantity = 35
+quantity = 3
 
 [sub_resource type="Resource" id="Resource_kb4ay"]
 script = ExtResource("3_xnhwq")
 item_data = ExtResource("2_is65w")
-quantity = 35
+quantity = 1
 
 [sub_resource type="Resource" id="Resource_12rg2"]
 script = ExtResource("3_xnhwq")

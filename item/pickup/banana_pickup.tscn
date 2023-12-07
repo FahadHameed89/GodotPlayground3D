@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxeq4xdos04ld"]
+
+[ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="1_xwgwc"]
+[ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="2_k8i4v"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_tfylx"]
+[ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="4_2dryv"]
+
+[sub_resource type="Resource" id="Resource_kdvam"]
+script = ExtResource("3_tfylx")
+item_data = ExtResource("2_k8i4v")
+quantity = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ffp2"]
+atlas = ExtResource("4_2dryv")
+region = Rect2(32, 448, 32, 32)
+
+[node name="banana_pickup" instance=ExtResource("1_xwgwc")]
+slot_data = SubResource("Resource_kdvam")
+
+[node name="Sprite3D" parent="." index="0"]
+texture = SubResource("AtlasTexture_5ffp2")

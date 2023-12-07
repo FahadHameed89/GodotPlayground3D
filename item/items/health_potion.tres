@@ -9,8 +9,8 @@ region = Rect2(0, 288, 32, 32)
 
 [resource]
 script = ExtResource("1_y6uu2")
-heal_value = 2
+heal_value = 100
 name = "Health Potion"
-description = "Restores 2 HP"
+description = "Restores 100 HP"
 stackable = true
 texture = SubResource("AtlasTexture_cm3cf")
