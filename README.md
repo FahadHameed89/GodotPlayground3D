@@ -5,7 +5,7 @@
  
 # How to Install
  1. Download the project files from this repository
- 2. Download and Install Godot 4.1.3 (stable)
+ 2. Download and Install Godot 4.1.3 (stable) from https://godotengine.org/download/archive/4.1.3-stable/
  3. Import the .godot file extension in the project directory
  4. Start a playtest in the Main.tscn in order to access all mechanics
 
