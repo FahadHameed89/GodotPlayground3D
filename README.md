@@ -1,5 +1,5 @@
 # GodotPlayground3D
- This is a playground for various godot features, listed below. 
+ This is a playground for various godot features, listed below, all tied to a single FPS controller 
  I intend to add more mechanics to this repository as I learn more about Godot. 
  This project uses Godot 4.1.3 (stable). 
  
