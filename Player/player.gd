@@ -57,6 +57,9 @@ var inventory_visible = false
 @onready var static_body_3d = $neck/head/eyes/Camera3D/StaticBody3D # Position at which objects are rotated
 @onready var joint = $neck/head/eyes/Camera3D/Generic6DOFJoint3D # For rotating the player
 
+@onready var hook_controller = $HookController
+
+
 # Raycasts
 @onready var ray_cast_3d = $RayCast3D #Standing Check Raycast (Checks above to see if there is enough room to stand up // if it detects anything 2m above the floor it says you cannot stand up )
 @onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay # For interacting with objects that can be picked up and held in hand
@@ -321,7 +324,7 @@ func _physics_process(delta):
 
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and available_jumps > 0:
+	if Input.is_action_just_pressed("ui_accept") and available_jumps > 0 and hook_controller.is_hook_attached == false:
 		velocity.y = jump_velocity
 		sliding = false
 		animation_player.play("jump")

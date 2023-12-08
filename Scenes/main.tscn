@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=46 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -22,26 +22,12 @@
 [ext_resource type="Script" path="res://item/item_data_consumable.gd" id="19_fjmbf"]
 [ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="20_j7jjs"]
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
+[ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
 
 [sub_resource type="Resource" id="Resource_enp0p"]
 script = ExtResource("12_7qsfd")
 item_data = ExtResource("16_hi1ld")
 quantity = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
-albedo_texture = ExtResource("2_qohbf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
-albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
-metallic = 1.0
-roughness = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij35k"]
-albedo_texture = ExtResource("5_gk6lf")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_afwid"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_aia04"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
 panorama = ExtResource("2_n0qm5")
@@ -108,6 +94,39 @@ quantity = 25
 script = ExtResource("10_qaor6")
 slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_vp653"), SubResource("Resource_gdeum"), null])
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
+albedo_texture = ExtResource("2_qohbf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
+albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij35k"]
+albedo_texture = ExtResource("5_gk6lf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_afwid"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aia04"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_811is"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1ljn"]
+render_priority = 0
+shader = ExtResource("23_yara4")
+shader_parameter/depth_fade_distance = 1.0
+shader_parameter/absorbance = 2.0
+shader_parameter/shallow_color = Color(0.22, 0.66, 1, 1)
+shader_parameter/deep_color = Color(0, 0.25, 0.45, 1)
+shader_parameter/foam_amount = 0.2
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.05
+shader_parameter/wave_scale = 4.0
+shader_parameter/height_scale = 0.15
+shader_parameter/wave_dir1 = Vector2(1, 0)
+shader_parameter/wave_dir2 = Vector2(0, 1)
+shader_parameter/wave_speed = 0.015
+
 [node name="main" type="Node3D"]
 script = ExtResource("1_sgebs")
 
@@ -173,6 +192,53 @@ slot_data = SubResource("Resource_enp0p")
 
 [node name="Apple_pickup" parent="." instance=ExtResource("17_vg1ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_r2xxn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Interactable" type="Node3D" parent="Objects"]
+
+[node name="B Ball" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
+
+[node name="Containers" type="Node3D" parent="Objects"]
+
+[node name="Chest" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_ly2l4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
+
+[node name="Chest2" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_2m7pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
 
 [node name="Level" type="Node3D" parent="."]
 
@@ -280,7 +346,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
 
 [node name="CSGCylinder3D58" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1555, 4.02869, 11.5058)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1555, -0.841099, 11.5058)
 use_collision = true
 radius = 4.503
 height = 0.595
@@ -312,52 +378,12 @@ Alt to Free Look
 Left Click to Grab and Release Blocks
 R to Rotate grabbed blocks"
 
-[node name="Lighting" type="Node3D" parent="."]
+[node name="Water" type="Node3D" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource("Environment_r2xxn")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
-[node name="Objects" type="Node3D" parent="."]
-
-[node name="Interactable" type="Node3D" parent="Objects"]
-
-[node name="B Ball" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
-
-[node name="Containers" type="Node3D" parent="Objects"]
-
-[node name="Chest" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
-collision_layer = 5
-collision_mask = 0
-script = ExtResource("17_kxtjv")
-inventory_data = SubResource("Resource_ly2l4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_vn05x")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("ConcavePolygonShape3D_sfb1n")
-
-[node name="Chest2" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
-transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
-collision_layer = 5
-collision_mask = 0
-script = ExtResource("17_kxtjv")
-inventory_data = SubResource("Resource_2m7pg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_vn05x")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("ConcavePolygonShape3D_sfb1n")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
+mesh = SubResource("PlaneMesh_811is")
+surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]

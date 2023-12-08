@@ -18,6 +18,7 @@ var _hook_model: Node3D
 var _hook_target_normal: Vector3
 
 var is_hook_launched: bool
+@onready var is_hook_attached: bool = false
 var hook_target_position: Vector3
 
 signal hook_launched()
@@ -49,6 +50,7 @@ func _attach_hook() -> void:
 	add_child(_hook_model)
 	
 	hook_attached.emit()
+	is_hook_attached = true
 
 
 func _retract_hook() -> void:
@@ -57,6 +59,7 @@ func _retract_hook() -> void:
 	_hook_model.queue_free()
 	
 	hook_detached.emit()
+	is_hook_attached = false
 
 
 func _handle_hook(delta: float) -> void:
