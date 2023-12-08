@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://calbusi5i4lx2"
+path="res://.godot/imported/SM_Primitive_Pyramid_01.obj-afd4b228b50718d1c9ddf4de7c67b803.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Pyramid_01.obj-afd4b228b50718d1c9ddf4de7c67b803.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Pyramid_01.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Pyramid_01.obj-afd4b228b50718d1c9ddf4de7c67b803.mesh", "res://.godot/imported/SM_Primitive_Pyramid_01.obj-afd4b228b50718d1c9ddf4de7c67b803.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

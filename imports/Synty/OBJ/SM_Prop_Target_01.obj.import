@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cstj3xb74xf08"
+path="res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Prop_Target_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh", "res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

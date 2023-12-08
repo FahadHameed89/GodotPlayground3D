@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bnrolwebnb700"
+path="res://.godot/imported/SM_Pawn_Handsup_Male_01.obj-53bbc5f49c99dd0f0f2a5e6616e1a07e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Pawn_Handsup_Male_01.obj-53bbc5f49c99dd0f0f2a5e6616e1a07e.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Pawn_Handsup_Male_01.obj"
+dest_files=["res://.godot/imported/SM_Pawn_Handsup_Male_01.obj-53bbc5f49c99dd0f0f2a5e6616e1a07e.mesh", "res://.godot/imported/SM_Pawn_Handsup_Male_01.obj-53bbc5f49c99dd0f0f2a5e6616e1a07e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

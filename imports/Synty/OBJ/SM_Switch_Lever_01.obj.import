@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqj24kry6ppr"
+path="res://.godot/imported/SM_Switch_Lever_01.obj-28c169d9f2af8feda2a3718bf11bc287.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Switch_Lever_01.obj-28c169d9f2af8feda2a3718bf11bc287.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Switch_Lever_01.obj"
+dest_files=["res://.godot/imported/SM_Switch_Lever_01.obj-28c169d9f2af8feda2a3718bf11bc287.mesh", "res://.godot/imported/SM_Switch_Lever_01.obj-28c169d9f2af8feda2a3718bf11bc287.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

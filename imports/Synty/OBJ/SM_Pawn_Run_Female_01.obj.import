@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cke1x57cx2kgq"
+path="res://.godot/imported/SM_Pawn_Run_Female_01.obj-fb5acf935bb53efd9f9c836a9e51f3dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Pawn_Run_Female_01.obj-fb5acf935bb53efd9f9c836a9e51f3dc.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Pawn_Run_Female_01.obj"
+dest_files=["res://.godot/imported/SM_Pawn_Run_Female_01.obj-fb5acf935bb53efd9f9c836a9e51f3dc.mesh", "res://.godot/imported/SM_Pawn_Run_Female_01.obj-fb5acf935bb53efd9f9c836a9e51f3dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

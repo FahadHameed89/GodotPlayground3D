@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://duma2cngyamyn"
+path="res://.godot/imported/SM_Icon_Potion_02.obj-fc9f5dccfb796a02811a4118d7f42caf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Potion_02.obj-fc9f5dccfb796a02811a4118d7f42caf.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Potion_02.obj"
+dest_files=["res://.godot/imported/SM_Icon_Potion_02.obj-fc9f5dccfb796a02811a4118d7f42caf.mesh", "res://.godot/imported/SM_Icon_Potion_02.obj-fc9f5dccfb796a02811a4118d7f42caf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

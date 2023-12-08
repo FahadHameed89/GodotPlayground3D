@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://67yeblbih27v"
+path="res://.godot/imported/SM_Pawn_Cower_Male_01.obj-2415bd19eff63279e559725c2c15a53a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Pawn_Cower_Male_01.obj-2415bd19eff63279e559725c2c15a53a.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Pawn_Cower_Male_01.obj"
+dest_files=["res://.godot/imported/SM_Pawn_Cower_Male_01.obj-2415bd19eff63279e559725c2c15a53a.mesh", "res://.godot/imported/SM_Pawn_Cower_Male_01.obj-2415bd19eff63279e559725c2c15a53a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

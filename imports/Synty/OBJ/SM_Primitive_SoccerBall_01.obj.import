@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bej1dwwhygks3"
+path="res://.godot/imported/SM_Primitive_SoccerBall_01.obj-ce7b63918443c390aa6852c944c37e9f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_SoccerBall_01.obj-ce7b63918443c390aa6852c944c37e9f.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_SoccerBall_01.obj"
+dest_files=["res://.godot/imported/SM_Primitive_SoccerBall_01.obj-ce7b63918443c390aa6852c944c37e9f.mesh", "res://.godot/imported/SM_Primitive_SoccerBall_01.obj-ce7b63918443c390aa6852c944c37e9f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

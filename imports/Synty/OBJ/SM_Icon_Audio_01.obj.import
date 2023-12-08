@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://beejvy4mg2ha3"
+path="res://.godot/imported/SM_Icon_Audio_01.obj-f3675578d5000859e4a296384d661172.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Audio_01.obj-f3675578d5000859e4a296384d661172.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Audio_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Audio_01.obj-f3675578d5000859e4a296384d661172.mesh", "res://.godot/imported/SM_Icon_Audio_01.obj-f3675578d5000859e4a296384d661172.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

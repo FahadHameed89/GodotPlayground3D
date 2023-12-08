@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bd2cgdpce4015"
+path="res://.godot/imported/SM_Icon_Arrow_Small_04.obj-3104f677887b50b79815491ee864975e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Arrow_Small_04.obj-3104f677887b50b79815491ee864975e.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Arrow_Small_04.obj"
+dest_files=["res://.godot/imported/SM_Icon_Arrow_Small_04.obj-3104f677887b50b79815491ee864975e.mesh", "res://.godot/imported/SM_Icon_Arrow_Small_04.obj-3104f677887b50b79815491ee864975e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

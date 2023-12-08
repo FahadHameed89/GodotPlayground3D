@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cypmi3177m8kp"
+path="res://.godot/imported/SM_Note_Bug_01.obj-1cbb0225bd1d90a47fec506209200348.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Note_Bug_01.obj-1cbb0225bd1d90a47fec506209200348.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Note_Bug_01.obj"
+dest_files=["res://.godot/imported/SM_Note_Bug_01.obj-1cbb0225bd1d90a47fec506209200348.mesh", "res://.godot/imported/SM_Note_Bug_01.obj-1cbb0225bd1d90a47fec506209200348.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

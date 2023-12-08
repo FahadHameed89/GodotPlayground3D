@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://e1sbnoaqkawi"
+path="res://.godot/imported/SM_Icon_Letter_Apostrophe_01.obj-2b1dc63220e293e9c9dc44892a37a582.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Letter_Apostrophe_01.obj-2b1dc63220e293e9c9dc44892a37a582.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Letter_Apostrophe_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Letter_Apostrophe_01.obj-2b1dc63220e293e9c9dc44892a37a582.mesh", "res://.godot/imported/SM_Icon_Letter_Apostrophe_01.obj-2b1dc63220e293e9c9dc44892a37a582.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

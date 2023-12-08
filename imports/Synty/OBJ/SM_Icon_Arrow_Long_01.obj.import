@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7mwb033acabk"
+path="res://.godot/imported/SM_Icon_Arrow_Long_01.obj-fda42ed066692f18456ba00b1af01b41.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Arrow_Long_01.obj-fda42ed066692f18456ba00b1af01b41.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Arrow_Long_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Arrow_Long_01.obj-fda42ed066692f18456ba00b1af01b41.mesh", "res://.godot/imported/SM_Icon_Arrow_Long_01.obj-fda42ed066692f18456ba00b1af01b41.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

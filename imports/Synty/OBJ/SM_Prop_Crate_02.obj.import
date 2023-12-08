@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4vx4eolc0k8b"
+path="res://.godot/imported/SM_Prop_Crate_02.obj-a1af966e10069195f26bd1f4f9f9a32a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Crate_02.obj-a1af966e10069195f26bd1f4f9f9a32a.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Prop_Crate_02.obj"
+dest_files=["res://.godot/imported/SM_Prop_Crate_02.obj-a1af966e10069195f26bd1f4f9f9a32a.mesh", "res://.godot/imported/SM_Prop_Crate_02.obj-a1af966e10069195f26bd1f4f9f9a32a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

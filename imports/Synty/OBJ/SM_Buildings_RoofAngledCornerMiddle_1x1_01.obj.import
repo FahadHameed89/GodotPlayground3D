@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d047dhpyfy0uc"
+path="res://.godot/imported/SM_Buildings_RoofAngledCornerMiddle_1x1_01.obj-a2edb43630a9c324e8589204a2561ab7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_RoofAngledCornerMiddle_1x1_01.obj-a2edb43630a9c324e8589204a2561ab7.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_RoofAngledCornerMiddle_1x1_01.obj"
+dest_files=["res://.godot/imported/SM_Buildings_RoofAngledCornerMiddle_1x1_01.obj-a2edb43630a9c324e8589204a2561ab7.mesh", "res://.godot/imported/SM_Buildings_RoofAngledCornerMiddle_1x1_01.obj-a2edb43630a9c324e8589204a2561ab7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctnn7b83y4es1"
+path="res://.godot/imported/SM_Icon_Pin_01.obj-afed4384d1c07ffc0ab19a8963d54f61.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Pin_01.obj-afed4384d1c07ffc0ab19a8963d54f61.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Pin_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Pin_01.obj-afed4384d1c07ffc0ab19a8963d54f61.mesh", "res://.godot/imported/SM_Icon_Pin_01.obj-afed4384d1c07ffc0ab19a8963d54f61.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

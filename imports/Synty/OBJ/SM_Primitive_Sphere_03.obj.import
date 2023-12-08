@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsrmrl6aul0j2"
+path="res://.godot/imported/SM_Primitive_Sphere_03.obj-7ce3ec4818a32dd60303bace4d452c3b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Sphere_03.obj-7ce3ec4818a32dd60303bace4d452c3b.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Sphere_03.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Sphere_03.obj-7ce3ec4818a32dd60303bace4d452c3b.mesh", "res://.godot/imported/SM_Primitive_Sphere_03.obj-7ce3ec4818a32dd60303bace4d452c3b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

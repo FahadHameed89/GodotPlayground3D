@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bu115fx18y18o"
+path="res://.godot/imported/SM_Icon_Letter_Money_01.obj-9f63b557edae583f8a7d0ae4e13227a6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Letter_Money_01.obj-9f63b557edae583f8a7d0ae4e13227a6.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Letter_Money_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Letter_Money_01.obj-9f63b557edae583f8a7d0ae4e13227a6.mesh", "res://.godot/imported/SM_Icon_Letter_Money_01.obj-9f63b557edae583f8a7d0ae4e13227a6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

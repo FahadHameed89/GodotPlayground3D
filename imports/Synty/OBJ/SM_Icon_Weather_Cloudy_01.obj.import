@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmmnvnwimvqf2"
+path="res://.godot/imported/SM_Icon_Weather_Cloudy_01.obj-d07a65198ef62e21036865f9c02bf261.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Weather_Cloudy_01.obj-d07a65198ef62e21036865f9c02bf261.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Weather_Cloudy_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Weather_Cloudy_01.obj-d07a65198ef62e21036865f9c02bf261.mesh", "res://.godot/imported/SM_Icon_Weather_Cloudy_01.obj-d07a65198ef62e21036865f9c02bf261.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwxttxwdoubp4"
+path="res://.godot/imported/SM_Icon_Error_Circle_01.obj-f2562edb1683bc66937078a4f2d92d0c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Error_Circle_01.obj-f2562edb1683bc66937078a4f2d92d0c.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Error_Circle_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Error_Circle_01.obj-f2562edb1683bc66937078a4f2d92d0c.mesh", "res://.godot/imported/SM_Icon_Error_Circle_01.obj-f2562edb1683bc66937078a4f2d92d0c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

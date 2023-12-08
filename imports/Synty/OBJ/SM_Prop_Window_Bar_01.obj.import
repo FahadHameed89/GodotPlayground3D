@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cs812gr6a7q0p"
+path="res://.godot/imported/SM_Prop_Window_Bar_01.obj-d3a4076a4258d2e0dc0f98b92056bccb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Window_Bar_01.obj-d3a4076a4258d2e0dc0f98b92056bccb.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Prop_Window_Bar_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Window_Bar_01.obj-d3a4076a4258d2e0dc0f98b92056bccb.mesh", "res://.godot/imported/SM_Prop_Window_Bar_01.obj-d3a4076a4258d2e0dc0f98b92056bccb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

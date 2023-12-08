@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bl3qdwya13elo"
+path="res://.godot/imported/SM_Buildings_Stairs_1x3_01.obj-863b05b6843259e8a8fb5ca55c575ec0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_Stairs_1x3_01.obj-863b05b6843259e8a8fb5ca55c575ec0.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_Stairs_1x3_01.obj"
+dest_files=["res://.godot/imported/SM_Buildings_Stairs_1x3_01.obj-863b05b6843259e8a8fb5ca55c575ec0.mesh", "res://.godot/imported/SM_Buildings_Stairs_1x3_01.obj-863b05b6843259e8a8fb5ca55c575ec0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

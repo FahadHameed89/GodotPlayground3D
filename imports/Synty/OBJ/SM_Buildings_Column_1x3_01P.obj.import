@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blsa1gu36efep"
+path="res://.godot/imported/SM_Buildings_Column_1x3_01P.obj-61127bde4f13b03d416d30f8e9745c8e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_Column_1x3_01P.obj-61127bde4f13b03d416d30f8e9745c8e.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_Column_1x3_01P.obj"
+dest_files=["res://.godot/imported/SM_Buildings_Column_1x3_01P.obj-61127bde4f13b03d416d30f8e9745c8e.mesh", "res://.godot/imported/SM_Buildings_Column_1x3_01P.obj-61127bde4f13b03d416d30f8e9745c8e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

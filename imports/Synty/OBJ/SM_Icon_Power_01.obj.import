@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brgb312gd0q3n"
+path="res://.godot/imported/SM_Icon_Power_01.obj-d74dc11f8bfb5186600dfa9ed4c47838.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Power_01.obj-d74dc11f8bfb5186600dfa9ed4c47838.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Power_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Power_01.obj-d74dc11f8bfb5186600dfa9ed4c47838.mesh", "res://.godot/imported/SM_Icon_Power_01.obj-d74dc11f8bfb5186600dfa9ed4c47838.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ds5k8p0j7vg0d"
+path="res://.godot/imported/SM_Icon_Letter_M_01.obj-387117c2c7c1335bcc18f68ce0e30a1d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Letter_M_01.obj-387117c2c7c1335bcc18f68ce0e30a1d.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Letter_M_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Letter_M_01.obj-387117c2c7c1335bcc18f68ce0e30a1d.mesh", "res://.godot/imported/SM_Icon_Letter_M_01.obj-387117c2c7c1335bcc18f68ce0e30a1d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

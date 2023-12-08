@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xodo1geodygl"
+path="res://.godot/imported/SM_Icon_Ammo_04.obj-644ae5d51a9fefc53334af99124a3a16.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Ammo_04.obj-644ae5d51a9fefc53334af99124a3a16.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Ammo_04.obj"
+dest_files=["res://.godot/imported/SM_Icon_Ammo_04.obj-644ae5d51a9fefc53334af99124a3a16.mesh", "res://.godot/imported/SM_Icon_Ammo_04.obj-644ae5d51a9fefc53334af99124a3a16.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

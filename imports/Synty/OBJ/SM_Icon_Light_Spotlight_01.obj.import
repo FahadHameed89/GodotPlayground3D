@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bvikgrspd6m06"
+path="res://.godot/imported/SM_Icon_Light_Spotlight_01.obj-a028efead6bfeb7e1a8908ea9cf88237.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Light_Spotlight_01.obj-a028efead6bfeb7e1a8908ea9cf88237.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Light_Spotlight_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Light_Spotlight_01.obj-a028efead6bfeb7e1a8908ea9cf88237.mesh", "res://.godot/imported/SM_Icon_Light_Spotlight_01.obj-a028efead6bfeb7e1a8908ea9cf88237.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

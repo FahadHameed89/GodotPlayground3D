@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4vnypx7hrxl5"
+path="res://.godot/imported/SM_Primitive_Tube_01P.obj-e37dd0d15933b4052a26d9e0f17d67cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Tube_01P.obj-e37dd0d15933b4052a26d9e0f17d67cb.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Tube_01P.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Tube_01P.obj-e37dd0d15933b4052a26d9e0f17d67cb.mesh", "res://.godot/imported/SM_Primitive_Tube_01P.obj-e37dd0d15933b4052a26d9e0f17d67cb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

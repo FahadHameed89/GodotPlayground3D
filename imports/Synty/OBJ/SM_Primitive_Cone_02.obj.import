@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0rd6bs1h7187"
+path="res://.godot/imported/SM_Primitive_Cone_02.obj-31c380ebd53db8975e5046726679e65f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Cone_02.obj-31c380ebd53db8975e5046726679e65f.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Cone_02.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Cone_02.obj-31c380ebd53db8975e5046726679e65f.mesh", "res://.godot/imported/SM_Primitive_Cone_02.obj-31c380ebd53db8975e5046726679e65f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

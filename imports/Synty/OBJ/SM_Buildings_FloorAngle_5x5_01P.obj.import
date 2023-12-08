@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ba57y1bq4yn6v"
+path="res://.godot/imported/SM_Buildings_FloorAngle_5x5_01P.obj-a76dcab9e90673c7589c33ecc9faaa21.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_FloorAngle_5x5_01P.obj-a76dcab9e90673c7589c33ecc9faaa21.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_FloorAngle_5x5_01P.obj"
+dest_files=["res://.godot/imported/SM_Buildings_FloorAngle_5x5_01P.obj-a76dcab9e90673c7589c33ecc9faaa21.mesh", "res://.godot/imported/SM_Buildings_FloorAngle_5x5_01P.obj-a76dcab9e90673c7589c33ecc9faaa21.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

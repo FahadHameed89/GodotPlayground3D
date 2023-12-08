@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jn4p1kdqg61"
+path="res://.godot/imported/SM_Generic_Water_Plane_01.obj-f7fc7bcbad064b3b7a11e50ccabc1212.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Generic_Water_Plane_01.obj-f7fc7bcbad064b3b7a11e50ccabc1212.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Generic_Water_Plane_01.obj"
+dest_files=["res://.godot/imported/SM_Generic_Water_Plane_01.obj-f7fc7bcbad064b3b7a11e50ccabc1212.mesh", "res://.godot/imported/SM_Generic_Water_Plane_01.obj-f7fc7bcbad064b3b7a11e50ccabc1212.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

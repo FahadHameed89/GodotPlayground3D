@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7l2ykysdqyyu"
+path="res://.godot/imported/SM_Icon_System_01.obj-81399b3c67823ee96b187d1678221b3b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_System_01.obj-81399b3c67823ee96b187d1678221b3b.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_System_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_System_01.obj-81399b3c67823ee96b187d1678221b3b.mesh", "res://.godot/imported/SM_Icon_System_01.obj-81399b3c67823ee96b187d1678221b3b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

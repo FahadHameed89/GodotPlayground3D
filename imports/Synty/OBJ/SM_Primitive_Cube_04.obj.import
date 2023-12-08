@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4mhsfjhqa0mm"
+path="res://.godot/imported/SM_Primitive_Cube_04.obj-b50c5e72dae5c9ed0668d2189601dfac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Cube_04.obj-b50c5e72dae5c9ed0668d2189601dfac.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Cube_04.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Cube_04.obj-b50c5e72dae5c9ed0668d2189601dfac.mesh", "res://.godot/imported/SM_Primitive_Cube_04.obj-b50c5e72dae5c9ed0668d2189601dfac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

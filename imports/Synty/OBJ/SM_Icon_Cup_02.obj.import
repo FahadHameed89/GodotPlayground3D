@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctvoyk3dp8qt0"
+path="res://.godot/imported/SM_Icon_Cup_02.obj-87f9020a4e4402d5f5e83c25557c0faf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Cup_02.obj-87f9020a4e4402d5f5e83c25557c0faf.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Cup_02.obj"
+dest_files=["res://.godot/imported/SM_Icon_Cup_02.obj-87f9020a4e4402d5f5e83c25557c0faf.mesh", "res://.godot/imported/SM_Icon_Cup_02.obj-87f9020a4e4402d5f5e83c25557c0faf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

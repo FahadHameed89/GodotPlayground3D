@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbqr7yxetwkcq"
+path="res://.godot/imported/SM_Switch_Remote_01.obj-de1e24f3bea05ea9ce90b651618d1736.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Switch_Remote_01.obj-de1e24f3bea05ea9ce90b651618d1736.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Switch_Remote_01.obj"
+dest_files=["res://.godot/imported/SM_Switch_Remote_01.obj-de1e24f3bea05ea9ce90b651618d1736.mesh", "res://.godot/imported/SM_Switch_Remote_01.obj-de1e24f3bea05ea9ce90b651618d1736.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

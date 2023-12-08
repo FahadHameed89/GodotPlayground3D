@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b024vjger4ksc"
+path="res://.godot/imported/SM_Generic_Mountains_Grass_01.obj-66fa510d7ae0a63c6615956b5ebd873a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Generic_Mountains_Grass_01.obj-66fa510d7ae0a63c6615956b5ebd873a.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Generic_Mountains_Grass_01.obj"
+dest_files=["res://.godot/imported/SM_Generic_Mountains_Grass_01.obj-66fa510d7ae0a63c6615956b5ebd873a.mesh", "res://.godot/imported/SM_Generic_Mountains_Grass_01.obj-66fa510d7ae0a63c6615956b5ebd873a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

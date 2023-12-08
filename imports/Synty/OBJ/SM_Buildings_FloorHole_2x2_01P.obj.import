@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ppeok1hpjch7"
+path="res://.godot/imported/SM_Buildings_FloorHole_2x2_01P.obj-9e12c3c06a57b28d42d58069b606d181.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_FloorHole_2x2_01P.obj-9e12c3c06a57b28d42d58069b606d181.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_FloorHole_2x2_01P.obj"
+dest_files=["res://.godot/imported/SM_Buildings_FloorHole_2x2_01P.obj-9e12c3c06a57b28d42d58069b606d181.mesh", "res://.godot/imported/SM_Buildings_FloorHole_2x2_01P.obj-9e12c3c06a57b28d42d58069b606d181.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

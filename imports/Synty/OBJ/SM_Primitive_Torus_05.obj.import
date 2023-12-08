@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://vadft6adyiiv"
+path="res://.godot/imported/SM_Primitive_Torus_05.obj-abce94ae8d9becf7ab6e9303324fb864.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Torus_05.obj-abce94ae8d9becf7ab6e9303324fb864.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Torus_05.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Torus_05.obj-abce94ae8d9becf7ab6e9303324fb864.mesh", "res://.godot/imported/SM_Primitive_Torus_05.obj-abce94ae8d9becf7ab6e9303324fb864.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgjgpmxuq6jvo"
+path="res://.godot/imported/SM_Buildings_Ramp_55_1x1_01.obj-99305a147c34e7e6d925d2b16843fe89.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_Ramp_55_1x1_01.obj-99305a147c34e7e6d925d2b16843fe89.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_Ramp_55_1x1_01.obj"
+dest_files=["res://.godot/imported/SM_Buildings_Ramp_55_1x1_01.obj-99305a147c34e7e6d925d2b16843fe89.mesh", "res://.godot/imported/SM_Buildings_Ramp_55_1x1_01.obj-99305a147c34e7e6d925d2b16843fe89.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

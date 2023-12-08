@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bv2yb7oyc132d"
+path="res://.godot/imported/SM_Icon_Pencil_01.obj-45b68725f8ff1e7a876aca4daddb635e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Pencil_01.obj-45b68725f8ff1e7a876aca4daddb635e.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Pencil_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Pencil_01.obj-45b68725f8ff1e7a876aca4daddb635e.mesh", "res://.godot/imported/SM_Icon_Pencil_01.obj-45b68725f8ff1e7a876aca4daddb635e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

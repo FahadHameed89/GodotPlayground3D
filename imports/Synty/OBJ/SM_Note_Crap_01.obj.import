@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpcsdg5fj056f"
+path="res://.godot/imported/SM_Note_Crap_01.obj-07f699332274f2fffab9951288b6fecd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Note_Crap_01.obj-07f699332274f2fffab9951288b6fecd.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Note_Crap_01.obj"
+dest_files=["res://.godot/imported/SM_Note_Crap_01.obj-07f699332274f2fffab9951288b6fecd.mesh", "res://.godot/imported/SM_Note_Crap_01.obj-07f699332274f2fffab9951288b6fecd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

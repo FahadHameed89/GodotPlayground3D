@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btfbd84x3533h"
+path="res://.godot/imported/SM_Pawn_Weapon_Female_01.obj-4e3a683d30a134ea7c11fd1a1842468d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Pawn_Weapon_Female_01.obj-4e3a683d30a134ea7c11fd1a1842468d.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Pawn_Weapon_Female_01.obj"
+dest_files=["res://.godot/imported/SM_Pawn_Weapon_Female_01.obj-4e3a683d30a134ea7c11fd1a1842468d.mesh", "res://.godot/imported/SM_Pawn_Weapon_Female_01.obj-4e3a683d30a134ea7c11fd1a1842468d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

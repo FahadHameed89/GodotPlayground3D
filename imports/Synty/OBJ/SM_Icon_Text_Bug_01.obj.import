@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmf6032ty3dov"
+path="res://.godot/imported/SM_Icon_Text_Bug_01.obj-2a80253677de16f6129eec8d80955667.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Text_Bug_01.obj-2a80253677de16f6129eec8d80955667.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Text_Bug_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Text_Bug_01.obj-2a80253677de16f6129eec8d80955667.mesh", "res://.godot/imported/SM_Icon_Text_Bug_01.obj-2a80253677de16f6129eec8d80955667.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

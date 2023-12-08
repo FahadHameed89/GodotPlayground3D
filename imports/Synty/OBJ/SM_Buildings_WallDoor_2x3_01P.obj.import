@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwry4duft0u53"
+path="res://.godot/imported/SM_Buildings_WallDoor_2x3_01P.obj-f1b9f6e1b9110b19480739f9ef4276ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_WallDoor_2x3_01P.obj-f1b9f6e1b9110b19480739f9ef4276ff.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_WallDoor_2x3_01P.obj"
+dest_files=["res://.godot/imported/SM_Buildings_WallDoor_2x3_01P.obj-f1b9f6e1b9110b19480739f9ef4276ff.mesh", "res://.godot/imported/SM_Buildings_WallDoor_2x3_01P.obj-f1b9f6e1b9110b19480739f9ef4276ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

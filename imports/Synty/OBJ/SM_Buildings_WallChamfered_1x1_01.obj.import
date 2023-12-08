@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cm0p0pryxxpfb"
+path="res://.godot/imported/SM_Buildings_WallChamfered_1x1_01.obj-d3ed944c7003d8544c1f13065639a55b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_WallChamfered_1x1_01.obj-d3ed944c7003d8544c1f13065639a55b.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_WallChamfered_1x1_01.obj"
+dest_files=["res://.godot/imported/SM_Buildings_WallChamfered_1x1_01.obj-d3ed944c7003d8544c1f13065639a55b.mesh", "res://.godot/imported/SM_Buildings_WallChamfered_1x1_01.obj-d3ed944c7003d8544c1f13065639a55b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

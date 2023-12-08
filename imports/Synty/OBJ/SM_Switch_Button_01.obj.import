@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chvjpi4gdh0uu"
+path="res://.godot/imported/SM_Switch_Button_01.obj-4690c495ef06641da289dc84175c26e9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Switch_Button_01.obj-4690c495ef06641da289dc84175c26e9.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Switch_Button_01.obj"
+dest_files=["res://.godot/imported/SM_Switch_Button_01.obj-4690c495ef06641da289dc84175c26e9.mesh", "res://.godot/imported/SM_Switch_Button_01.obj-4690c495ef06641da289dc84175c26e9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

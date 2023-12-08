@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c70q2a203lbiq"
+path="res://.godot/imported/SM_Buildings_WallCurved_5x5_01P.obj-0677a47862d2ad34f077915d815a0aa7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_WallCurved_5x5_01P.obj-0677a47862d2ad34f077915d815a0aa7.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_WallCurved_5x5_01P.obj"
+dest_files=["res://.godot/imported/SM_Buildings_WallCurved_5x5_01P.obj-0677a47862d2ad34f077915d815a0aa7.mesh", "res://.godot/imported/SM_Buildings_WallCurved_5x5_01P.obj-0677a47862d2ad34f077915d815a0aa7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

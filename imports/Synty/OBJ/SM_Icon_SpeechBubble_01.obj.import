@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cux3p3vurahf6"
+path="res://.godot/imported/SM_Icon_SpeechBubble_01.obj-416d9a2efa9367cc8e844f45e610e129.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_SpeechBubble_01.obj-416d9a2efa9367cc8e844f45e610e129.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_SpeechBubble_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_SpeechBubble_01.obj-416d9a2efa9367cc8e844f45e610e129.mesh", "res://.godot/imported/SM_Icon_SpeechBubble_01.obj-416d9a2efa9367cc8e844f45e610e129.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

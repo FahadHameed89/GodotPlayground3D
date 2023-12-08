@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh0jwadvhjn6w"
+path="res://.godot/imported/SM_Icon_Text_Finish_03.obj-4f8bc5231604c5ccc96691921829bf76.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Text_Finish_03.obj-4f8bc5231604c5ccc96691921829bf76.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Text_Finish_03.obj"
+dest_files=["res://.godot/imported/SM_Icon_Text_Finish_03.obj-4f8bc5231604c5ccc96691921829bf76.mesh", "res://.godot/imported/SM_Icon_Text_Finish_03.obj-4f8bc5231604c5ccc96691921829bf76.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

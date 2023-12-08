@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bovblovchxmbs"
+path="res://.godot/imported/SM_FX_Glow_Ring_01.obj-96fbdde39d9c740930cd8298a75aa772.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_FX_Glow_Ring_01.obj-96fbdde39d9c740930cd8298a75aa772.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_FX_Glow_Ring_01.obj"
+dest_files=["res://.godot/imported/SM_FX_Glow_Ring_01.obj-96fbdde39d9c740930cd8298a75aa772.mesh", "res://.godot/imported/SM_FX_Glow_Ring_01.obj-96fbdde39d9c740930cd8298a75aa772.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

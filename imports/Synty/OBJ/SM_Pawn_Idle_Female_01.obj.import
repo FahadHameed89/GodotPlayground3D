@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b813jq6dpjih"
+path="res://.godot/imported/SM_Pawn_Idle_Female_01.obj-f52fa37886ac5d0e6962184aa1168be9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Pawn_Idle_Female_01.obj-f52fa37886ac5d0e6962184aa1168be9.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Pawn_Idle_Female_01.obj"
+dest_files=["res://.godot/imported/SM_Pawn_Idle_Female_01.obj-f52fa37886ac5d0e6962184aa1168be9.mesh", "res://.godot/imported/SM_Pawn_Idle_Female_01.obj-f52fa37886ac5d0e6962184aa1168be9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

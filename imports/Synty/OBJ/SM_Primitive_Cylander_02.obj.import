@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://w6gxidc3n5xa"
+path="res://.godot/imported/SM_Primitive_Cylander_02.obj-4ffcbae4f7ac3e066c42b77634c97a9d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Primitive_Cylander_02.obj-4ffcbae4f7ac3e066c42b77634c97a9d.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Primitive_Cylander_02.obj"
+dest_files=["res://.godot/imported/SM_Primitive_Cylander_02.obj-4ffcbae4f7ac3e066c42b77634c97a9d.mesh", "res://.godot/imported/SM_Primitive_Cylander_02.obj-4ffcbae4f7ac3e066c42b77634c97a9d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

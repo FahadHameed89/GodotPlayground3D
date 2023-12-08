@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dl4gq2j4qee1w"
+path="res://.godot/imported/SM_Prop_Pipe_Curve_02.obj-ae221e17fc58f3369e92555ffc1614fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Pipe_Curve_02.obj-ae221e17fc58f3369e92555ffc1614fc.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Prop_Pipe_Curve_02.obj"
+dest_files=["res://.godot/imported/SM_Prop_Pipe_Curve_02.obj-ae221e17fc58f3369e92555ffc1614fc.mesh", "res://.godot/imported/SM_Prop_Pipe_Curve_02.obj-ae221e17fc58f3369e92555ffc1614fc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

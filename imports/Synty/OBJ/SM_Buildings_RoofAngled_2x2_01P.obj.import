@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0m3fleqxe4fn"
+path="res://.godot/imported/SM_Buildings_RoofAngled_2x2_01P.obj-1df7d31a53251d98bfe6dff591d837d3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Buildings_RoofAngled_2x2_01P.obj-1df7d31a53251d98bfe6dff591d837d3.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Buildings_RoofAngled_2x2_01P.obj"
+dest_files=["res://.godot/imported/SM_Buildings_RoofAngled_2x2_01P.obj-1df7d31a53251d98bfe6dff591d837d3.mesh", "res://.godot/imported/SM_Buildings_RoofAngled_2x2_01P.obj-1df7d31a53251d98bfe6dff591d837d3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

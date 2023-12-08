@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://butswwomqi371"
+path="res://.godot/imported/SM_Icon_SelectionRing_09.obj-d042473ca6d8be99eba80985bcc7dc58.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_SelectionRing_09.obj-d042473ca6d8be99eba80985bcc7dc58.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_SelectionRing_09.obj"
+dest_files=["res://.godot/imported/SM_Icon_SelectionRing_09.obj-d042473ca6d8be99eba80985bcc7dc58.mesh", "res://.godot/imported/SM_Icon_SelectionRing_09.obj-d042473ca6d8be99eba80985bcc7dc58.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgcqxnbkse4pi"
+path="res://.godot/imported/SM_Icon_Letter_Exclamation_01.obj-24d6872374ade4797b5d35a549f1ba81.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Letter_Exclamation_01.obj-24d6872374ade4797b5d35a549f1ba81.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Letter_Exclamation_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Letter_Exclamation_01.obj-24d6872374ade4797b5d35a549f1ba81.mesh", "res://.godot/imported/SM_Icon_Letter_Exclamation_01.obj-24d6872374ade4797b5d35a549f1ba81.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

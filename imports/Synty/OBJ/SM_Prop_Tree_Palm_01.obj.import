@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cckkgioco25gs"
+path="res://.godot/imported/SM_Prop_Tree_Palm_01.obj-5a588c299ba3cc503b43b2bf247cbd84.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Tree_Palm_01.obj-5a588c299ba3cc503b43b2bf247cbd84.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Prop_Tree_Palm_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Tree_Palm_01.obj-5a588c299ba3cc503b43b2bf247cbd84.mesh", "res://.godot/imported/SM_Prop_Tree_Palm_01.obj-5a588c299ba3cc503b43b2bf247cbd84.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cje5ybu7kryko"
+path="res://.godot/imported/SM_Note_Polish_01.obj-a43a20d81452e8e54b730643722fca10.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Note_Polish_01.obj-a43a20d81452e8e54b730643722fca10.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Note_Polish_01.obj"
+dest_files=["res://.godot/imported/SM_Note_Polish_01.obj-a43a20d81452e8e54b730643722fca10.mesh", "res://.godot/imported/SM_Note_Polish_01.obj-a43a20d81452e8e54b730643722fca10.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dl572djkf4kw3"
+path="res://.godot/imported/SM_Icon_Shield_01.obj-bf89e1bdac4158e2c238aae3b3ad5743.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Icon_Shield_01.obj-bf89e1bdac4158e2c238aae3b3ad5743.mesh"]
+
+source_file="res://imports/Synty/OBJ/SM_Icon_Shield_01.obj"
+dest_files=["res://.godot/imported/SM_Icon_Shield_01.obj-bf89e1bdac4158e2c238aae3b3ad5743.mesh", "res://.godot/imported/SM_Icon_Shield_01.obj-bf89e1bdac4158e2c238aae3b3ad5743.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
