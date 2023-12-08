@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_fu03a"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
-[ext_resource type="Resource" uid="uid://cd167loy6v83r" path="res://test_inv.tres" id="2_slkwd"]
+[ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_jc7wv"]
 [ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_ojf7j"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
 [ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="4_23ffn"]
 
 [sub_resource type="Resource" id="Resource_7cf2m"]
 script = ExtResource("3_ojf7j")
-slot_datas = Array[Resource("res://inventory/slot_data.gd")]([null, null, null])
+slot_datas = Array[Resource("res://inventory/slot_data.gd")]([null, null, null, null, null, null, null, null, null, null])
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gwa3"]
 
@@ -124,7 +124,7 @@ material = SubResource("StandardMaterial3D_fwpgf")
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_fu03a")
-inventory_data = ExtResource("2_slkwd")
+inventory_data = ExtResource("2_jc7wv")
 equip_inventory_data = SubResource("Resource_7cf2m")
 max_jumps = 3
 
