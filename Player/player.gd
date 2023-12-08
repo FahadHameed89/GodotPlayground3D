@@ -231,14 +231,14 @@ func _physics_process(delta):
 	
 	# Crouching
 	
-	if Input.is_action_pressed("crouch") || sliding:
+	if Input.is_action_pressed("crouch") and hook_controller.is_hook_attached == false || sliding:
 		current_speed = lerp(crouching_speed, crouching_speed, delta*lerp_speed)
 		head.position.y = lerp(head.position.y, crouching_depth, delta*lerp_speed)
 		standing_collision_shape.disabled = true
 		crouching_collision_shape.disabled = false
 		
 	# Handle Slide Begin
-		if sprinting && input_dir != Vector2.ZERO:
+		if sprinting && input_dir != Vector2.ZERO and hook_controller.is_hook_attached == false:
 			sliding = true
 			slide_timer = slide_timer_max
 			slide_vector = input_dir
@@ -259,7 +259,8 @@ func _physics_process(delta):
 		#print("stand")
 		
 		#Sprinting
-		if Input.is_action_pressed("sprint"):
+		if Input.is_action_pressed("sprint"): 
+		#and hook_controller.is_hook_attached == false
 			current_speed =  lerp(sprinting_speed, sprinting_speed, delta*lerp_speed)
 			walking = false
 			sprinting = true
