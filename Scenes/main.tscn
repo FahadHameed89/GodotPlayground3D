@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=43 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -11,40 +11,25 @@
 [ext_resource type="PackedScene" uid="uid://bxeq4xdos04ld" path="res://item/pickup/banana_pickup.tscn" id="6_64nmk"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
 [ext_resource type="PackedScene" uid="uid://dtif53vi34get" path="res://inventory/hotbar_inventory.tscn" id="9_3ayl4"]
-[ext_resource type="PackedScene" uid="uid://cbsu2ub57fcms" path="res://Objects/chest.tscn" id="9_d2lut"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
-[ext_resource type="Resource" uid="uid://s84flyvnjupc" path="res://item/items/blue_book.tres" id="13_xq1xn"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
+[ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
 [ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="16_hi1ld"]
+[ext_resource type="Script" path="res://Objects/chest.gd" id="17_kxtjv"]
 [ext_resource type="PackedScene" uid="uid://b81m7lig5p8j8" path="res://item/pickup/apple_pickup.tscn" id="17_vg1ko"]
+[ext_resource type="Script" path="res://item/item_data_consumable.gd" id="19_fjmbf"]
+[ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="20_j7jjs"]
+[ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
-panorama = ExtResource("2_n0qm5")
-
-[sub_resource type="Sky" id="Sky_a3ljo"]
-sky_material = SubResource("PanoramaSkyMaterial_xmu7k")
-
-[sub_resource type="Environment" id="Environment_r2xxn"]
-background_mode = 2
-sky = SubResource("Sky_a3ljo")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="Resource" id="Resource_enp0p"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("16_hi1ld")
+quantity = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
 albedo_texture = ExtResource("2_qohbf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pkln"]
-albedo_color = Color(0.321569, 0.396078, 0.513726, 1)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_b7fxw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3743"]
-albedo_texture = ExtResource("2_qohbf")
-
-[sub_resource type="SphereMesh" id="SphereMesh_o2ekt"]
-material = SubResource("StandardMaterial3D_t3743")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
 albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
@@ -58,6 +43,57 @@ albedo_texture = ExtResource("5_gk6lf")
 
 [sub_resource type="BoxMesh" id="BoxMesh_aia04"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
+panorama = ExtResource("2_n0qm5")
+
+[sub_resource type="Sky" id="Sky_a3ljo"]
+sky_material = SubResource("PanoramaSkyMaterial_xmu7k")
+
+[sub_resource type="Environment" id="Environment_r2xxn"]
+background_mode = 2
+sky = SubResource("Sky_a3ljo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm3cf"]
+atlas = ExtResource("20_j7jjs")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="Resource" id="Resource_6mipr"]
+script = ExtResource("19_fjmbf")
+heal_value = 100
+name = "Health Potion"
+description = "Restores 100 HP"
+stackable = true
+texture = SubResource("AtlasTexture_cm3cf")
+
+[sub_resource type="Resource" id="Resource_r0kal"]
+script = ExtResource("12_7qsfd")
+item_data = SubResource("Resource_6mipr")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_alhh0"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("16_hi1ld")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_ly2l4"]
+script = ExtResource("10_qaor6")
+slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_r0kal"), SubResource("Resource_alhh0"), null])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wp7m2"]
+albedo_texture = ExtResource("20_wpgpb")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vn05x"]
+lightmap_size_hint = Vector2i(12, 18)
+material = SubResource("StandardMaterial3D_wp7m2")
+uv2_padding = 1.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sfb1n"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
 [sub_resource type="Resource" id="Resource_vp653"]
 script = ExtResource("12_7qsfd")
 item_data = ExtResource("11_2ifp3")
@@ -65,638 +101,18 @@ quantity = 9
 
 [sub_resource type="Resource" id="Resource_gdeum"]
 script = ExtResource("12_7qsfd")
-item_data = ExtResource("13_xq1xn")
-quantity = 1
+item_data = ExtResource("16_hi1ld")
+quantity = 25
 
-[sub_resource type="Resource" id="Resource_jtn8m"]
+[sub_resource type="Resource" id="Resource_2m7pg"]
 script = ExtResource("10_qaor6")
 slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_vp653"), SubResource("Resource_gdeum"), null])
-
-[sub_resource type="Resource" id="Resource_enp0p"]
-script = ExtResource("12_7qsfd")
-item_data = ExtResource("16_hi1ld")
-quantity = 1
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_sgebs")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_r2xxn")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
-[node name="Level" type="Node3D" parent="."]
-
-[node name="Floor" type="CSGBox3D" parent="Level"]
-rotation_edit_mode = 2
-material_override = SubResource("StandardMaterial3D_q3c1v")
-use_collision = true
-size = Vector3(30, 0.5, 15)
-material = ExtResource("3_mrk2h")
-
-[node name="Wall" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1.20384, 0, 0, 0, -4.37114e-08, -0.800104, 0, 1, -3.49737e-08, 0, 9.28614, 7.46574)
-use_collision = true
-size = Vector3(25, 0.5, 25)
-material = SubResource("StandardMaterial3D_0pkln")
-
-[node name="Wall2" type="CSGBox3D" parent="Level"]
-transform = Transform3D(1.20384, 0, 0, 0, -4.37114e-08, -0.800104, 0, 1, -3.49737e-08, 0, 9.28614, -7.78613)
-use_collision = true
-size = Vector3(25, 0.5, 25)
-material = SubResource("StandardMaterial3D_0pkln")
-
-[node name="Wall3" type="CSGBox3D" parent="Level"]
-transform = Transform3D(-2.97809e-08, 1, -3.49736e-08, 0, -4.37114e-08, -0.800104, -0.681308, -4.37114e-08, 1.52875e-15, 14.4487, 9.28614, -0.140257)
-use_collision = true
-size = Vector3(25, 0.5, 25)
-material = SubResource("StandardMaterial3D_0pkln")
-
-[node name="Wall4" type="CSGBox3D" parent="Level"]
-transform = Transform3D(-2.97809e-08, 1, -3.49736e-08, 0, -4.37114e-08, -0.800104, -0.681308, -4.37114e-08, 1.52875e-15, -14.5642, 9.28614, -0.140257)
-use_collision = true
-size = Vector3(25, 0.5, 25)
-material = SubResource("StandardMaterial3D_0pkln")
-
-[node name="Backboard" type="CSGBox3D" parent="Level"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 14.2362, 3.29269, 0)
-material_override = SubResource("StandardMaterial3D_q3c1v")
-use_collision = true
-size = Vector3(1.85, 0.2, 1.2)
-material = ExtResource("3_mrk2h")
-
-[node name="Ball" type="RigidBody3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 3.81638)
-mass = 0.62
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Ball"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("SphereShape3D_b7fxw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Ball"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-mesh = SubResource("SphereMesh_o2ekt")
-
-[node name="Rim" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 3, 0)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim2" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 13.3119, 0)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim3" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 13.3119, 2.39417)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim4" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 13.3119, -2.56812)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim5" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 11.5307, -1.67984)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim6" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 9.81834, -0.883811)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim7" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 8.48876, -0.121407)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim8" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 7.06866, -0.121407)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim9" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 7.06866, 1.45251)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim10" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 7.06866, 2.93949)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim11" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 9.86853, 2.93949)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim12" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 9.86853, 1.20322)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Rim13" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 11.9445, 1.20322)
-use_collision = true
-outer_radius = 0.6
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Ring" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
-use_collision = true
-inner_radius = 20.0
-outer_radius = 25.973
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Ring2" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 250, 0)
-use_collision = true
-inner_radius = 20.0
-outer_radius = 25.973
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Ring3" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 450, 0)
-use_collision = true
-inner_radius = 20.0
-outer_radius = 25.973
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="Ring4" type="CSGTorus3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 650, 0)
-use_collision = true
-inner_radius = 20.0
-outer_radius = 25.973
-sides = 12
-material = SubResource("StandardMaterial3D_47dcr")
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 81.3478, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 105.807, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 160.904, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 185.364, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 253.377, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 277.836, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 346.69, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 371.15, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 440.816, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 465.276, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 526.65, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 551.11, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 631.252, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 655.711, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 718.93, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 743.389, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 818.873, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 843.332, 0)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D19" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 134.428, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D20" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 158.888, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D21" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 213.985, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D22" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 238.444, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D23" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 306.457, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D24" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 330.916, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D25" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 399.771, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D26" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 424.23, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D27" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 493.897, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D28" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 518.356, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D29" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 579.731, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D30" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 604.19, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D31" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 684.332, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D32" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 708.792, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D33" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.729, 770, 4.194)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D34" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 796.47, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D35" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72886, 871.953, 4.19403)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D36" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.729, 900, 4.194)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D55" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.729, 900, -4.70593)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="RigidBody3D5" type="RigidBody3D" parent="Level/CSGCylinder3D55"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515457, 1.24854, 2.88378)
-mass = 50.0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/CSGCylinder3D55/RigidBody3D5"]
-shape = SubResource("BoxShape3D_afwid")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/CSGCylinder3D55/RigidBody3D5"]
-mesh = SubResource("BoxMesh_aia04")
-
-[node name="CSGCylinder3D56" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23869, 900, 2.53906)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="CSGCylinder3D57" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.788566, 900, 15.6412)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="CSGCylinder3D58" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.08318, 900, 11.5058)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="CSGCylinder3D37" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 90.3659, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D38" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 114.825, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D39" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 169.922, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D40" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 194.382, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D41" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 262.395, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D42" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 286.854, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D43" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 355.708, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D44" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 380.168, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D45" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 449.834, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D46" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 474.294, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D47" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 535.668, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D48" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 560.128, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D49" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 640.27, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D50" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 664.729, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D51" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 727.948, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D52" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 752.407, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D53" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 827.891, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D54" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18371, 852.35, 0.788055)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="Label3D" type="Label3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51879, 903.078, 0)
-billboard = 1
-text = "WASD to Move
-Shift to Run
-Ctrl to Crouch
-Space to (Double) Jump
-Alt to Free Look
-Left Click to Grab and Release Blocks
-R to Rotate grabbed blocks"
-
 [node name="player" parent="." instance=ExtResource("2_5hthv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74154, 901.679, 4.33228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4971, 5.7077, 4.33228)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -751,16 +167,197 @@ offset_top = 10.0
 offset_right = 360.0
 offset_bottom = 90.0
 
-[node name="Chest" parent="." instance=ExtResource("9_d2lut")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
-inventory_data = SubResource("Resource_jtn8m")
-
 [node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
 slot_data = SubResource("Resource_enp0p")
 
 [node name="Apple_pickup" parent="." instance=ExtResource("17_vg1ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Level"]
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Backboard" type="CSGBox3D" parent="Level"]
+transform = Transform3D(-2.67821e-07, 1.74219, -3.02368e-07, 0, -7.61535e-08, -6.91738, -6.12702, -7.61535e-08, 1.3217e-14, 14.2362, 3.29269, 0)
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(1.85, 0.2, 1.2)
+material = ExtResource("3_mrk2h")
+
+[node name="Rim" type="CSGTorus3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 3, 0)
+use_collision = true
+outer_radius = 0.6
+sides = 12
+material = SubResource("StandardMaterial3D_47dcr")
+
+[node name="CSGCylinder3D36" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5097, 4.02869, 4.194)
+use_collision = true
+radius = 1.155
+material = SubResource("StandardMaterial3D_ij35k")
+
+[node name="CSGCylinder3D55" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5097, 4.02869, -4.70593)
+use_collision = true
+radius = 4.503
+height = 0.595
+material = SubResource("StandardMaterial3D_ij35k")
+
+[node name="banana_pickup" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="banana_pickup5" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+
+[node name="banana_pickup2" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+
+[node name="banana_pickup3" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="banana_pickup4" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="RigidBody3D5" type="RigidBody3D" parent="Level/CSGCylinder3D55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515457, 1.24854, 2.88378)
+mass = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/CSGCylinder3D55/RigidBody3D5"]
+shape = SubResource("BoxShape3D_afwid")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/CSGCylinder3D55/RigidBody3D5"]
+mesh = SubResource("BoxMesh_aia04")
+
+[node name="CSGCylinder3D56" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4774, 4.02869, 2.53906)
+use_collision = true
+radius = 4.503
+height = 0.595
+material = SubResource("StandardMaterial3D_ij35k")
+
+[node name="banana_pickup" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="banana_pickup5" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+
+[node name="banana_pickup2" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+
+[node name="banana_pickup3" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="banana_pickup4" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="CSGCylinder3D57" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.0272, 4.02869, 15.6412)
+use_collision = true
+radius = 4.503
+height = 0.595
+material = SubResource("StandardMaterial3D_ij35k")
+
+[node name="banana_pickup" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="banana_pickup5" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+
+[node name="banana_pickup2" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+
+[node name="banana_pickup3" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="banana_pickup4" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="CSGCylinder3D58" type="CSGCylinder3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1555, 4.02869, 11.5058)
+use_collision = true
+radius = 4.503
+height = 0.595
+material = SubResource("StandardMaterial3D_ij35k")
+
+[node name="banana_pickup" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="banana_pickup5" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+
+[node name="banana_pickup2" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+
+[node name="banana_pickup3" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="banana_pickup4" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+
+[node name="Label3D" type="Label3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7199, 7.10669, 0)
+billboard = 1
+text = "WASD to Move
+Shift to Run
+Ctrl to Crouch
+Space to (Double) Jump
+Alt to Free Look
+Left Click to Grab and Release Blocks
+R to Rotate grabbed blocks"
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_r2xxn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Interactable" type="Node3D" parent="Objects"]
+
+[node name="B Ball" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
+
+[node name="Containers" type="Node3D" parent="Objects"]
+
+[node name="Chest" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189826, -4.78119)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_ly2l4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
+
+[node name="Chest2" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_2m7pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgg85lnhjj7p5"]
+
+[ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="1_vm25d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b7fxw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t3743"]
+albedo_texture = ExtResource("1_vm25d")
+
+[sub_resource type="SphereMesh" id="SphereMesh_o2ekt"]
+material = SubResource("StandardMaterial3D_t3743")
+
+[node name="B Ball" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689106, 3.81638)
+mass = 0.62
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_b7fxw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_o2ekt")
