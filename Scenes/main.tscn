@@ -228,8 +228,10 @@ layout_mode = 2
 value = 50.0
 fill_mode = 4
 nine_patch_stretch = true
+texture_under = ExtResource("8_7girm")
 texture_over = ExtResource("7_pgem7")
 texture_progress = ExtResource("8_7girm")
+tint_under = Color(1, 1, 1, 0.27451)
 
 [node name="ManaBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -237,9 +239,10 @@ layout_mode = 2
 value = 20.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("7_pgem7")
+texture_under = ExtResource("9_cd0kg")
 texture_over = ExtResource("7_pgem7")
 texture_progress = ExtResource("9_cd0kg")
+tint_under = Color(1, 1, 1, 0.176471)
 
 [node name="StaminaBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -247,9 +250,10 @@ layout_mode = 2
 value = 87.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("7_pgem7")
+texture_under = ExtResource("10_jjikj")
 texture_over = ExtResource("7_pgem7")
 texture_progress = ExtResource("10_jjikj")
+tint_under = Color(1, 1, 1, 0.152941)
 
 [node name="HungerBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -257,9 +261,10 @@ layout_mode = 2
 value = 95.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("7_pgem7")
+texture_under = ExtResource("11_2tbub")
 texture_over = ExtResource("7_pgem7")
 texture_progress = ExtResource("11_2tbub")
+tint_under = Color(1, 1, 1, 0.266667)
 
 [node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
