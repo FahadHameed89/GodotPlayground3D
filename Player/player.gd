@@ -4,16 +4,23 @@ extends CharacterBody3D
 @export var max_health = 10 
 @export var current_health = 5
 @export var health_regen = 0
-@export var max_mana = 10
-@export var current_mana = 5
+
+@export var max_mana = 100
+@export var current_mana = 50
 @export var mana_regen = 0
-@export var max_stamina = 3000
-@export var current_stamina = 3000
-@export var stamina_regen = 1000
+
+@export var max_stamina = 100
+@export var current_stamina = 50
+@export var stamina_regen = 500 # Stamina regenerates quickly , and will not regen when fatigue is drained
+
+@export var max_fatigue = 1000 
+@export var current_fatigue = 1000
+@export var fatigue_rate = 10 # Fatigue rate at rest is 10/hr -> 10 'hours' before fatigue is empty
 
 @export var max_hunger = 3000
 @export var current_hunger = 3000
 @export var hunger_rate = 60 # Calories burned per hour -> 50 'hours' before Hunger bar is empty
+
 @export var max_thirst = 2000
 @export var current_thirst = 2000
 @export var thirst_rate = 80 # mL of water burned per hour -> 25 'hours' before Thirst bar is empty
