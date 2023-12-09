@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=51 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://behjvdp0ukhgl" path="res://assets/ui/parchment.tscn" id="9_hvvii"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
+[ext_resource type="Script" path="res://Scenes/FPSMeter.gd" id="11_g6352"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
@@ -361,6 +362,15 @@ text = "PLACEHOLDER TEXT
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/GameMenu/VBoxContainer"]
 layout_mode = 2
+
+[node name="FPSMeter" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+script = ExtResource("11_g6352")
 
 [node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
