@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=52 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -10,14 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://bbh51uq0cl4li" path="res://assets/textures/cord.png" id="5_gk6lf"]
 [ext_resource type="PackedScene" uid="uid://bxeq4xdos04ld" path="res://item/pickup/banana_pickup.tscn" id="6_64nmk"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
+[ext_resource type="Texture2D" uid="uid://jbpb1mq0kgsu" path="res://assets/ui/progress-bar-circle.png" id="7_2yekq"]
 [ext_resource type="Texture2D" uid="uid://cn4vbq8333s6h" path="res://assets/ui/progress-bar-frame.png" id="7_pgem7"]
-[ext_resource type="Texture2D" uid="uid://c240rqunicxrh" path="res://assets/ui/progress-bar-red.png" id="8_7girm"]
 [ext_resource type="PackedScene" uid="uid://dtif53vi34get" path="res://inventory/hotbar_inventory.tscn" id="9_3ayl4"]
-[ext_resource type="Texture2D" uid="uid://3twey6awlgy4" path="res://assets/ui/progress-bar-blue.png" id="9_cd0kg"]
-[ext_resource type="Texture2D" uid="uid://cuqp02ftmw2eq" path="res://assets/ui/progress-bar-green.png" id="10_jjikj"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
-[ext_resource type="Texture2D" uid="uid://b8hdd4f1y8rv" path="res://assets/ui/progress-bar-orange.png" id="11_2tbub"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
@@ -30,6 +27,34 @@
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
 [ext_resource type="PackedScene" uid="uid://bekx4yc3slj8e" path="res://Objects/Platforms/Banana_Platform.tscn" id="24_4dt24"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
+bg_color = Color(0.776471, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qer0l"]
+bg_color = Color(0.0901961, 0.466667, 0.639216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48upj"]
+bg_color = Color(0.184314, 0.537255, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c1md"]
+bg_color = Color(0.717647, 0.792157, 0.109804, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="Resource" id="Resource_enp0p"]
 script = ExtResource("12_7qsfd")
@@ -198,73 +223,100 @@ layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -48.0
-offset_right = 10.0
-offset_bottom = -48.0
 grow_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatBars"]
+[node name="VitalStats" type="VBoxContainer" parent="UI/StatBars"]
 custom_minimum_size = Vector2(10, 0)
 layout_direction = 1
-layout_mode = 0
-offset_right = 140.0
-offset_bottom = 68.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -78.0
+offset_right = 150.0
+offset_bottom = -10.0
+grow_vertical = 0
 
-[node name="ProgressBar" type="ProgressBar" parent="UI/StatBars/VBoxContainer"]
+[node name="HPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
 layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wo7he")
 value = 50.0
+show_percentage = false
 
-[node name="HPBar2" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer"]
+[node name="MPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
 layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_qer0l")
+value = 50.0
+show_percentage = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/StatBars/VBoxContainer"]
+[node name="SPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_48upj")
+value = 100.0
+show_percentage = false
+
+[node name="RadialMeters" type="HBoxContainer" parent="UI/StatBars/VitalStats"]
 layout_direction = 2
 layout_mode = 2
 
-[node name="HealthBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+[node name="ColdBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 value = 50.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("8_7girm")
+texture_under = ExtResource("7_2yekq")
 texture_over = ExtResource("7_pgem7")
-texture_progress = ExtResource("8_7girm")
+texture_progress = ExtResource("7_2yekq")
 tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(0.0705882, 1, 1, 1)
 
-[node name="ManaBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+[node name="FatigueBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-value = 20.0
+value = 50.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("9_cd0kg")
+texture_under = ExtResource("7_2yekq")
 texture_over = ExtResource("7_pgem7")
-texture_progress = ExtResource("9_cd0kg")
-tint_under = Color(1, 1, 1, 0.176471)
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(0.2, 1, 0.211765, 1)
 
-[node name="StaminaBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+[node name="HungerBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-value = 87.0
+value = 50.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("10_jjikj")
+texture_under = ExtResource("7_2yekq")
 texture_over = ExtResource("7_pgem7")
-texture_progress = ExtResource("10_jjikj")
-tint_under = Color(1, 1, 1, 0.152941)
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(1, 0.356863, 0.243137, 1)
 
-[node name="HungerBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+[node name="ThirstBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-value = 95.0
+value = 50.0
 fill_mode = 4
 nine_patch_stretch = true
-texture_under = ExtResource("11_2tbub")
+texture_under = ExtResource("7_2yekq")
 texture_over = ExtResource("7_pgem7")
-texture_progress = ExtResource("11_2tbub")
-tint_under = Color(1, 1, 1, 0.266667)
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(0.0196078, 0.105882, 1, 1)
+
+[node name="XPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_5c1md")
+value = 5.0
+show_percentage = false
 
 [node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
