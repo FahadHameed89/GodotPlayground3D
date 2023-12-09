@@ -427,3 +427,8 @@ func mp_cost(mp_cost_value: int) -> void:
 	else: 
 		current_mana -= mp_cost_value
 		print("Spell cast successful")
+		
+func MPRegen(delta):
+	current_mana += mana_regen * delta
+	if current_mana > max_mana:
+		current_health = max_health
