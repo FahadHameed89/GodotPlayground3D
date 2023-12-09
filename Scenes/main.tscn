@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=51 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -10,9 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://bbh51uq0cl4li" path="res://assets/textures/cord.png" id="5_gk6lf"]
 [ext_resource type="PackedScene" uid="uid://bxeq4xdos04ld" path="res://item/pickup/banana_pickup.tscn" id="6_64nmk"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
+[ext_resource type="Texture2D" uid="uid://cn4vbq8333s6h" path="res://assets/ui/progress-bar-frame.png" id="7_pgem7"]
+[ext_resource type="Texture2D" uid="uid://c240rqunicxrh" path="res://assets/ui/progress-bar-red.png" id="8_7girm"]
 [ext_resource type="PackedScene" uid="uid://dtif53vi34get" path="res://inventory/hotbar_inventory.tscn" id="9_3ayl4"]
+[ext_resource type="Texture2D" uid="uid://3twey6awlgy4" path="res://assets/ui/progress-bar-blue.png" id="9_cd0kg"]
+[ext_resource type="Texture2D" uid="uid://cuqp02ftmw2eq" path="res://assets/ui/progress-bar-green.png" id="10_jjikj"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
+[ext_resource type="Texture2D" uid="uid://b8hdd4f1y8rv" path="res://assets/ui/progress-bar-orange.png" id="11_2tbub"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
@@ -187,6 +192,74 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 360.0
 offset_bottom = 90.0
+
+[node name="StatBars" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -48.0
+offset_right = 10.0
+offset_bottom = -48.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/StatBars"]
+custom_minimum_size = Vector2(10, 0)
+layout_direction = 1
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 68.0
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/StatBars/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="HPBar2" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/StatBars/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("8_7girm")
+
+[node name="ManaBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 20.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_pgem7")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("9_cd0kg")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 87.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_pgem7")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("10_jjikj")
+
+[node name="HungerBar" type="TextureProgressBar" parent="UI/StatBars/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 95.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_pgem7")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("11_2tbub")
 
 [node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
@@ -494,14 +567,6 @@ text = "Some objects are very heavy and cannot be thrown very far... While other
 [node name="Water Up" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water Up"]
-transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
-mesh = SubResource("PlaneMesh_811is")
-surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
-
-[node name="Water Down" type="Node3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 70, -594, -47)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Water Down"]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
