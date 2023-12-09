@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://behjvdp0ukhgl"]
+
+[ext_resource type="Texture2D" uid="uid://fyhft2shgy67" path="res://assets/ui/9patch_parchment.png" id="1_34bpw"]
+
+[node name="Parchment" type="NinePatchRect"]
+offset_left = 99.0
+offset_top = 123.0
+offset_right = 139.0
+offset_bottom = 163.0
+texture = ExtResource("1_34bpw")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16

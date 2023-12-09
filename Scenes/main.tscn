@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=53 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://jbpb1mq0kgsu" path="res://assets/ui/progress-bar-circle.png" id="7_2yekq"]
 [ext_resource type="Texture2D" uid="uid://cn4vbq8333s6h" path="res://assets/ui/progress-bar-frame.png" id="7_pgem7"]
 [ext_resource type="PackedScene" uid="uid://dtif53vi34get" path="res://inventory/hotbar_inventory.tscn" id="9_3ayl4"]
+[ext_resource type="PackedScene" uid="uid://behjvdp0ukhgl" path="res://assets/ui/parchment.tscn" id="9_hvvii"]
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
@@ -317,6 +318,26 @@ theme_override_constants/outline_size = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_5c1md")
 value = 5.0
 show_percentage = false
+
+[node name="GameMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Parchment" parent="UI/GameMenu" instance=ExtResource("9_hvvii")]
+layout_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="UI/GameMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GameMenu/VBoxContainer"]
+layout_mode = 2
 
 [node name="Pickup" parent="." instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
