@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=50 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -8,8 +8,6 @@
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="3_60uc3"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
-[ext_resource type="Texture2D" uid="uid://bbh51uq0cl4li" path="res://assets/textures/cord.png" id="5_gk6lf"]
-[ext_resource type="PackedScene" uid="uid://bxeq4xdos04ld" path="res://item/pickup/banana_pickup.tscn" id="6_64nmk"]
 [ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
 [ext_resource type="Texture2D" uid="uid://jbpb1mq0kgsu" path="res://assets/ui/progress-bar-circle.png" id="7_2yekq"]
 [ext_resource type="Texture2D" uid="uid://cn4vbq8333s6h" path="res://assets/ui/progress-bar-frame.png" id="7_pgem7"]
@@ -28,7 +26,6 @@
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
-[ext_resource type="PackedScene" uid="uid://bekx4yc3slj8e" path="res://Objects/Platforms/Banana_Platform.tscn" id="24_4dt24"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -136,9 +133,6 @@ albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij35k"]
-albedo_texture = ExtResource("5_gk6lf")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_811is"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t1ljn"]
@@ -161,7 +155,7 @@ shader_parameter/wave_speed = 0.015
 script = ExtResource("1_sgebs")
 
 [node name="player" parent="." instance=ExtResource("2_5hthv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4971, 5.7077, 4.33228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5029, 5.7077, 4.33228)
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_60uc3")
@@ -477,186 +471,8 @@ outer_radius = 0.6
 sides = 12
 material = SubResource("StandardMaterial3D_47dcr")
 
-[node name="CSGCylinder3D36" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5097, 4.02869, 4.194)
-use_collision = true
-radius = 1.155
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="CSGCylinder3D55" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5097, 4.02869, -4.70593)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D55" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="CSGCylinder3D56" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4774, 4.02869, 2.53906)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D56" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="CSGCylinder3D57" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.0272, 4.02869, 15.6412)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
-
-[node name="banana_pickup" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="banana_pickup5" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
-
-[node name="CSGCylinder3D58" parent="Level" instance=ExtResource("24_4dt24")]
-
-[node name="CSGCylinder3D59" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, 2.19782, 24.3421)
-
-[node name="CSGCylinder3D61" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0023, 2.19782, 24.3421)
-
-[node name="CSGCylinder3D62" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0023, 2.19782, 24.3421)
-
-[node name="CSGCylinder3D63" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9977, 2.19782, 25.3421)
-
-[node name="CSGCylinder3D64" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9977, 2.19782, 24.3421)
-
-[node name="CSGCylinder3D65" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9977, 1.19782, 22.3421)
-
-[node name="CSGCylinder3D66" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9977, 1.19782, 22.3421)
-
-[node name="CSGCylinder3D67" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9977, 1.19782, 22.3421)
-height = 12.0
-
-[node name="CSGCylinder3D68" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9977, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D69" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9977, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D70" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9977, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D71" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9977, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D72" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0023, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D73" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0023, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D74" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, 36.3421)
-height = 12.0
-
-[node name="CSGCylinder3D75" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, 15.3421)
-height = 12.0
-
-[node name="CSGCylinder3D76" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, -10.6579)
-height = 12.0
-
-[node name="CSGCylinder3D77" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, -19.6579)
-height = 12.0
-
-[node name="CSGCylinder3D78" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0023, 1.19782, -19.6579)
-height = 12.0
-
-[node name="CSGCylinder3D79" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0023, 1.19782, -19.6579)
-height = 12.0
-
-[node name="CSGCylinder3D80" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9977, 1.19782, -19.6579)
-height = 12.0
-
-[node name="CSGCylinder3D81" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9977, 1.19782, -19.6579)
-height = 12.0
-
-[node name="CSGCylinder3D82" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9977, 1.19782, -8.6579)
-height = 12.0
-
-[node name="CSGCylinder3D83" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9977, 1.19782, 4.3421)
-height = 12.0
-
-[node name="CSGCylinder3D84" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9977, 6.19782, 4.3421)
-height = 12.0
-
-[node name="CSGCylinder3D85" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9977, 6.19782, -8.6579)
-height = 12.0
-
-[node name="CSGCylinder3D86" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9977, 6.19782, -8.6579)
-height = 12.0
-
-[node name="CSGCylinder3D60" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 45.3421)
-
 [node name="Label3D" type="Label3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7199, 7.10669, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2801, 7.10669, 0)
 billboard = 1
 text = "WASD to Move
 Shift to Run

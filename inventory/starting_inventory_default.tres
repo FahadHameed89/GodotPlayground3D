@@ -1,14 +1,20 @@
-[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://bmpbkkix1edef"]
+[gd_resource type="Resource" script_class="InventoryData" load_steps=7 format=3 uid="uid://bmpbkkix1edef"]
 
 [ext_resource type="Script" path="res://inventory/inventory_data.gd" id="1_r3xjf"]
 [ext_resource type="Resource" uid="uid://dal2yluy3em7y" path="res://item/items/health_potion.tres" id="2_lkc0d"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_e4rns"]
+[ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="4_fbqvs"]
 
 [sub_resource type="Resource" id="Resource_mv7wm"]
 script = ExtResource("3_e4rns")
 item_data = ExtResource("2_lkc0d")
 quantity = 3
 
+[sub_resource type="Resource" id="Resource_sm42a"]
+script = ExtResource("3_e4rns")
+item_data = ExtResource("4_fbqvs")
+quantity = 75
+
 [resource]
 script = ExtResource("1_r3xjf")
-slot_datas = Array[ExtResource("3_e4rns")]([SubResource("Resource_mv7wm"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+slot_datas = Array[ExtResource("3_e4rns")]([SubResource("Resource_mv7wm"), SubResource("Resource_sm42a"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

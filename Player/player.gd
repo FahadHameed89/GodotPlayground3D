@@ -1,9 +1,9 @@
 extends CharacterBody3D
 
 # HP, MP, SP variables
-@export var max_health = 10 
+@export var max_health = 100 
 @export var current_health = 5
-@export var health_regen = 0
+@export var health_regen = 1
 
 @export var max_mana = 100
 @export var current_mana = 50
@@ -230,6 +230,7 @@ func _input(event):
 		
 
 func _physics_process(delta):
+	HPRegen(delta)
 	# Getting movement input
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	if rooted:
@@ -394,3 +395,8 @@ func heal(heal_value: int) -> void:
 		current_health = max_health
 	else:
 		current_health += heal_value
+
+func HPRegen(delta):
+	current_health += health_regen * delta
+	if current_health > max_health:
+		current_health = max_health
