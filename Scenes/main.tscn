@@ -491,9 +491,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7199, 2.10669, 0)
 billboard = 1
 text = "Some objects are very heavy and cannot be thrown very far... While others are very light weight!"
 
-[node name="Water" type="Node3D" parent="."]
+[node name="Water Up" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water Up"]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
+mesh = SubResource("PlaneMesh_811is")
+surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
+
+[node name="Water Down" type="Node3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 70, -594, -47)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water Down"]
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
