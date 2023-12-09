@@ -404,9 +404,10 @@ func HPRegen(delta):
 
 func damage(damage_value: int) -> void:
 	if current_health == 0:
-		pass
+		print("HP is already 0...!")
 	elif current_health - damage_value <= 0:
 		current_health = 0
+		print("HP dropped to critical...!")
 	else: 
 		current_health -= damage_value
 
@@ -417,3 +418,12 @@ func mp_heal(mp_heal_value: int) -> void:
 		current_mana = max_mana
 	else:
 		current_mana += mp_heal_value
+
+func mp_cost(mp_cost_value: int) -> void:
+	if current_mana == 0:
+		print("Not enough MP...")
+	elif current_mana - mp_cost_value <= 0:
+		print("Not enough MP...")
+	else: 
+		current_mana -= mp_cost_value
+		print("Spell cast successful")
