@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bekx4yc3slj8e"]
+
+[ext_resource type="Texture2D" uid="uid://bbh51uq0cl4li" path="res://assets/textures/cord.png" id="1_28tdx"]
+[ext_resource type="PackedScene" uid="uid://bxeq4xdos04ld" path="res://item/pickup/banana_pickup.tscn" id="2_uev82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ij35k"]
+albedo_texture = ExtResource("1_28tdx")
+
+[node name="CSGCylinder3D58" type="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 11.3421)
+use_collision = true
+radius = 4.503
+height = 0.595
+material = SubResource("StandardMaterial3D_ij35k")
+
+[node name="banana_pickup" parent="." instance=ExtResource("2_uev82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="banana_pickup5" parent="." instance=ExtResource("2_uev82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+
+[node name="banana_pickup2" parent="." instance=ExtResource("2_uev82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
+
+[node name="banana_pickup3" parent="." instance=ExtResource("2_uev82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
+
+[node name="banana_pickup4" parent="." instance=ExtResource("2_uev82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)

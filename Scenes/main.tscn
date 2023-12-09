@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=46 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
+[ext_resource type="PackedScene" uid="uid://bekx4yc3slj8e" path="res://Objects/Platforms/Banana_Platform.tscn" id="24_4dt24"]
 
 [sub_resource type="Resource" id="Resource_enp0p"]
 script = ExtResource("12_7qsfd")
@@ -216,14 +217,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
 [node name="MetalBox" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.97723, -1.82215)
 
-[node name="MetalBox4" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.97723, -1.82215)
-
 [node name="MetalBox2" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.97723, 0.17785)
 
 [node name="MetalBox3" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.97723, 2.17785)
+
+[node name="MetalBox5" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.97723, -1.82215)
+
+[node name="MetalBox6" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.97723, 0.17785)
+
+[node name="MetalBox7" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.97723, 2.17785)
+
+[node name="MetalBox4" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.97723, -1.82215)
 
 [node name="Containers" type="Node3D" parent="Objects"]
 
@@ -352,27 +362,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
 [node name="banana_pickup4" parent="Level/CSGCylinder3D57" instance=ExtResource("6_64nmk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
 
-[node name="CSGCylinder3D58" type="CSGCylinder3D" parent="Level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 11.3421)
-use_collision = true
-radius = 4.503
-height = 0.595
-material = SubResource("StandardMaterial3D_ij35k")
+[node name="CSGCylinder3D58" parent="Level" instance=ExtResource("24_4dt24")]
 
-[node name="banana_pickup" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+[node name="CSGCylinder3D59" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 24.3421)
 
-[node name="banana_pickup5" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
-
-[node name="banana_pickup2" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 2)
-
-[node name="banana_pickup3" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 0)
-
-[node name="banana_pickup4" parent="Level/CSGCylinder3D58" instance=ExtResource("6_64nmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+[node name="CSGCylinder3D60" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 45.3421)
 
 [node name="Label3D" type="Label3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.7199, 7.10669, 0)
