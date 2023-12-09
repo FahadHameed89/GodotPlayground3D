@@ -321,20 +321,44 @@ show_percentage = false
 
 [node name="GameMenu" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Parchment" parent="UI/GameMenu" instance=ExtResource("9_hvvii")]
-layout_mode = 0
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 209.0
+offset_top = 117.0
+offset_right = 556.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/GameMenu"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -341.0
+offset_top = -85.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Label" type="Label" parent="UI/GameMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PLACEHOLDER TEXT
+"
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/GameMenu/VBoxContainer"]
 layout_mode = 2
