@@ -409,3 +409,11 @@ func damage(damage_value: int) -> void:
 		current_health = 0
 	else: 
 		current_health -= damage_value
+
+func mp_heal(mp_heal_value: int) -> void:
+	if current_mana == max_mana:
+		pass
+	elif current_mana + mp_heal_value > max_mana:
+		current_mana = max_mana
+	else:
+		current_mana += mp_heal_value
