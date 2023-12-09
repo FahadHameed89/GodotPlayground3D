@@ -372,7 +372,105 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
 [node name="CSGCylinder3D58" parent="Level" instance=ExtResource("24_4dt24")]
 
 [node name="CSGCylinder3D59" parent="Level" instance=ExtResource("24_4dt24")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 24.3421)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, 2.19782, 24.3421)
+
+[node name="CSGCylinder3D61" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0023, 2.19782, 24.3421)
+
+[node name="CSGCylinder3D62" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0023, 2.19782, 24.3421)
+
+[node name="CSGCylinder3D63" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9977, 2.19782, 25.3421)
+
+[node name="CSGCylinder3D64" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9977, 2.19782, 24.3421)
+
+[node name="CSGCylinder3D65" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9977, 1.19782, 22.3421)
+
+[node name="CSGCylinder3D66" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9977, 1.19782, 22.3421)
+
+[node name="CSGCylinder3D67" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9977, 1.19782, 22.3421)
+height = 12.0
+
+[node name="CSGCylinder3D68" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.9977, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D69" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.9977, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D70" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9977, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D71" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9977, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D72" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0023, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D73" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0023, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D74" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, 36.3421)
+height = 12.0
+
+[node name="CSGCylinder3D75" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, 15.3421)
+height = 12.0
+
+[node name="CSGCylinder3D76" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, -10.6579)
+height = 12.0
+
+[node name="CSGCylinder3D77" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0023, 1.19782, -19.6579)
+height = 12.0
+
+[node name="CSGCylinder3D78" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0023, 1.19782, -19.6579)
+height = 12.0
+
+[node name="CSGCylinder3D79" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0023, 1.19782, -19.6579)
+height = 12.0
+
+[node name="CSGCylinder3D80" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9977, 1.19782, -19.6579)
+height = 12.0
+
+[node name="CSGCylinder3D81" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9977, 1.19782, -19.6579)
+height = 12.0
+
+[node name="CSGCylinder3D82" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9977, 1.19782, -8.6579)
+height = 12.0
+
+[node name="CSGCylinder3D83" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9977, 1.19782, 4.3421)
+height = 12.0
+
+[node name="CSGCylinder3D84" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9977, 6.19782, 4.3421)
+height = 12.0
+
+[node name="CSGCylinder3D85" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9977, 6.19782, -8.6579)
+height = 12.0
+
+[node name="CSGCylinder3D86" parent="Level" instance=ExtResource("24_4dt24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9977, 6.19782, -8.6579)
+height = 12.0
 
 [node name="CSGCylinder3D60" parent="Level" instance=ExtResource("24_4dt24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.0023, -0.802181, 45.3421)
