@@ -432,3 +432,25 @@ func MPRegen(delta):
 	current_mana += mana_regen * delta
 	if current_mana > max_mana:
 		current_health = max_health
+
+func sp_heal(sp_heal_value: int) -> void:
+	if current_stamina == max_stamina:
+		pass
+	elif current_stamina + sp_heal_value > max_stamina:
+		current_stamina = max_stamina
+	else:
+		current_stamina += sp_heal_value
+
+func sp_cost(sp_cost_value: int) -> void:
+	if current_stamina == 0:
+		print("Not enough SP...")
+	elif current_stamina - sp_cost_value <= 0:
+		print("Not enough SP...")
+	else: 
+		current_stamina -= sp_cost_value
+		
+		
+func SPRegen(delta):
+	current_stamina += stamina_regen * delta
+	if current_stamina > max_stamina:
+		current_stamina = max_stamina
