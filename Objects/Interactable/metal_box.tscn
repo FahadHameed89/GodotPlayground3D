@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://x041s2g3ifk3"]
+
+[ext_resource type="Texture2D" uid="uid://c1c8si8h0do0g" path="res://assets/textures/metal_box.png" id="1_y4qt5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_afwid"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lq8xw"]
+albedo_texture = ExtResource("1_y4qt5")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_aia04"]
+
+[node name="MetalBox" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3845, 3.94854, 2.88378)
+mass = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_afwid")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_lq8xw")
+mesh = SubResource("BoxMesh_aia04")
