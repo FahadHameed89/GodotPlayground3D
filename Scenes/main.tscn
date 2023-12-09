@@ -80,6 +80,7 @@ region = Rect2(0, 288, 32, 32)
 [sub_resource type="Resource" id="Resource_6mipr"]
 script = ExtResource("19_fjmbf")
 heal_value = 100
+damage_value = 0
 name = "Health Potion"
 description = "Restores 100 HP"
 stackable = true

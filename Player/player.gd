@@ -7,7 +7,7 @@ extends CharacterBody3D
 
 @export var max_mana = 100
 @export var current_mana = 50
-@export var mana_regen = 0
+@export var mana_regen = 1
 
 @export var max_stamina = 100
 @export var current_stamina = 50
@@ -137,6 +137,7 @@ var last_velocity = Vector3.ZERO
 var direction = Vector3.ZERO #Default starting direction is zero
 const mouse_sens_h = 0.25 #Horizontal mouse sensitivity
 const mouse_sens_v = 0.2 #Vertical mouse sensitivity
+
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -400,3 +401,11 @@ func HPRegen(delta):
 	current_health += health_regen * delta
 	if current_health > max_health:
 		current_health = max_health
+
+func damage(damage_value: int) -> void:
+	if current_health == 0:
+		pass
+	elif current_health - damage_value <= 0:
+		current_health = 0
+	else: 
+		current_health -= damage_value
