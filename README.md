@@ -39,6 +39,7 @@
 
 https://www.youtube.com/@lukky (FPS Controller, Interaction Mechanics)
 https://www.youtube.com/@DevLogLogan (Inventory Mechanics)
+https://www.youtube.com/@GameDevelopmentCenter (User Interface and RPG Mechanics) 
 
 # Addons Used
 https://godotengine.org/asset-library/asset/2337 (Grappling Hook 3D)
