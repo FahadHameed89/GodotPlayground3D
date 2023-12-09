@@ -9,7 +9,7 @@ region = Rect2(32, 448, 32, 32)
 
 [resource]
 script = ExtResource("1_cnu2l")
-heal_value = 25
+heal_value = 1
 name = "Banana"
 description = "A bright  yellow banana. Tasty and nutritious. 
 Restores 1 HP"

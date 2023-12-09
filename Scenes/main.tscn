@@ -1,10 +1,11 @@
-[gd_scene load_steps=53 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=54 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
 [ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="2_5hthv"]
 [ext_resource type="Texture2D" uid="uid://ccfisp8mco7xb" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_n0qm5"]
 [ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="2_qohbf"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="3_60uc3"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
 [ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
 [ext_resource type="Texture2D" uid="uid://bbh51uq0cl4li" path="res://assets/textures/cord.png" id="5_gk6lf"]
@@ -163,6 +164,7 @@ script = ExtResource("1_sgebs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4971, 5.7077, 4.33228)
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_60uc3")
 
 [node name="InventoryInterface" type="Control" parent="UI"]
 visible = false
@@ -243,7 +245,9 @@ grow_vertical = 0
 layout_mode = 2
 theme_override_constants/outline_size = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_wo7he")
-value = 50.0
+max_value = 10.0
+step = 1.0
+value = 5.0
 show_percentage = false
 
 [node name="MPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
@@ -320,6 +324,7 @@ value = 5.0
 show_percentage = false
 
 [node name="GameMenu" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
