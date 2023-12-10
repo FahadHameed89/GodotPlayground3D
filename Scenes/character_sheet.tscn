@@ -12,14 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://dicclx06q2h47" path="res://assets/ui/right-arrow.png" id="9_0mo7c"]
 [ext_resource type="Texture2D" uid="uid://briwjaexfjoii" path="res://assets/ui/right-arrow-disabled.png" id="10_41pd2"]
 
+[sub_resource type="FontVariation" id="FontVariation_di7g1"]
+
 [sub_resource type="Gradient" id="Gradient_l8bpp"]
 colors = PackedColorArray(0, 0, 0, 1, 0.0588235, 0.113725, 0.682353, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5xl8b"]
 gradient = SubResource("Gradient_l8bpp")
 fill = 2
-
-[sub_resource type="FontVariation" id="FontVariation_di7g1"]
 
 [node name="CharacterSheet" type="Control"]
 layout_mode = 3
@@ -91,11 +91,11 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 
-[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+[node name="Strength" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Control"]
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength"]
 custom_minimum_size = Vector2(350, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -112,7 +112,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Control/StatsBackground"]
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -120,7 +120,7 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = -9.0
 offset_top = -33.0
-offset_right = 61.0
+offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
 texture_normal = ExtResource("5_3uh0i")
@@ -128,7 +128,7 @@ texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Control/StatsBackground"]
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -136,7 +136,7 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -69.0
+offset_left = -60.0
 offset_top = -33.0
 offset_right = 1.0
 offset_bottom = 32.0
@@ -146,6 +146,499 @@ texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
 stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 24
+text = "Strength"
+
+[node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "+1"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+
+[node name="Vitality" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -30.0
+offset_right = 175.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_msgvq")
+expand_mode = 1
+
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("5_3uh0i")
+texture_pressed = ExtResource("6_p1yki")
+texture_disabled = ExtResource("7_d3ee3")
+stretch_mode = 0
+
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_n07jf")
+texture_pressed = ExtResource("9_0mo7c")
+texture_disabled = ExtResource("10_41pd2")
+stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 24
+text = "Vitality"
+
+[node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "+1"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+
+[node name="Dexterity" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -30.0
+offset_right = 175.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_msgvq")
+expand_mode = 1
+
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("5_3uh0i")
+texture_pressed = ExtResource("6_p1yki")
+texture_disabled = ExtResource("7_d3ee3")
+stretch_mode = 0
+
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_n07jf")
+texture_pressed = ExtResource("9_0mo7c")
+texture_disabled = ExtResource("10_41pd2")
+stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 24
+text = "Dexterity"
+
+[node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "+1"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+
+[node name="Agility" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -30.0
+offset_right = 175.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_msgvq")
+expand_mode = 1
+
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("5_3uh0i")
+texture_pressed = ExtResource("6_p1yki")
+texture_disabled = ExtResource("7_d3ee3")
+stretch_mode = 0
+
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_n07jf")
+texture_pressed = ExtResource("9_0mo7c")
+texture_disabled = ExtResource("10_41pd2")
+stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 24
+text = "Agility
+"
+
+[node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "+1"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+
+[node name="Spirit" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -30.0
+offset_right = 175.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_msgvq")
+expand_mode = 1
+
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("5_3uh0i")
+texture_pressed = ExtResource("6_p1yki")
+texture_disabled = ExtResource("7_d3ee3")
+stretch_mode = 0
+
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_n07jf")
+texture_pressed = ExtResource("9_0mo7c")
+texture_disabled = ExtResource("10_41pd2")
+stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 24
+text = "Spirit
+"
+
+[node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "+1"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
+
+[node name="Charisma" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -30.0
+offset_right = 175.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_msgvq")
+expand_mode = 1
+
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 51.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("5_3uh0i")
+texture_pressed = ExtResource("6_p1yki")
+texture_disabled = ExtResource("7_d3ee3")
+stretch_mode = 0
+
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_n07jf")
+texture_pressed = ExtResource("9_0mo7c")
+texture_disabled = ExtResource("10_41pd2")
+stretch_mode = 0
+
+[node name="Stats" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -30.0
+offset_right = 117.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Name" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 24
+text = "Charisma
+"
+
+[node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 24
+text = "+1"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "10"
 
 [node name="DerivedStats" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
