@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1qxjdodhy2qa"
-path="res://.godot/imported/ui-eva.png-34ce1b94b7de683341d92e134ac073ff.ctex"
+uid="uid://bqrdin2f4vhrv"
+path="res://.godot/imported/ui-defense2.svg-919bb6f02e8f6c132daf1facc12e03f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/icons/ui-eva.png"
-dest_files=["res://.godot/imported/ui-eva.png-34ce1b94b7de683341d92e134ac073ff.ctex"]
+source_file="res://assets/ui/icons/ui-defense2.svg"
+dest_files=["res://.godot/imported/ui-defense2.svg-919bb6f02e8f6c132daf1facc12e03f5.ctex"]
 
 [params]
 
@@ -31,4 +31,7 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
