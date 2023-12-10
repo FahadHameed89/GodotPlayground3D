@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://g08fxnk1o6h6"]
+
+[ext_resource type="PackedScene" uid="uid://datuu8pj8hydi" path="res://imports/GLBs/WOOD LOGS.glb" id="1_sqtt4"]
+
+[node name="WOOD LOGS" instance=ExtResource("1_sqtt4")]
+
+[node name="WOOD_LOG_001" parent="WOOD_LOG" index="0"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -5, 0)
+
+[node name="WOOD_LOG_039" parent="." index="26"]
+transform = Transform3D(-3.8743e-08, 0.5, 2.98023e-08, -0.1625, -6.65203e-08, 0.433013, 0.281458, -3.99275e-09, 0.25, -25.6, 17.3175, -3.90754)
