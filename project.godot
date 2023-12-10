@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.1", "Forward Plus")
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
 PlayerManager="*res://Player/player_manager.gd"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [dotnet]
 
 project/assembly_name="3dplayground"
