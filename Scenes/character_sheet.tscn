@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvnddvhyqcihg"]
+[gd_scene load_steps=15 format=3 uid="uid://cvnddvhyqcihg"]
 
 [ext_resource type="Texture2D" uid="uid://dxrgckjv44c0n" path="res://assets/ui/bg2.png" id="1_rel20"]
 [ext_resource type="Texture2D" uid="uid://c3m68ovw6lo2x" path="res://assets/ui/card.png" id="2_68y2h"]
 [ext_resource type="Texture2D" uid="uid://701vf1rcjy1r" path="res://assets/ui/wizard_outline.png" id="3_0yvrr"]
+[ext_resource type="Texture2D" uid="uid://cu5awkylxgd3t" path="res://assets/ui/bar.png" id="4_msgvq"]
 [ext_resource type="Texture2D" uid="uid://drniwycjgahyq" path="res://assets/ui/pressed_button_texture.tres" id="4_or8qu"]
+[ext_resource type="Texture2D" uid="uid://tad8akvjiwb1" path="res://assets/ui/left-arrow-pressed.png" id="5_3uh0i"]
+[ext_resource type="Texture2D" uid="uid://boe6mmwcwlxgl" path="res://assets/ui/left-arrow.png" id="6_p1yki"]
+[ext_resource type="Texture2D" uid="uid://cpuj5g2mm7uc4" path="res://assets/ui/left-arrow-disabled.png" id="7_d3ee3"]
+[ext_resource type="Texture2D" uid="uid://bx30het4qvv66" path="res://assets/ui/right-arrow-pressed.png" id="8_n07jf"]
+[ext_resource type="Texture2D" uid="uid://dicclx06q2h47" path="res://assets/ui/right-arrow.png" id="9_0mo7c"]
+[ext_resource type="Texture2D" uid="uid://briwjaexfjoii" path="res://assets/ui/right-arrow-disabled.png" id="10_41pd2"]
 
 [sub_resource type="Gradient" id="Gradient_l8bpp"]
 colors = PackedColorArray(0, 0, 0, 1, 0.0588235, 0.113725, 0.682353, 1)
@@ -84,11 +91,67 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="StatsBackground" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Control"]
+custom_minimum_size = Vector2(350, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -30.0
+offset_right = 175.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_msgvq")
+expand_mode = 1
+
+[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Control/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -33.0
+offset_right = 61.0
+offset_bottom = 32.0
+grow_vertical = 2
+texture_normal = ExtResource("5_3uh0i")
+texture_pressed = ExtResource("6_p1yki")
+texture_disabled = ExtResource("7_d3ee3")
+stretch_mode = 0
+
+[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Control/StatsBackground"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -33.0
+offset_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("8_n07jf")
+texture_pressed = ExtResource("9_0mo7c")
+texture_disabled = ExtResource("10_41pd2")
+stretch_mode = 0
+
 [node name="DerivedStats" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DerivedStatsContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
