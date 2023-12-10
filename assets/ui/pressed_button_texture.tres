@@ -1,8 +1,10 @@
 [gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://drniwycjgahyq"]
 
 [sub_resource type="Gradient" id="Gradient_l8bpp"]
-colors = PackedColorArray(0, 0, 0, 1, 0.929412, 0.105882, 0.0784314, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.698039, 0.0823529, 0.266667, 1)
 
 [resource]
 gradient = SubResource("Gradient_l8bpp")
+width = 50
+height = 50
 fill = 2

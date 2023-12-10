@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvnddvhyqcihg"]
+[gd_scene load_steps=16 format=3 uid="uid://cvnddvhyqcihg"]
 
 [ext_resource type="Texture2D" uid="uid://dxrgckjv44c0n" path="res://assets/ui/bg2.png" id="1_rel20"]
 [ext_resource type="Texture2D" uid="uid://c3m68ovw6lo2x" path="res://assets/ui/card.png" id="2_68y2h"]
@@ -11,14 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://bx30het4qvv66" path="res://assets/ui/right-arrow-pressed.png" id="8_n07jf"]
 [ext_resource type="Texture2D" uid="uid://dicclx06q2h47" path="res://assets/ui/right-arrow.png" id="9_0mo7c"]
 [ext_resource type="Texture2D" uid="uid://briwjaexfjoii" path="res://assets/ui/right-arrow-disabled.png" id="10_41pd2"]
+[ext_resource type="Texture2D" uid="uid://bgalgjt7evq2u" path="res://assets/ui/unpressed_button_texture.tres" id="11_s3cda"]
 
 [sub_resource type="FontVariation" id="FontVariation_di7g1"]
 
 [sub_resource type="Gradient" id="Gradient_l8bpp"]
-colors = PackedColorArray(0, 0, 0, 1, 0.0588235, 0.113725, 0.682353, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.698039, 0.0823529, 0.266667, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5xl8b"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jmoja"]
 gradient = SubResource("Gradient_l8bpp")
+width = 50
+height = 50
 fill = 2
 
 [node name="CharacterSheet" type="Control"]
@@ -88,7 +91,11 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="MainStats" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(450, 0)
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="Strength" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
@@ -640,6 +647,44 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "10"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+custom_minimum_size = Vector2(42.83, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Points: 7"
+
+[node name="Confirm" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+custom_minimum_size = Vector2(125, 50)
+layout_mode = 2
+texture_normal = ExtResource("11_s3cda")
+texture_pressed = ExtResource("4_or8qu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/Confirm"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Confirm
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+custom_minimum_size = Vector2(52.825, 0)
+layout_mode = 2
+
 [node name="DerivedStats" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -656,8 +701,8 @@ layout_mode = 2
 [node name="StatsButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Buttons"]
 custom_minimum_size = Vector2(220, 50)
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_5xl8b")
-texture_pressed = ExtResource("4_or8qu")
+texture_normal = ExtResource("11_s3cda")
+texture_pressed = SubResource("GradientTexture2D_jmoja")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Buttons/StatsButton"]
@@ -676,7 +721,7 @@ vertical_alignment = 1
 [node name="SkillsButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Buttons"]
 custom_minimum_size = Vector2(220, 50)
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_5xl8b")
+texture_normal = ExtResource("11_s3cda")
 texture_pressed = ExtResource("4_or8qu")
 stretch_mode = 0
 
@@ -696,7 +741,7 @@ vertical_alignment = 1
 [node name="EquipmentButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Buttons"]
 custom_minimum_size = Vector2(220, 50)
 layout_mode = 2
-texture_normal = SubResource("GradientTexture2D_5xl8b")
+texture_normal = ExtResource("11_s3cda")
 texture_pressed = ExtResource("4_or8qu")
 stretch_mode = 0
 
