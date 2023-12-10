@@ -15,7 +15,7 @@ extends CharacterBody3D
 
 @export var max_bravery = 1000 
 @export var current_bravery = 1000
-@export var bravery_degen = 1 # Bravery rate at rest is 10/hr -> 10 'hours' before fatigue is empty
+@export var bravery_degen = 10 # Bravery rate at rest is 10/hr -> 10 'hours' before fatigue is empty
 
 @export var max_fatigue = 1000 
 @export var current_fatigue = 1000
@@ -238,6 +238,7 @@ func _physics_process(delta):
 	HPRegen(delta)
 	MPRegen(delta)
 	SPRegen(delta)
+	BraveryDegen(delta)
 	# Getting movement input
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	if rooted:
