@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cvnddvhyqcihg"]
+[gd_scene load_steps=30 format=3 uid="uid://cvnddvhyqcihg"]
 
 [ext_resource type="Texture2D" uid="uid://dxrgckjv44c0n" path="res://assets/ui/bg2.png" id="1_rel20"]
 [ext_resource type="Texture2D" uid="uid://c3m68ovw6lo2x" path="res://assets/ui/card.png" id="2_68y2h"]
@@ -17,10 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://cch35t11ktgh0" path="res://assets/ui/icons/ui-sp.png" id="15_dc2hs"]
 [ext_resource type="Texture2D" uid="uid://dsw8rwyqbs6sh" path="res://assets/ui/icons/ui-atk.png" id="16_mkvlh"]
 [ext_resource type="Texture2D" uid="uid://bumqjummexcjc" path="res://assets/ui/icons/ui-def.png" id="17_3e5am"]
+[ext_resource type="Texture2D" uid="uid://ei1f2d0uvxq0" path="res://assets/ui/icons/ui-actionspeed.svg" id="18_f41u4"]
 [ext_resource type="Texture2D" uid="uid://33dcqabpgfvi" path="res://assets/ui/icons/ui-matk.png" id="18_lxekh"]
 [ext_resource type="Texture2D" uid="uid://7cisb1qyv8iy" path="res://assets/ui/icons/ui-mdef.png" id="19_3e7dv"]
-[ext_resource type="Texture2D" uid="uid://1qxjdodhy2qa" path="res://assets/ui/icons/ui-eva.png" id="20_y5qdj"]
-[ext_resource type="Texture2D" uid="uid://bmp6ga3xounme" path="res://assets/ui/icons/ui-luk.png" id="21_ubd35"]
+[ext_resource type="Texture2D" uid="uid://c5l2pedp60rgt" path="res://assets/ui/icons/ui-castspeed.svg" id="19_dcwyn"]
+[ext_resource type="Texture2D" uid="uid://lvw5wq368ni6" path="res://assets/ui/icons/ui-critical.svg" id="19_ud01p"]
 [ext_resource type="Texture2D" uid="uid://b1iak72dfwy35" path="res://assets/ui/icons/ui-minionatk.png" id="22_yo6w7"]
 [ext_resource type="Texture2D" uid="uid://dr06ddc8ks8ff" path="res://assets/ui/icons/ui-minionhp.png" id="23_npth5"]
 [ext_resource type="Texture2D" uid="uid://xdwwym0mq505" path="res://assets/ui/icons/ui-minionduration.png" id="24_1acfr"]
@@ -175,9 +176,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.0
+offset_left = -120.0
 offset_top = -30.0
-offset_right = 117.0
+offset_right = 120.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -266,9 +267,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.0
+offset_left = -120.5
 offset_top = -30.0
-offset_right = 117.0
+offset_right = 120.5
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -292,7 +293,7 @@ text = "+1"
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "10"
+text = "40"
 
 [node name="Dexterity" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
 custom_minimum_size = Vector2(0, 60)
@@ -383,7 +384,7 @@ text = "+1"
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "10"
+text = "14"
 
 [node name="Agility" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
 custom_minimum_size = Vector2(0, 60)
@@ -465,6 +466,7 @@ text = "Agility
 "
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -475,7 +477,7 @@ text = "+1"
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "10"
+text = "75"
 
 [node name="Spirit" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
 custom_minimum_size = Vector2(0, 60)
@@ -528,6 +530,7 @@ offset_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
@@ -557,6 +560,7 @@ text = "Spirit
 "
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -567,7 +571,7 @@ text = "+1"
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "10"
+text = "100"
 
 [node name="Charisma" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
 custom_minimum_size = Vector2(0, 60)
@@ -649,6 +653,7 @@ text = "Charisma
 "
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -821,6 +826,70 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "10"
 
+[node name="Action Speed" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon8" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("18_f41u4")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Action Speed"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
+[node name="Critical" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon8" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("19_ud01p")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Critical Chance"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10%"
+
+[node name="Cast Speed" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon9" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("19_dcwyn")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Cast Speed
+"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100%"
+
 [node name="Magic Attack" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
@@ -859,49 +928,6 @@ theme_override_font_sizes/font_size = 20
 text = "Magic Defense"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "10"
-
-[node name="Evasion" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
-[node name="Icon8" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("20_y5qdj")
-expand_mode = 1
-
-[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 20
-text = "Evasion"
-
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "10"
-
-[node name="Luck" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
-[node name="Icon9" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Luck"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("21_ubd35")
-expand_mode = 1
-
-[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Luck"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 20
-text = "Luck
-"
-
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Luck"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "10"
@@ -985,7 +1011,7 @@ expand_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
-text = "Enchantment Duration
+text = "Spell Duration
 "
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Enchantment Duration"]
