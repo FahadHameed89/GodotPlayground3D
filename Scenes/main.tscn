@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=51 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
-[ext_resource type="PackedScene" uid="uid://bfv2yvauy68ek" path="res://imports/Blend/WOOD LOGS.blend" id="28_qljf2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -509,9 +508,6 @@ text = "Some objects are very heavy and cannot be thrown very far... While other
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
-
-[node name="WOOD LOGS" parent="." instance=ExtResource("28_qljf2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 2, 5)
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
