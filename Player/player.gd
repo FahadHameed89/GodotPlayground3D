@@ -11,7 +11,7 @@ extends CharacterBody3D
 
 @export var max_stamina = 100
 @export var current_stamina = 50
-@export var stamina_regen = 500 # Stamina regenerates quickly , and will not regen when fatigue is drained
+@export var stamina_regen = 10 # Stamina regenerates quickly , and will not regen when fatigue is drained
 
 @export var max_fatigue = 1000 
 @export var current_fatigue = 1000
@@ -232,6 +232,8 @@ func _input(event):
 
 func _physics_process(delta):
 	HPRegen(delta)
+	MPRegen(delta)
+	SPRegen(delta)
 	# Getting movement input
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	if rooted:
