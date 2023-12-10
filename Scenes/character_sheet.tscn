@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvnddvhyqcihg"]
+
+[ext_resource type="Texture2D" uid="uid://dxrgckjv44c0n" path="res://assets/ui/bg2.png" id="1_rel20"]
+[ext_resource type="Texture2D" uid="uid://c3m68ovw6lo2x" path="res://assets/ui/card.png" id="2_68y2h"]
+[ext_resource type="Texture2D" uid="uid://701vf1rcjy1r" path="res://assets/ui/wizard_outline.png" id="3_0yvrr"]
+[ext_resource type="Texture2D" uid="uid://drniwycjgahyq" path="res://assets/ui/pressed_button_texture.tres" id="4_or8qu"]
+
+[sub_resource type="Gradient" id="Gradient_l8bpp"]
+colors = PackedColorArray(0, 0, 0, 1, 0.0588235, 0.113725, 0.682353, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5xl8b"]
+gradient = SubResource("Gradient_l8bpp")
+fill = 2
+
+[sub_resource type="FontVariation" id="FontVariation_di7g1"]
+
+[node name="CharacterSheet" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rel20")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -30.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharacterBackground" type="NinePatchRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(330, 580)
+layout_mode = 2
+texture = ExtResource("2_68y2h")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="CharacterPortrait" type="TextureRect" parent="HBoxContainer/CharacterBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 10.0
+offset_right = -17.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0yvrr")
+expand_mode = 5
+stretch_mode = 3
+flip_h = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainStats" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+
+[node name="DerivedStats" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DerivedStatsContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="StatsButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_5xl8b")
+texture_pressed = ExtResource("4_or8qu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Buttons/StatsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 35
+text = "Stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillsButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_5xl8b")
+texture_pressed = ExtResource("4_or8qu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Buttons/SkillsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 35
+text = "Spells"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquipmentButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_5xl8b")
+texture_pressed = ExtResource("4_or8qu")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/Buttons/EquipmentButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_di7g1")
+theme_override_font_sizes/font_size = 35
+text = "Equipment"
+horizontal_alignment = 1
+vertical_alignment = 1
