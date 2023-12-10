@@ -268,7 +268,7 @@ show_percentage = false
 layout_direction = 2
 layout_mode = 2
 
-[node name="ColdBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
+[node name="BraveryBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 value = 50.0
@@ -278,7 +278,7 @@ texture_under = ExtResource("7_2yekq")
 texture_over = ExtResource("7_pgem7")
 texture_progress = ExtResource("7_2yekq")
 tint_under = Color(1, 1, 1, 0.27451)
-tint_progress = Color(0.0705882, 1, 1, 1)
+tint_progress = Color(0.286275, 0.0235294, 0.921569, 1)
 
 [node name="FatigueBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
 custom_minimum_size = Vector2(32, 32)
