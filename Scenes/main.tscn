@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
 [ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="2_5hthv"]
-[ext_resource type="Texture2D" uid="uid://ccfisp8mco7xb" path="res://assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_n0qm5"]
 [ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="2_qohbf"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="3_60uc3"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" path="res://Scenes/FPSMeter.gd" id="11_g6352"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
+[ext_resource type="Texture2D" uid="uid://d1nwmgddgyc1s" path="res://assets/hdris/beautiful-shining-stars-night-sky.jpg" id="16_f8y8f"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
 [ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="16_hi1ld"]
 [ext_resource type="Script" path="res://Objects/chest.gd" id="17_kxtjv"]
@@ -63,7 +63,7 @@ item_data = ExtResource("16_hi1ld")
 quantity = 1
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xmu7k"]
-panorama = ExtResource("2_n0qm5")
+panorama = ExtResource("16_f8y8f")
 
 [sub_resource type="Sky" id="Sky_a3ljo"]
 sky_material = SubResource("PanoramaSkyMaterial_xmu7k")
