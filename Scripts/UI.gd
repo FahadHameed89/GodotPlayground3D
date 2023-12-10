@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var mp_bar = $StatBars/VitalStats/MPBar
 @onready var sp_bar = $StatBars/VitalStats/SPBar
 @onready var bravery_bar = $StatBars/VitalStats/RadialMeters/BraveryBar
+@onready var fatigue_bar = $StatBars/VitalStats/RadialMeters/FatigueBar
 
 
 
@@ -18,6 +19,8 @@ func _ready():
 	sp_bar.value = player.current_stamina
 	bravery_bar.max_value = player.max_bravery
 	bravery_bar.value = player.current_bravery
+	fatigue_bar.max_value = player.max_fatigue
+	fatigue_bar.value = player.current_fatigue
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -29,3 +32,4 @@ func UpdateHealth():
 	mp_bar.value = player.current_mana
 	sp_bar.value = player.current_stamina
 	bravery_bar.value = player.current_bravery
+	fatigue_bar.value = player.current_fatigue

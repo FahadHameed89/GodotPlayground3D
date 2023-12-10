@@ -239,6 +239,7 @@ func _physics_process(delta):
 	MPRegen(delta)
 	SPRegen(delta)
 	BraveryDegen(delta)
+	FatigueDegen(delta)
 	# Getting movement input
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
 	if rooted:
@@ -483,3 +484,26 @@ func BraveryDegen(delta):
 	current_bravery -= bravery_degen * delta
 	if current_bravery <= 0:
 		current_bravery = 0
+
+func fatigue_heal(fatigue_heal_value: int) -> void:
+	if current_fatigue == max_fatigue:
+		print("You are already well rested!")
+	elif current_fatigue + fatigue_heal_value > max_fatigue:
+		current_fatigue = max_fatigue
+		print("You are fully rested!")
+	else:
+		current_fatigue += fatigue_heal_value
+
+func fatigue_cost(fatigue_cost_value: int) -> void:
+	if current_fatigue == 0:
+		print("You are totally exhausted...!")
+	elif current_fatigue - fatigue_cost_value <= 0:
+		print("You need to close your eyes...")
+		current_fatigue = 0
+	else: 
+		current_fatigue -= fatigue_cost_value
+
+func FatigueDegen(delta):
+	current_fatigue -= fatigue_degen * delta
+	if current_fatigue <= 0:
+		current_fatigue = 0
