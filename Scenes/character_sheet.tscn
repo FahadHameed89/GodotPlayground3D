@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvnddvhyqcihg"]
+[gd_scene load_steps=29 format=3 uid="uid://cvnddvhyqcihg"]
 
 [ext_resource type="Texture2D" uid="uid://dxrgckjv44c0n" path="res://assets/ui/bg2.png" id="1_rel20"]
 [ext_resource type="Texture2D" uid="uid://c3m68ovw6lo2x" path="res://assets/ui/card.png" id="2_68y2h"]
@@ -12,6 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://dicclx06q2h47" path="res://assets/ui/right-arrow.png" id="9_0mo7c"]
 [ext_resource type="Texture2D" uid="uid://briwjaexfjoii" path="res://assets/ui/right-arrow-disabled.png" id="10_41pd2"]
 [ext_resource type="Texture2D" uid="uid://bgalgjt7evq2u" path="res://assets/ui/unpressed_button_texture.tres" id="11_s3cda"]
+[ext_resource type="Texture2D" uid="uid://bb6vtf5ycs7m2" path="res://assets/ui/icons/ui-hp.png" id="13_yl54r"]
+[ext_resource type="Texture2D" uid="uid://c5ep30v3owb24" path="res://assets/ui/icons/ui-mp.png" id="14_sjhpi"]
+[ext_resource type="Texture2D" uid="uid://cch35t11ktgh0" path="res://assets/ui/icons/ui-sp.png" id="15_dc2hs"]
+[ext_resource type="Texture2D" uid="uid://dsw8rwyqbs6sh" path="res://assets/ui/icons/ui-atk.png" id="16_mkvlh"]
+[ext_resource type="Texture2D" uid="uid://bumqjummexcjc" path="res://assets/ui/icons/ui-def.png" id="17_3e5am"]
+[ext_resource type="Texture2D" uid="uid://33dcqabpgfvi" path="res://assets/ui/icons/ui-matk.png" id="18_lxekh"]
+[ext_resource type="Texture2D" uid="uid://7cisb1qyv8iy" path="res://assets/ui/icons/ui-mdef.png" id="19_3e7dv"]
+[ext_resource type="Texture2D" uid="uid://1qxjdodhy2qa" path="res://assets/ui/icons/ui-eva.png" id="20_y5qdj"]
+[ext_resource type="Texture2D" uid="uid://bmp6ga3xounme" path="res://assets/ui/icons/ui-luk.png" id="21_ubd35"]
+[ext_resource type="Texture2D" uid="uid://b1iak72dfwy35" path="res://assets/ui/icons/ui-minionatk.png" id="22_yo6w7"]
+[ext_resource type="Texture2D" uid="uid://dr06ddc8ks8ff" path="res://assets/ui/icons/ui-minionhp.png" id="23_npth5"]
+[ext_resource type="Texture2D" uid="uid://xdwwym0mq505" path="res://assets/ui/icons/ui-minionduration.png" id="24_1acfr"]
+[ext_resource type="Texture2D" uid="uid://c3u1mqvnn33vl" path="res://assets/ui/icons/ui-enchantduration.png" id="25_te6lu"]
 
 [sub_resource type="FontVariation" id="FontVariation_di7g1"]
 
@@ -93,9 +106,10 @@ size_flags_vertical = 3
 [node name="MainStats" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(360, 0)
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
 [node name="Strength" type="Control" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
@@ -647,6 +661,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "10"
 
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats"]
 layout_mode = 2
 
@@ -693,6 +711,291 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="Health" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("13_yl54r")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Health"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+
+[node name="Mana" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon2" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("14_sjhpi")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Mana"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+
+[node name="Stamina" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon3" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("15_dc2hs")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Stamina"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "100"
+
+[node name="Attack" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon4" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Attack"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("16_mkvlh")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Attack"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Physical Attack"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Attack"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10"
+
+[node name="Defense" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon5" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Defense"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("17_3e5am")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Defense"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Physical Defense"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Defense"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10"
+
+[node name="Magic Attack" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon6" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Attack"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("18_lxekh")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Attack"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Magic Attack"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Attack"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10"
+
+[node name="Magic Defense" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon7" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("19_3e7dv")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Magic Defense"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10"
+
+[node name="Evasion" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon8" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("20_y5qdj")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Evasion"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10"
+
+[node name="Luck" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon9" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Luck"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("21_ubd35")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Luck"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Luck
+"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Luck"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "10"
+
+[node name="Minion Attack Bonus" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon10" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Attack Bonus"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("22_yo6w7")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Attack Bonus"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minion Attack 
+"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Attack Bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+0"
+
+[node name="Minion HP Bonus" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon11" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion HP Bonus"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("23_npth5")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion HP Bonus"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minion HP "
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion HP Bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+0"
+
+[node name="Minion Duration Bonus" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon12" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Duration Bonus"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("24_1acfr")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Duration Bonus"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Minion Duration
+"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Duration Bonus"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+0 s"
+
+[node name="Enchantment Duration" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon13" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Enchantment Duration"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("25_te6lu")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Enchantment Duration"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Enchantment Duration
+"
+
+[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Enchantment Duration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+0 s"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
 
 [node name="Buttons" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
