@@ -13,6 +13,10 @@ extends CharacterBody3D
 @export var current_stamina = 50
 @export var stamina_regen = 10 # Stamina regenerates quickly , and will not regen when fatigue is drained
 
+@export var max_bravery = 1000 
+@export var current_bravery = 1000
+@export var bravery_rate = 1 # Bravery rate at rest is 10/hr -> 10 'hours' before fatigue is empty
+
 @export var max_fatigue = 1000 
 @export var current_fatigue = 1000
 @export var fatigue_rate = 10 # Fatigue rate at rest is 10/hr -> 10 'hours' before fatigue is empty
