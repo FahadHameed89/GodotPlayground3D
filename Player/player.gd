@@ -15,19 +15,19 @@ extends CharacterBody3D
 
 @export var max_bravery = 1000 
 @export var current_bravery = 1000
-@export var bravery_rate = 1 # Bravery rate at rest is 10/hr -> 10 'hours' before fatigue is empty
+@export var bravery_degen = 1 # Bravery rate at rest is 10/hr -> 10 'hours' before fatigue is empty
 
 @export var max_fatigue = 1000 
 @export var current_fatigue = 1000
-@export var fatigue_rate = 10 # Fatigue rate at rest is 10/hr -> 10 'hours' before fatigue is empty
+@export var fatigue_degen = 10 # Fatigue rate at rest is 10/hr -> 10 'hours' before fatigue is empty
 
 @export var max_hunger = 3000
 @export var current_hunger = 3000
-@export var hunger_rate = 60 # Calories burned per hour -> 50 'hours' before Hunger bar is empty
+@export var hunger_degen = 60 # Calories burned per hour -> 50 'hours' before Hunger bar is empty
 
 @export var max_thirst = 2000
 @export var current_thirst = 2000
-@export var thirst_rate = 80 # mL of water burned per hour -> 25 'hours' before Thirst bar is empty
+@export var thirst_degen = 80 # mL of water burned per hour -> 25 'hours' before Thirst bar is empty
 
 
 @export var attack = 0
@@ -454,9 +454,31 @@ func sp_cost(sp_cost_value: int) -> void:
 		print("Not enough SP...")
 	else: 
 		current_stamina -= sp_cost_value
-		
-		
+
 func SPRegen(delta):
 	current_stamina += stamina_regen * delta
 	if current_stamina > max_stamina:
 		current_stamina = max_stamina
+
+func bravery_heal(bravery_heal_value: int) -> void:
+	if current_bravery == max_bravery:
+		print("Nothing can scare you!")
+	elif current_bravery + bravery_heal_value > max_bravery:
+		current_bravery = max_bravery
+		print("Your heart fills with bravery!")
+	else:
+		current_bravery += bravery_heal_value
+
+func bravery_cost(bravery_cost_value: int) -> void:
+	if current_bravery == 0:
+		print("You feel a chill run down your spine...")
+	elif current_bravery - bravery_cost_value <= 0:
+		print("Fearful thoughts enter your mind...")
+		current_bravery = 0
+	else: 
+		current_bravery -= bravery_cost_value
+
+func BraveryDegen(delta):
+	current_bravery -= bravery_degen * delta
+	if current_bravery <= 0:
+		current_bravery = 0

@@ -10,6 +10,11 @@ region = Rect2(0, 288, 32, 32)
 [resource]
 script = ExtResource("1_y6uu2")
 heal_value = 100
+damage_value = 0
+mp_heal_value = 0
+mp_cost_value = 0
+sp_heal_value = 0
+sp_cost_value = 0
 name = "Health Potion"
 description = "Restores 100 HP"
 stackable = true
