@@ -828,7 +828,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Stamina"
 
-[node name="SPRegenValue2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
+[node name="MaxSPValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "185"

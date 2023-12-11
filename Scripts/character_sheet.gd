@@ -34,12 +34,28 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @onready var charisma_minus = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaMinus
 @onready var charisma_plus = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaPlus
 
+@onready var max_hp_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health/MaxHPValue
+@onready var hp_regen_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health/HPRegenValue
+@onready var max_mp_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana/MaxMPValue
+@onready var mp_regen_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana/MPRegenValue
+@onready var max_sp_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina/MaxSPValue
+@onready var sp_regen_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina/SPRegenValue
+
+
+# Placeholder References to Player varaibles
 @export var player_strength_value = 0
 @export var player_vitality_value = 0
 @export var player_dexterity_value = 0
 @export var player_agility_value = 0
 @export var player_spirit_value = 0
 @export var player_charisma_value = 0
+
+@export var player_health_value = 0
+@export var player_health_regen_value = 0
+@export var player_mana_value = 0
+@export var player_mana_regen_value = 0
+@export var player_stamina_value = 0
+@export var player_stamina_regen_value = 0
 
 @onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
@@ -75,6 +91,9 @@ func LoadStats():
 	spirit_value.set_text(str(player_spirit_value))
 	player_charisma_value = player.charisma
 	charisma_value.set_text(str(player_charisma_value))
+	player_health_value = player.max_health
+	max_hp_value.set_text(str(player_health_value))
+	
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
