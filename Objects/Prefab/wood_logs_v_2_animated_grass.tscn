@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgbwlwfc3wfvp"]
+
+[ext_resource type="PackedScene" uid="uid://by6vvf0fbq7bt" path="res://imports/GLBs/WOOD LOGS_V2_ANIMATED_GRASS.glb" id="1_hp8qr"]
+[ext_resource type="Script" path="res://Objects/Prefab/wood_logs_v_2_animated_grass.gd" id="2_5e487"]
+
+[node name="WOOD LOGS_V2_ANIMATED_GRASS" instance=ExtResource("1_hp8qr")]
+script = ExtResource("2_5e487")
+
+[node name="Empty" parent="." index="4"]
+transform = Transform3D(11.6437, 3.12644, 0, -3.12644, 11.6437, 0, 0, 0, 12.0561, -27.8904, 22.7875, -1.90754)

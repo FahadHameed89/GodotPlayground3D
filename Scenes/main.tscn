@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=54 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -29,6 +29,7 @@
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
 [ext_resource type="PackedScene" uid="uid://datuu8pj8hydi" path="res://imports/GLBs/WOOD LOGS.glb" id="28_ysf48"]
 [ext_resource type="PackedScene" uid="uid://g08fxnk1o6h6" path="res://Objects/Prefab/wood_logs_broken.tscn" id="29_xdnqr"]
+[ext_resource type="PackedScene" uid="uid://bgbwlwfc3wfvp" path="res://Objects/Prefab/wood_logs_v_2_animated_grass.tscn" id="30_wyjp8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -519,6 +520,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.22812, 2.25, 50.5108)
 transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, -73.898, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
+
+[node name="WOOD LOGS_V2_ANIMATED_GRASS" parent="." instance=ExtResource("30_wyjp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6, -50)
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
