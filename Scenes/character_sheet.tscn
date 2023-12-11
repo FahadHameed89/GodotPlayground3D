@@ -1,5 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://cvnddvhyqcihg"]
+[gd_scene load_steps=31 format=3 uid="uid://cvnddvhyqcihg"]
 
+[ext_resource type="Script" path="res://Scripts/character_sheet.gd" id="1_0qmuy"]
 [ext_resource type="Texture2D" uid="uid://dxrgckjv44c0n" path="res://assets/ui/bg2.png" id="1_rel20"]
 [ext_resource type="Texture2D" uid="uid://c3m68ovw6lo2x" path="res://assets/ui/card.png" id="2_68y2h"]
 [ext_resource type="Texture2D" uid="uid://701vf1rcjy1r" path="res://assets/ui/wizard_outline.png" id="3_0yvrr"]
@@ -45,6 +46,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0qmuy")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
@@ -134,7 +136,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground"]
+[node name="StrengthMinus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground" groups=["MinusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -145,12 +147,13 @@ offset_top = -33.0
 offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_3uh0i")
 texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground"]
+[node name="StrengthPlus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground" groups=["PlusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -164,6 +167,7 @@ offset_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
@@ -192,13 +196,11 @@ theme_override_font_sizes/font_size = 24
 text = "Strength"
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "+1"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats"]
 layout_mode = 2
@@ -226,7 +228,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground"]
+[node name="VitalityMinus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground" groups=["MinusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -237,12 +239,13 @@ offset_top = -33.0
 offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_3uh0i")
 texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground"]
+[node name="VitalityPlus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground" groups=["PlusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -256,6 +259,7 @@ offset_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
@@ -284,13 +288,11 @@ theme_override_font_sizes/font_size = 24
 text = "Vitality"
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "+1"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
 layout_mode = 2
@@ -318,7 +320,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground"]
+[node name="DexterityMinus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground" groups=["MinusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -329,12 +331,13 @@ offset_top = -33.0
 offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_3uh0i")
 texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground"]
+[node name="DexterityPlus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground" groups=["PlusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -348,6 +351,7 @@ offset_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
@@ -376,13 +380,11 @@ theme_override_font_sizes/font_size = 24
 text = "Dexterity"
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "+5"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
 layout_mode = 2
@@ -410,7 +412,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground"]
+[node name="AgilityMinus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground" groups=["MinusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -421,12 +423,13 @@ offset_top = -33.0
 offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_3uh0i")
 texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground"]
+[node name="AgilityPlus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground" groups=["PlusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -440,6 +443,7 @@ offset_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
@@ -469,13 +473,11 @@ text = "Agility
 "
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "+1"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
 layout_mode = 2
@@ -503,7 +505,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground"]
+[node name="SpiritMinus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground" groups=["MinusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -514,12 +516,13 @@ offset_top = -33.0
 offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_3uh0i")
 texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground"]
+[node name="SpiritPlus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground" groups=["PlusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -563,13 +566,11 @@ text = "Spirit
 "
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "+1"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
 layout_mode = 2
@@ -597,7 +598,7 @@ grow_vertical = 2
 texture = ExtResource("4_msgvq")
 expand_mode = 1
 
-[node name="Minus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground"]
+[node name="CharismaMinus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground" groups=["MinusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 4
@@ -608,12 +609,13 @@ offset_top = -33.0
 offset_right = 51.0
 offset_bottom = 32.0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("5_3uh0i")
 texture_pressed = ExtResource("6_p1yki")
 texture_disabled = ExtResource("7_d3ee3")
 stretch_mode = 0
 
-[node name="Plus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground"]
+[node name="CharismaPlus" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground" groups=["PlusButtons"]]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 6
@@ -627,6 +629,7 @@ offset_right = 1.0
 offset_bottom = 32.0
 grow_horizontal = 0
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("8_n07jf")
 texture_pressed = ExtResource("9_0mo7c")
 texture_disabled = ExtResource("10_41pd2")
@@ -656,13 +659,11 @@ text = "Charisma
 "
 
 [node name="Change" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 24
-text = "+1"
 
 [node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
 layout_mode = 2
@@ -680,7 +681,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(42.83, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+[node name="StatPointsLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
@@ -1151,3 +1152,16 @@ theme_override_font_sizes/font_size = 35
 text = "Equipment"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/StrengthMinus" to="." method="_on_strength_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/StrengthPlus" to="." method="_on_strength_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/VitalityMinus" to="." method="_on_vitality_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/VitalityPlus" to="." method="_on_vitality_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/DexterityMinus" to="." method="_on_dexterity_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/DexterityPlus" to="." method="_on_dexterity_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/AgilityMinus" to="." method="_on_agility_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/AgilityPlus" to="." method="_on_agility_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/SpiritMinus" to="." method="_on_spirit_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/SpiritPlus" to="." method="_on_spirit_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaMinus" to="." method="_on_charisma_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaPlus" to="." method="_on_charisma_plus_pressed"]
