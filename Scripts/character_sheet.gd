@@ -1,6 +1,6 @@
 extends Control
 
-
+@onready var player = get_node("%player")
 
 var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 
@@ -49,6 +49,7 @@ var cha_add = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#available_points = player.stat_points
 	stat_points_label.set_text(str(available_points))
 	if available_points == 0:
 		pass
@@ -61,6 +62,14 @@ func _ready():
 	if agility_value.text == str(100): agility_plus.disabled = true
 	if spirit_value.text == str(100): spirit_plus.disabled = true
 	if charisma_value.text == str(100): charisma_plus.disabled = true
+
+func LoadStats():
+	strength_value = player.strength
+	vitality_value = player.vitality
+	dexterity_value = player.dexterity
+	agility_value = player.agility
+	spirit_value = player.spirit
+	charisma_value = player.charisma
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")

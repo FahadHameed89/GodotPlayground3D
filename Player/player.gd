@@ -29,18 +29,29 @@ extends CharacterBody3D
 @export var current_thirst = 2000
 @export var thirst_degen = 80 # mL of water burned per hour -> 25 'hours' before Thirst bar is empty
 
+var level = 1
+var experience = 0
+var experience_required = 10000
 
-@export var attack = 0
-@export var defense = 0
-@export var magic_attack = 0
-@export var magic_defense = 0
-@export var evasion = 0
-@export var life_steal = 0
-@export var mana_steal = 0
-@export var minion_attack = 0
-@export var minion_hp = 0
-@export var minion_duration = 0
-@export var minion_max = 0
+@onready var stat_points = 12
+var strength = 8
+var vitality = 8
+var dexterity = 8
+var agility = 8
+var spirit = 8
+var charisma = 8
+
+@export var w_attack = 0
+@export var w_defense = 0
+@export var w_magic_attack = 0
+@export var w_magic_defense = 0
+@export var w_evasion = 0
+@export var w_life_steal = 0
+@export var w_mana_steal = 0
+@export var w_minion_attack = 0
+@export var w_minion_hp = 0
+@export var w_minion_duration = 0
+@export var w_minion_max = 0
 
 # Inventory Variables and Signals
 signal toggle_inventory()
