@@ -1,10 +1,33 @@
 extends Control
 
 
-@onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
+
 var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 
+@onready var strength_change = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats/StrengthChange
+@onready var strength_value = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats/StrengthValue
+@onready var strength_minus = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/StrengthMinus
+@onready var strength_plus = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/StrengthPlus
+
+@onready var vitality_change = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats/VitalityChange
+@onready var vitality_value = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats/VitalityValue
+
+@onready var dexterity_change = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats/DexterityChange
+@onready var dexterity_value = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats/DexterityValue
+
+@onready var agility_change = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats/AgilityChange
+@onready var agility_value = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats/AgilityValue
+
+@onready var spirit_change = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats/SpiritChange
+@onready var spirit_value = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats/SpiritValue
+
+@onready var charisma_change = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats/CharismaChange
+@onready var charisma_value = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats/CharismaValue
+
+@onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
+
+
 var str_add = 0
 var vit_add = 0
 var dex_add = 0
@@ -15,7 +38,7 @@ var cha_add = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	stat_points_label.set_text(str(available_points) + " Points")
+	stat_points_label.set_text(str(available_points))
 	if available_points == 0:
 		pass
 	else:
@@ -25,13 +48,15 @@ func _ready():
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
-	str_add += 1
-# Increase the stat in code
-# update the change label
-# unlock the minus button
-# reduce the available stat points in code
-# reduce the avaiable stat points on the label
-# if available points = 0, lock all plus buttons
+	str_add += 1 # Increase the stat in code
+	strength_change.set_text("+ " + str(str_add)) # update the change label
+	strength_minus.disabled = false # unlock the minus button
+	available_points -= 1 # reduce the available stat points in code
+	stat_points_label.set_text(str(available_points)) # reduce the avaiable stat points on the label
+	if available_points == 0: # if available points = 0, lock all plus buttons
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(true)
+
 
 func _on_vitality_plus_pressed():
 	print("Vitality + 1")

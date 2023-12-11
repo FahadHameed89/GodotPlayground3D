@@ -681,11 +681,21 @@ layout_mode = 2
 custom_minimum_size = Vector2(42.83, 0)
 layout_mode = 2
 
+[node name="Points" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "Points:
+"
+vertical_alignment = 1
+
 [node name="StatPointsLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30
-text = "Points: 7"
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Confirm" type="TextureButton" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
 custom_minimum_size = Vector2(125, 50)
