@@ -26,7 +26,8 @@
  # Interaction Mechanics
 - All keymapping up to this point is experimental and will be changed for both keyboard+mouse and controller once everything is implemented. For now, check the Project > Project Settings > Input Map tab to see what is mapped to what. 
 
- # Interactable Objects (Objects you can pick up and throw such as balls, boxes, weighted blocks, furniture)
+ # Interactable Objects 
+(Objects you can pick up and throw such as balls, boxes, weighted blocks, furniture)
 - Left Click to Pick up or Drop 'Interactable Objects'
 - R to Rotate picked up 'Interactable Objects'
 - F to Throw picked up 'Interactable Objects' (If an object is too heavy, it will simply fall to the ground)
