@@ -132,6 +132,12 @@ func _on_charisma_plus_pressed():
 
 func _on_strength_minus_pressed():
 	print("Strength - 1")
+	# Decrease the stat in code
+	# Update the change label
+	# increase the available stat points in code
+	# increase the available stat points on the label
+	# if the change value is = 0, lock the minus button
+	
 
 
 func _on_vitality_minus_pressed():
