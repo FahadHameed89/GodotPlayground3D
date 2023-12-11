@@ -129,6 +129,37 @@ func LoadStats():
 	
 	player_physical_attack_value = player.physical_attack
 	physical_attack_value.set_text(str(player_physical_attack_value))
+	
+	player_physical_defense_value = player.physical_defense
+	physical_defense_value.set_text(str(player_physical_defense_value))
+	
+	player_critical_chance_value = player.critical_chance
+	critical_value.set_text(str(player_critical_chance_value))
+	player_evasion_chance_value = player.evasion_chance
+	
+	player_action_speed_value = player.action_speed
+	
+	player_magic_attack_value = player.magic_attack
+	
+	player_magic_defense_value = player.magic_defense
+	
+	player_minion_power_value = player.minion_power
+	
+	player_effect_duration_value = player.effect_duration
+	
+	player_cast_speed_value = player.cast_speed
+
+func CalculateDerivedStats():
+	player.physical_attack = (player.strength * 2) + (player.dexterity * 1)
+	player.physical_defense = (player.vitality * 2) + (player.strength * 1) 
+	player.critical_chance = (player.dexterity * 1/4) + (player.strength * 1/5)
+	player.evasion_chance = (player.agility * 2) + (player.dexterity * 1)
+	player.action_speed = 100 + (player.agility * 1) + (player.dexterity * 1/2)
+	player.magic_attack = (player.spirit * 3)
+	player.magic_defense = (player.spirit * 2) + (player.charisma * 1)
+	player.minion_power = (player.charisma * 2) + (player.spirit * 1)
+	player.effect_duration = (player.charisma * 1/2)
+	player.cast_speed = 100 + (player.dexterity * 1) + (player.spirit * 1/2)
 
 func _on_confirm_pressed():
 	if str_add + vit_add + dex_add + agi_add + spr_add + cha_add == 0:
@@ -147,7 +178,7 @@ func _on_confirm_pressed():
 		agi_add = 0
 		spr_add = 0
 		cha_add = 0
-		player.physical_attack = (player.strength * 2) + (player.dexterity * 1)
+		CalculateDerivedStats()
 		LoadStats()
 		for button in get_tree().get_nodes_in_group("MinusButtons"):
 			button.set_disabled(true)
