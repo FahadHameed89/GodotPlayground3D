@@ -44,7 +44,6 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
 
-
 var str_add = 0
 var vit_add = 0
 var dex_add = 0
@@ -53,7 +52,6 @@ var spr_add = 0
 var cha_add = 0
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	LoadStats()
 	available_points = player.stat_points
@@ -63,12 +61,6 @@ func _ready():
 	else:
 		for button in get_tree().get_nodes_in_group("PlusButtons"):
 			button.set_disabled(false)
-#	if strength_value.text == str(100): strength_plus.disabled = true
-#	if vitality_value.text == str(100): vitality_plus.disabled = true
-#	if dexterity_value.text == str(100): dexterity_plus.disabled = true
-#	if agility_value.text == str(100): agility_plus.disabled = true
-#	if spirit_value.text == str(100): spirit_plus.disabled = true
-#	if charisma_value.text == str(100): charisma_plus.disabled = true
 
 func LoadStats():
 	player_strength_value = player.strength

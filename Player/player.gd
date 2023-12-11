@@ -31,8 +31,11 @@ extends CharacterBody3D
 
 var level = 1
 var experience = 0
-var experience_required = 10000
+var experience_required = 5000 # this determines the amount of exp required for the first level up
+var exp_alpha = 250 # This value determines the EXP required to level up using the formula (exp_base + (level * exp_alpha))
+var exp_base = 5000 # with exp_base at 5000, level 99->100 requires 30 000 EXP, 6x more than required from level 1->2
 
+@export var skill_points = 1
 @export var stat_points = 12
 @export var strength = 8
 @export var vitality = 8
@@ -518,3 +521,9 @@ func FatigueDegen(delta):
 	current_fatigue -= fatigue_degen * delta
 	if current_fatigue <= 0:
 		current_fatigue = 0
+
+func LevelUp():
+	level += 1
+	stat_points += 3
+	skill_points += 1
+	experience_required = exp_base + (level*exp_alpha)
