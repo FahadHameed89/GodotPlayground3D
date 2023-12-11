@@ -752,7 +752,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Health"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
+[node name="MaxHPValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "1700"
@@ -763,7 +763,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "+"
 
-[node name="Value2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
+[node name="HPRegenValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Health"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "17"
@@ -790,7 +790,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Mana"
 
-[node name="Max MP Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
+[node name="MaxMPValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "400"
@@ -801,7 +801,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "+"
 
-[node name="MP Regen Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
+[node name="MPRegenValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Mana"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "4"
@@ -828,7 +828,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Stamina"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
+[node name="SPRegenValue2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "185"
@@ -839,7 +839,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "+"
 
-[node name="MP Regen Value2" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
+[node name="SPRegenValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "37"
@@ -854,23 +854,23 @@ text = "SP/s"
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Attack" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+[node name="PhysicalAttack" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
-[node name="Icon4" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Attack"]
+[node name="Icon4" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/PhysicalAttack"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture = ExtResource("16_cg14g")
 expand_mode = 1
 
-[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Attack"]
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/PhysicalAttack"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Physical Attack"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Attack"]
+[node name="PhysicalAttackValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/PhysicalAttack"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "10"
@@ -891,7 +891,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Physical Defense"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Defense"]
+[node name="PhysicalDefenseValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Defense"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "80"
@@ -912,7 +912,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Critical Chance"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
+[node name="CriticalValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "28%"
@@ -934,7 +934,7 @@ theme_override_font_sizes/font_size = 20
 text = "Evasion
 "
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
+[node name="EvasionValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "75"
@@ -952,11 +952,10 @@ expand_mode = 1
 [node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "DEX and AGI"
 theme_override_font_sizes/font_size = 20
 text = "Action Speed"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
+[node name="ActionSpeedValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "250%"
@@ -964,28 +963,6 @@ text = "250%"
 [node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
-
-[node name="Cast Speed" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-
-[node name="Icon9" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-texture = ExtResource("19_dcwyn")
-expand_mode = 1
-
-[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 20
-text = "Cast Speed
-"
-
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "175%"
 
 [node name="Magic Attack" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -1003,7 +980,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Magic Attack"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Attack"]
+[node name="MagicAttackValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Attack"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -1024,7 +1001,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
 text = "Magic Defense"
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense"]
+[node name="MagicDefenseValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "100"
@@ -1046,7 +1023,7 @@ theme_override_font_sizes/font_size = 20
 text = "Minion Power
 "
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Power"]
+[node name="MinionPowerValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Power"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "+110%"
@@ -1091,10 +1068,32 @@ theme_override_font_sizes/font_size = 20
 text = "Effect Duration
 "
 
-[node name="Value" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Effect Duration"]
+[node name="EffectDurationValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Effect Duration"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "+10 s"
+
+[node name="Cast Speed" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Icon9" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("19_dcwyn")
+expand_mode = 1
+
+[node name="Text" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "Cast Speed
+"
+
+[node name="CastSpeedValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "175%"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(70, 0)
