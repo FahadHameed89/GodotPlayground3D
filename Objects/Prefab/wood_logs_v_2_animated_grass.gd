@@ -4,6 +4,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	animation_player.play("CircleAction_001")
 	animation_player.play("EmptyAction_002")
 
 	
