@@ -55,7 +55,12 @@ func _ready():
 	else:
 		for button in get_tree().get_nodes_in_group("PlusButtons"):
 			button.set_disabled(false)
-
+	if strength_value.text == str(100): strength_plus.disabled = true
+	if vitality_value.text == str(100): vitality_plus.disabled = true
+	if dexterity_value.text == str(100): dexterity_plus.disabled = true
+	if agility_value.text == str(100): agility_plus.disabled = true
+	if spirit_value.text == str(100): spirit_plus.disabled = true
+	if charisma_value.text == str(100): charisma_plus.disabled = true
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
@@ -82,19 +87,47 @@ func _on_vitality_plus_pressed():
 
 func _on_dexterity_plus_pressed():
 	print("Dexterity + 1")
-
+	dex_add += 1 # Increase the stat in code
+	dexterity_change.set_text("+ " + str(dex_add)) # update the change label
+	dexterity_minus.disabled = false # unlock the minus button
+	available_points -= 1 # reduce the available stat points in code
+	stat_points_label.set_text(str(available_points)) # reduce the avaiable stat points on the label
+	if available_points == 0: # if available points = 0, lock all plus buttons
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(true)
 
 func _on_agility_plus_pressed():
 	print("Agility + 1")
-
+	agi_add += 1 # Increase the stat in code
+	agility_change.set_text("+ " + str(agi_add)) # update the change label
+	agility_minus.disabled = false # unlock the minus button
+	available_points -= 1 # reduce the available stat points in code
+	stat_points_label.set_text(str(available_points)) # reduce the avaiable stat points on the label
+	if available_points == 0: # if available points = 0, lock all plus buttons
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(true)
 
 func _on_spirit_plus_pressed():
 	print("Spirit + 1")
-
+	spr_add += 1 # Increase the stat in code
+	spirit_change.set_text("+ " + str(spr_add)) # update the change label
+	spirit_minus.disabled = false # unlock the minus button
+	available_points -= 1 # reduce the available stat points in code
+	stat_points_label.set_text(str(available_points)) # reduce the avaiable stat points on the label
+	if available_points == 0: # if available points = 0, lock all plus buttons
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(true)
 
 func _on_charisma_plus_pressed():
 	print("Charisma + 1")
-
+	cha_add += 1 # Increase the stat in code
+	charisma_change.set_text("+ " + str(cha_add)) # update the change label
+	charisma_minus.disabled = false # unlock the minus button
+	available_points -= 1 # reduce the available stat points in code
+	stat_points_label.set_text(str(available_points)) # reduce the avaiable stat points on the label
+	if available_points == 0: # if available points = 0, lock all plus buttons
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(true)
 
 
 func _on_strength_minus_pressed():
