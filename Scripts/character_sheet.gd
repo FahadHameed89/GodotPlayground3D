@@ -25,7 +25,12 @@ func _ready():
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
-
+# Increase the stat in code
+# update the change label
+# unlock the minus button
+# reduce the available stat points in code
+# reduce the avaiable stat points on the label
+# if available points = 0, lock all plus buttons
 
 func _on_vitality_plus_pressed():
 	print("Vitality + 1")
