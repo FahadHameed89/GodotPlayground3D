@@ -44,17 +44,17 @@ var exp_base = 5000 # with exp_base at 5000, level 99->100 requires 30 000 EXP, 
 @export var spirit = 8
 @export var charisma = 8
 
-@export var physical_attack = strength*2+dexterity
-@export var physical_defense = vitality*2+strength
-@export var critical_chance = (dexterity/4)+(strength/5)
-@export var evasion_chance = (agility*2) + dexterity
-@export var action_speed = 100 + agility + (dexterity/2)
+@export var physical_attack = (strength * 2) + (dexterity * 1)
+@export var physical_defense = (vitality * 2) + (strength * 1) 
+@export var critical_chance = (dexterity * 1/4) + (strength * 1/5)
+@export var evasion_chance = (agility * 2) + (dexterity * 1)
+@export var action_speed = 100 + (agility * 1) + (dexterity * 1/2)
 
-@export var magic_attack = spirit*3
-@export var magic_defense = spirit*2 + charisma
-@export var minion_power = 100 + charisma
-@export var effect_duration = charisma
-@export var cast_speed = 100 + dexterity + (spirit/2)
+@export var magic_attack = (spirit * 3)
+@export var magic_defense = (spirit * 2) + (charisma * 1)
+@export var minion_power = (charisma * 2) + (spirit * 1)
+@export var effect_duration = (charisma * 1/2)
+@export var cast_speed = 100 + (dexterity * 1) + (spirit * 1/2)
 
 # Inventory Variables and Signals
 signal toggle_inventory()
