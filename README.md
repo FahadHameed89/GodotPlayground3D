@@ -54,13 +54,18 @@
 - Core stats can be increased using stat points. Allocate points, then confirm to lock in your choices. 
 - Core stats determine 'Derived Stats', which are things like HP, MP, SP, ATK, DEF, MATK, MDEF, EVA, CRIT. 
 
+  # Known Bugs and Issues
+- Turning the camera while accessing a container may result in the container being out of line of sight after being opened, which results in the player being 'locked' in the inventory. Possible solution -> Make it so the container inventory automatically breaks when line of sight breaks. I feel like there's a validation missing somewhere. 
+- Grappling rope length is infinite -> Set a function that measures the length between the player and the grapple point and if it exceeds 'X' then detach the rope
 
 # Resources Used
 
-https://www.youtube.com/@lukky (FPS Controller, Interaction Mechanics)
-https://www.youtube.com/@abradotcs (Rotate and Throw Mechanics)
-https://www.youtube.com/@DevLogLogan (Inventory Mechanics)
-https://www.youtube.com/@GameDevelopmentCenter (User Interface and RPG Mechanics) 
+Lots of what you see in this project is derived from the following sources, check them out:
+
+- https://www.youtube.com/@lukky (FPS Controller, Interaction Mechanics)
+- https://www.youtube.com/@abradotcs (Rotate and Throw Mechanics)
+- https://www.youtube.com/@DevLogLogan (Inventory Mechanics)
+- https://www.youtube.com/@GameDevelopmentCenter (User Interface and RPG Mechanics) 
 
 # Addons Used
 https://godotengine.org/asset-library/asset/2337 (Grappling Hook 3D)
