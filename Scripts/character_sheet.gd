@@ -95,6 +95,14 @@ func LoadStats():
 	max_hp_value.set_text(str(player_health_value))
 	player_health_regen_value = player.health_regen
 	hp_regen_value.set_text(str(player_health_regen_value))
+	player_mana_value = player.max_mana
+	max_mp_value.set_text(str(player_mana_value))
+	player_mana_regen_value = player.mana_regen
+	mp_regen_value.set_text(str(player_mana_regen_value))
+	player_stamina_value = player.max_stamina
+	max_sp_value.set_text(str(player_stamina_value))
+	player_stamina_regen_value = player.stamina_regen
+	sp_regen_value.set_text(str(player_stamina_regen_value))
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
