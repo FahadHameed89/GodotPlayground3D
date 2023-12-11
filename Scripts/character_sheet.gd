@@ -25,6 +25,7 @@ func _ready():
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
+	str_add += 1
 # Increase the stat in code
 # update the change label
 # unlock the minus button
