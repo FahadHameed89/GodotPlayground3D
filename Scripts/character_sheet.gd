@@ -159,7 +159,16 @@ func _on_vitality_minus_pressed():
 
 func _on_dexterity_minus_pressed():
 	print("Dexterity - 1")
-
+	if dex_add > 0:
+		dex_add -= 1 # Decrease the stat in code
+		available_points += 1 # increase the available stat points in code
+		dexterity_change.set_text("+ " + str(dex_add)) # increase the available stat points on the str label
+		stat_points_label.set_text(str(available_points)) # set the avaiable stat points on the stat points label
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(false)
+	if dex_add == 0:
+		dexterity_change.set_text(" ") # update the change label
+		dexterity_minus.disabled = true # if the change value is = 0, lock the minus button
 
 func _on_agility_minus_pressed():
 	print("Agility - 1")
