@@ -185,7 +185,26 @@ func _on_agility_minus_pressed():
 
 func _on_spirit_minus_pressed():
 	print("Spirit - 1")
-
+	if spr_add > 0:
+		spr_add -= 1 # Decrease the stat in code
+		available_points += 1 # increase the available stat points in code
+		spirit_change.set_text("+ " + str(spr_add)) # increase the available stat points on the str label
+		stat_points_label.set_text(str(available_points)) # set the avaiable stat points on the stat points label
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(false)
+	if spr_add == 0:
+		spirit_change.set_text(" ") # update the change label
+		spirit_minus.disabled = true # if the change value is = 0, lock the minus button
 
 func _on_charisma_minus_pressed():
 	print("Charisma - 1")
+	if cha_add > 0:
+		cha_add -= 1 # Decrease the stat in code
+		available_points += 1 # increase the available stat points in code
+		charisma_change.set_text("+ " + str(cha_add)) # increase the available stat points on the str label
+		stat_points_label.set_text(str(available_points)) # set the avaiable stat points on the stat points label
+		for button in get_tree().get_nodes_in_group("PlusButtons"):
+			button.set_disabled(false)
+	if cha_add == 0:
+		charisma_change.set_text(" ") # update the change label
+		charisma_minus.disabled = true # if the change value is = 0, lock the minus button
