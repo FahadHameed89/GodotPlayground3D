@@ -44,6 +44,7 @@ var exp_base = 5000 # with exp_base at 5000, level 99->100 requires 30 000 EXP, 
 @export var spirit = 8
 @export var charisma = 8
 
+# Note -> The following are default formulas used to simply calculate initial stats. Changing this formula will not change much past level 1, do so in the character_sheet.gd script where stats are manually updated when stats points are allocated + confirmed 
 @export var physical_attack = (strength * 2) + (dexterity * 1)
 @export var physical_defense = (vitality * 2) + (strength * 1) 
 @export var critical_chance = (dexterity * 1/4) + (strength * 1/5)

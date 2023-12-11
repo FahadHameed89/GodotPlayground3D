@@ -41,6 +41,16 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @onready var max_sp_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina/MaxSPValue
 @onready var sp_regen_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina/SPRegenValue
 
+@onready var physical_attack_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/PhysicalAttack/PhysicalAttackValue
+@onready var physical_defense_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Defense/PhysicalDefenseValue
+@onready var critical_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical/CriticalValue
+@onready var evasion_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion/EvasionValue
+@onready var action_speed_value = $"HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed/ActionSpeedValue"
+@onready var magic_attack_value = $"HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Attack/MagicAttackValue"
+@onready var magic_defense_value = $"HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Magic Defense/MagicDefenseValue"
+@onready var minion_power_value = $"HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Power/MinionPowerValue"
+@onready var effect_duration_value = $"HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Effect Duration/EffectDurationValue"
+@onready var cast_speed_value = $"HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed/CastSpeedValue"
 
 
 # Placeholder References to Player varaibles in Player.gd -> these values initialize at 0 and are replaced with player vars in ready and load functions. 
@@ -58,17 +68,17 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @export var player_stamina_value = 0
 @export var player_stamina_regen_value = 0
 
-@export var player_physical_attack = 0
-@export var player_physical_defense = 0
-@export var player_critical_chance = 0
-@export var player_evasion_chance = 0
-@export var player_action_speed = 0
+@export var player_physical_attack_value = 0
+@export var player_physical_defense_value = 0
+@export var player_critical_chance_value = 0
+@export var player_evasion_chance_value = 0
+@export var player_action_speed_value = 0
 
-@export var player_magic_attack = 0
-@export var player_magic_defense = 0
-@export var player_minion_power = 0
-@export var player_effect_duration = 0
-@export var player_cast_speed = 0
+@export var player_magic_attack_value = 0
+@export var player_magic_defense_value = 0
+@export var player_minion_power_value = 0
+@export var player_effect_duration_value = 0
+@export var player_cast_speed_value = 0
 
 @onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
@@ -117,8 +127,36 @@ func LoadStats():
 	player_stamina_regen_value = player.stamina_regen
 	sp_regen_value.set_text(str(player_stamina_regen_value))
 	
-	player_physical_attack = player.physical_attack
-	
+	player_physical_attack_value = player.physical_attack
+	physical_attack_value.set_text(str(player_physical_attack_value))
+
+func _on_confirm_pressed():
+	if str_add + vit_add + dex_add + agi_add + spr_add + cha_add == 0:
+		print("You confirmed nothing!")
+	else:
+		player.stat_points = available_points
+		player.strength += str_add
+		player.vitality += vit_add
+		player.dexterity += dex_add
+		player.agility += agi_add
+		player.spirit += spr_add
+		player.charisma += cha_add
+		str_add = 0
+		vit_add = 0
+		dex_add = 0
+		agi_add = 0
+		spr_add = 0
+		cha_add = 0
+		player.physical_attack = (player.strength * 2) + (player.dexterity * 1)
+		LoadStats()
+		for button in get_tree().get_nodes_in_group("MinusButtons"):
+			button.set_disabled(true)
+		for label in get_tree().get_nodes_in_group("ChangeLabels"):
+			label.set_text("")
+		
+
+
+
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
@@ -268,26 +306,4 @@ func _on_charisma_minus_pressed():
 		charisma_minus.disabled = true # if the change value is = 0, lock the minus button
 
 
-func _on_confirm_pressed():
-	if str_add + vit_add + dex_add + agi_add + spr_add + cha_add == 0:
-		print("You confirmed nothing!")
-	else:
-		player.stat_points = available_points
-		player.strength += str_add
-		player.vitality += vit_add
-		player.dexterity += dex_add
-		player.agility += agi_add
-		player.spirit += spr_add
-		player.charisma += cha_add
-		str_add = 0
-		vit_add = 0
-		dex_add = 0
-		agi_add = 0
-		spr_add = 0
-		cha_add = 0
-		LoadStats()
-		for button in get_tree().get_nodes_in_group("MinusButtons"):
-			button.set_disabled(true)
-		for label in get_tree().get_nodes_in_group("ChangeLabels"):
-			label.set_text("")
-		
+
