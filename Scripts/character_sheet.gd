@@ -34,6 +34,12 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @onready var charisma_minus = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaMinus
 @onready var charisma_plus = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaPlus
 
+@export var player_strength_value = 0
+@export var player_vitality_value = 0
+@export var player_dexterity_value = 0
+@export var player_agility_value = 0
+@export var player_spirit_value = 0
+@export var player_charisma_value = 0
 
 @onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
@@ -49,6 +55,7 @@ var cha_add = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	LoadStats()
 	available_points = player.stat_points
 	stat_points_label.set_text(str(available_points))
 	if available_points == 0:
@@ -56,20 +63,20 @@ func _ready():
 	else:
 		for button in get_tree().get_nodes_in_group("PlusButtons"):
 			button.set_disabled(false)
-	if strength_value.text == str(100): strength_plus.disabled = true
-	if vitality_value.text == str(100): vitality_plus.disabled = true
-	if dexterity_value.text == str(100): dexterity_plus.disabled = true
-	if agility_value.text == str(100): agility_plus.disabled = true
-	if spirit_value.text == str(100): spirit_plus.disabled = true
-	if charisma_value.text == str(100): charisma_plus.disabled = true
+#	if strength_value.text == str(100): strength_plus.disabled = true
+#	if vitality_value.text == str(100): vitality_plus.disabled = true
+#	if dexterity_value.text == str(100): dexterity_plus.disabled = true
+#	if agility_value.text == str(100): agility_plus.disabled = true
+#	if spirit_value.text == str(100): spirit_plus.disabled = true
+#	if charisma_value.text == str(100): charisma_plus.disabled = true
 
 func LoadStats():
-	strength_value = player.strength
-	vitality_value = player.vitality
-	dexterity_value = player.dexterity
-	agility_value = player.agility
-	spirit_value = player.spirit
-	charisma_value = player.charisma
+	player_strength_value = player.strength
+	player_vitality_value = player.vitality
+	player_dexterity_value = player.dexterity
+	player_agility_value = player.agility
+	player_spirit_value = player.spirit
+	player_charisma_value = player.charisma
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
