@@ -915,7 +915,12 @@ text = "Critical Chance"
 [node name="CriticalValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "28%"
+text = "28"
+
+[node name="Percent" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Critical"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "%"
 
 [node name="Evasion" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -931,7 +936,7 @@ expand_mode = 1
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 20
-text = "Evasion
+text = "Evasion Rate
 "
 
 [node name="EvasionValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Evasion"]
@@ -958,7 +963,12 @@ text = "Action Speed"
 [node name="ActionSpeedValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "250%"
+text = "250"
+
+[node name="Percent" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Action Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "%"
 
 [node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
@@ -1023,10 +1033,20 @@ theme_override_font_sizes/font_size = 20
 text = "Minion Power
 "
 
+[node name="+" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Power"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+"
+
 [node name="MinionPowerValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Power"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "+110%"
+text = "110"
+
+[node name="Percent" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Minion Power"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "%"
 
 [node name="Minion Duration" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 visible = false
@@ -1068,10 +1088,20 @@ theme_override_font_sizes/font_size = 20
 text = "Effect Duration
 "
 
+[node name="+" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Effect Duration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+"
+
 [node name="EffectDurationValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Effect Duration"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "+10 s"
+text = "10"
+
+[node name="s" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Effect Duration"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "s"
 
 [node name="Cast Speed" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -1093,7 +1123,13 @@ text = "Cast Speed
 [node name="CastSpeedValue" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "175%"
+text = "175"
+
+[node name="Percent" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Cast Speed"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "%
+"
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(70, 0)

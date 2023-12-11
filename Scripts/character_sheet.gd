@@ -42,7 +42,8 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @onready var sp_regen_value = $HBoxContainer/VBoxContainer/HBoxContainer/DerivedStats/VBoxContainer/Stamina/SPRegenValue
 
 
-# Placeholder References to Player varaibles
+
+# Placeholder References to Player varaibles in Player.gd -> these values initialize at 0 and are replaced with player vars in ready and load functions. 
 @export var player_strength_value = 0
 @export var player_vitality_value = 0
 @export var player_dexterity_value = 0
@@ -56,6 +57,18 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 @export var player_mana_regen_value = 0
 @export var player_stamina_value = 0
 @export var player_stamina_regen_value = 0
+
+@export var player_physical_attack = 0
+@export var player_physical_defense = 0
+@export var player_critical_chance = 0
+@export var player_evasion_chance = 0
+@export var player_action_speed = 0
+
+@export var player_magic_attack = 0
+@export var player_magic_defense = 0
+@export var player_minion_power = 0
+@export var player_effect_duration = 0
+@export var player_cast_speed = 0
 
 @onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
@@ -103,6 +116,9 @@ func LoadStats():
 	max_sp_value.set_text(str(player_stamina_value))
 	player_stamina_regen_value = player.stamina_regen
 	sp_regen_value.set_text(str(player_stamina_regen_value))
+	
+	player_physical_attack = player.physical_attack
+	
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
