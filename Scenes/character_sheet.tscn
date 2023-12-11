@@ -195,7 +195,7 @@ theme_override_fonts/font = SubResource("FontVariation_di7g1")
 theme_override_font_sizes/font_size = 24
 text = "Strength"
 
-[node name="StrengthChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats"]
+[node name="StrengthChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Strength/StatsBackground/Stats" groups=["ChangeLabels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -287,7 +287,7 @@ theme_override_fonts/font = SubResource("FontVariation_di7g1")
 theme_override_font_sizes/font_size = 24
 text = "Vitality"
 
-[node name="VitalityChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats"]
+[node name="VitalityChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Vitality/StatsBackground/Stats" groups=["ChangeLabels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -379,7 +379,7 @@ theme_override_fonts/font = SubResource("FontVariation_di7g1")
 theme_override_font_sizes/font_size = 24
 text = "Dexterity"
 
-[node name="DexterityChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats"]
+[node name="DexterityChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Dexterity/StatsBackground/Stats" groups=["ChangeLabels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -472,7 +472,7 @@ theme_override_font_sizes/font_size = 24
 text = "Agility
 "
 
-[node name="AgilityChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats"]
+[node name="AgilityChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Agility/StatsBackground/Stats" groups=["ChangeLabels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -565,7 +565,7 @@ theme_override_font_sizes/font_size = 24
 text = "Spirit
 "
 
-[node name="SpiritChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats"]
+[node name="SpiritChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/Stats" groups=["ChangeLabels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -658,7 +658,7 @@ theme_override_font_sizes/font_size = 24
 text = "Charisma
 "
 
-[node name="CharismaChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats"]
+[node name="CharismaChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats" groups=["ChangeLabels"]]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.690196, 0.0705882, 0.0705882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -1176,3 +1176,4 @@ vertical_alignment = 1
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Spirit/StatsBackground/SpiritPlus" to="." method="_on_spirit_plus_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaMinus" to="." method="_on_charisma_minus_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/CharismaPlus" to="." method="_on_charisma_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/Confirm" to="." method="_on_confirm_pressed"]

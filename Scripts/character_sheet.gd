@@ -230,3 +230,28 @@ func _on_charisma_minus_pressed():
 	if cha_add == 0:
 		charisma_change.set_text(" ") # update the change label
 		charisma_minus.disabled = true # if the change value is = 0, lock the minus button
+
+
+func _on_confirm_pressed():
+	if str_add + vit_add + dex_add + agi_add + spr_add + cha_add == 0:
+		print("You confirmed nothing!")
+	else:
+		player.stat_points = available_points
+		player.strength += str_add
+		player.vitality += vit_add
+		player.dexterity += dex_add
+		player.agility += agi_add
+		player.spirit += spr_add
+		player.charisma += cha_add
+		str_add = 0
+		vit_add = 0
+		dex_add = 0
+		agi_add = 0
+		spr_add = 0
+		cha_add = 0
+		LoadStats()
+		for button in get_tree().get_nodes_in_group("MinusButtons"):
+			button.set_disabled(true)
+		for label in get_tree().get_nodes_in_group("ChangeLabels"):
+			label.set_text("")
+		
