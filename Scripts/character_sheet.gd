@@ -72,11 +72,17 @@ func _ready():
 
 func LoadStats():
 	player_strength_value = player.strength
+	strength_value.set_text(str(player_strength_value))
 	player_vitality_value = player.vitality
+	vitality_value.set_text(str(player_vitality_value))
 	player_dexterity_value = player.dexterity
+	dexterity_value.set_text(str(player_dexterity_value))
 	player_agility_value = player.agility
+	agility_value.set_text(str(player_agility_value))
 	player_spirit_value = player.spirit
+	spirit_value.set_text(str(player_spirit_value))
 	player_charisma_value = player.charisma
+	charisma_value.set_text(str(player_charisma_value))
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
