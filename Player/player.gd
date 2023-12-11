@@ -15,7 +15,7 @@ extends CharacterBody3D
 
 @export var max_bravery = 1000 
 @export var current_bravery = 1000
-@export var bravery_degen = 10 # Bravery rate at rest is 10/hr -> 10 'hours' before fatigue is empty
+@export var bravery_degen = 1 # Bravery rate degens extremely slowly, barely
 
 @export var max_fatigue = 1000 
 @export var current_fatigue = 1000
@@ -33,13 +33,13 @@ var level = 1
 var experience = 0
 var experience_required = 10000
 
-@onready var stat_points = 12
-var strength = 8
-var vitality = 8
-var dexterity = 8
-var agility = 8
-var spirit = 8
-var charisma = 8
+@export var stat_points = 12
+@export var strength = 8
+@export var vitality = 8
+@export var dexterity = 8
+@export var agility = 8
+@export var spirit = 8
+@export var charisma = 8
 
 @export var w_attack = 0
 @export var w_defense = 0

@@ -690,6 +690,7 @@ text = "Points:
 vertical_alignment = 1
 
 [node name="StatPointsLabel" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 30

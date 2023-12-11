@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player = get_node("%player")
+@onready var player = get_node("../../player")
 
 var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 
@@ -49,7 +49,7 @@ var cha_add = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#available_points = player.stat_points
+	available_points = player.stat_points
 	stat_points_label.set_text(str(available_points))
 	if available_points == 0:
 		pass
