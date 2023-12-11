@@ -132,21 +132,33 @@ func _on_charisma_plus_pressed():
 
 func _on_strength_minus_pressed():
 	print("Strength - 1")
-	strength_change.set_text("+ " + str(str_add)) # increase the available stat points on the str label
-	if str_add == 0:
-		strength_minus.disabled = true # if the change value is = 0, lock the minus button
-		strength_change.set_text(" ") # update the change label
-	else:
+
+	if str_add > 0:
+		strength_change.set_text("+ " + str(str_add)) # increase the available stat points on the str label
 		str_add -= 1 # Decrease the stat in code
 		available_points += 1 # increase the available stat points in code
 		strength_plus.disabled = false
 		stat_points_label.set_text(str(available_points)) # set the avaiable stat points on the stat points label
-	
+	#else:
+	#	strength_minus.disabled = true # if the change value is = 0, lock the minus button
+	#	strength_change.set_text(" ") # update the change label
+	if str_add == 0:
+		strength_change.set_text(" ") # update the change label
+		strength_minus.disabled = true # if the change value is = 0, lock the minus button
 
 
 func _on_vitality_minus_pressed():
 	print("Vitality - 1")
-
+	vitality_change.set_text("+ " + str(vit_add)) # increase the available stat points on the str label
+	if vit_add == 0:
+		vitality_minus.disabled = true # if the change value is = 0, lock the minus button
+		vitality_change.set_text(" ") # update the change label
+	else:
+		vit_add -= 1 # Decrease the stat in code
+		available_points += 1 # increase the available stat points in code
+		vitality_plus.disabled = false
+		stat_points_label.set_text(str(available_points)) # set the avaiable stat points on the stat points label
+	
 
 func _on_dexterity_minus_pressed():
 	print("Dexterity - 1")
