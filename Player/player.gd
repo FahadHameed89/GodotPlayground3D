@@ -3,11 +3,11 @@ extends CharacterBody3D
 # HP, MP, SP variables
 @export var max_health = 100 
 @export var current_health = 5
-@export var health_regen = 1
+@export var health_regen = 0
 
 @export var max_mana = 100
 @export var current_mana = 50
-@export var mana_regen = 1
+@export var mana_regen = 0
 
 @export var max_stamina = 100
 @export var current_stamina = 50

@@ -655,7 +655,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = SubResource("FontVariation_di7g1")
 theme_override_font_sizes/font_size = 24
-text = "Charisma
+text = "Coolness
 "
 
 [node name="CharismaChange" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/MainStats/Charisma/StatsBackground/Stats" groups=["ChangeLabels"]]

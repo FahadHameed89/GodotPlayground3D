@@ -92,6 +92,7 @@ var cha_add = 0
 
 
 func _ready():
+	CalculateDerivedStats()
 	LoadStats()
 	available_points = player.stat_points
 	stat_points_label.set_text(str(available_points))
@@ -126,38 +127,32 @@ func LoadStats():
 	max_sp_value.set_text(str(player_stamina_value))
 	player_stamina_regen_value = player.stamina_regen
 	sp_regen_value.set_text(str(player_stamina_regen_value))
-	
 	player_physical_attack_value = player.physical_attack
 	physical_attack_value.set_text(str(player_physical_attack_value))
-	
 	player_physical_defense_value = player.physical_defense
 	physical_defense_value.set_text(str(player_physical_defense_value))
-	
 	player_critical_chance_value = player.critical_chance
 	critical_value.set_text(str(player_critical_chance_value))
-	
 	player_evasion_chance_value = player.evasion_chance
 	evasion_value.set_text(str(player_evasion_chance_value))
-	
 	player_action_speed_value = player.action_speed
 	action_speed_value.set_text(str(player_action_speed_value))
-	
 	player_magic_attack_value = player.magic_attack
 	magic_attack_value.set_text(str(player_magic_attack_value))
-	
 	player_magic_defense_value = player.magic_defense
 	magic_defense_value.set_text(str(player_magic_defense_value))
-	
 	player_minion_power_value = player.minion_power
 	minion_power_value.set_text(str(player_minion_power_value))
-	
 	player_effect_duration_value = player.effect_duration
 	effect_duration_value.set_text(str(player_effect_duration_value))
-	
 	player_cast_speed_value = player.cast_speed
 	cast_speed_value.set_text(str(player_cast_speed_value))
 
 func CalculateDerivedStats():
+	player.max_health = (player.vitality * 15) + (player.strength * 5)
+	player.max_mana = (player.spirit * 3) + (player.charisma * 1)
+	player.max_stamina = 100 + (player.agility * 2) + (player.dexterity * 1)
+
 	player.physical_attack = (player.strength * 2) + (player.dexterity * 1)
 	player.physical_defense = (player.vitality * 2) + (player.strength * 1) 
 	player.critical_chance = (player.dexterity * 1/4) + (player.strength * 1/5)
