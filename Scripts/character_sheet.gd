@@ -93,7 +93,8 @@ func LoadStats():
 	charisma_value.set_text(str(player_charisma_value))
 	player_health_value = player.max_health
 	max_hp_value.set_text(str(player_health_value))
-	
+	player_health_regen_value = player.health_regen
+	hp_regen_value.set_text(str(player_health_regen_value))
 
 func _on_strength_plus_pressed():
 	print("Strength + 1")
