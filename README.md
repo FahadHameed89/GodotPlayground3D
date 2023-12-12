@@ -67,7 +67,7 @@ Lots of what you see in this project is derived from the following sources, chec
 - https://www.youtube.com/@abradotcs (Rotate and Throw Mechanics)
 - https://www.youtube.com/@DevLogLogan (Inventory Mechanics)
 - https://www.youtube.com/@GameDevelopmentCenter (User Interface and RPG Mechanics) 
-
+- https://godotshaders.com/shader/stylized-sky/ (Sky shader)
 # Addons Used
 https://godotengine.org/asset-library/asset/2337 (Grappling Hook 3D)
 https://github.com/blackears/cyclopsLevelBuilder (Cyclops Level Builder)
