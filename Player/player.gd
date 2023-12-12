@@ -98,7 +98,7 @@ var pull_force = 4 # Adjust this to pull objects with more force
 var rotation_force = 0.25 # Force of object rotation
 var locked = false # Prevents player LOOKING around when rotating object
 var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc.
-var throw_force = 3.5 #How much force is applied when throwing the object 
+var throw_force = 10 #How much force is applied when throwing the object 
 
 
 # Player Speed Variables
@@ -253,7 +253,11 @@ func _input(event):
 	if Input.is_action_just_pressed("throw_object"):
 		if picked_object != null:
 			var throw_direction = picked_object.global_position - global_position
-			picked_object.apply_central_impulse(throw_direction * throw_force)
+			var ray_throw_direction =  -camera_3d.get_global_transform().basis.z
+			picked_object.apply_central_impulse(ray_throw_direction * throw_force)
+			print(throw_direction)
+			print(ray_throw_direction)
+			print(throw_force)
 			remove_object()
 			
 		
