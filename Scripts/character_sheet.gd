@@ -92,7 +92,9 @@ var cha_add = 0
 
 
 func _ready():
-	CalculateDerivedStats()
+	#player.current_health = player.current_health
+	#player.current_mana = player.current_mana
+	#CalculateDerivedStats()
 	LoadStats()
 	available_points = player.stat_points
 	stat_points_label.set_text(str(available_points))
@@ -149,8 +151,7 @@ func LoadStats():
 	cast_speed_value.set_text(str(player_cast_speed_value))
 
 func CalculateDerivedStats():
-	player.current_health = player.current_health
-	player.current_mana = player.current_mana
+
 	player.max_health = (player.vitality * 15) + (player.strength * 5)
 	player.max_mana = (player.spirit * 3) + (player.charisma * 1)
 	player.max_stamina = 100 + (player.agility * 2) + (player.dexterity * 1)
