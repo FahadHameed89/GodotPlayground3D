@@ -253,7 +253,7 @@ func _input(event):
 	if Input.is_action_just_released("rotate_object"):
 		locked = false
 		
-	if Input.is_action_just_pressed("throw_object"):
+	if Input.is_action_just_pressed("throw_object") and is_holding == true:
 		if picked_object != null:
 			var throw_direction = picked_object.global_position - global_position
 			var ray_throw_direction =  -camera_3d.get_global_transform().basis.z
