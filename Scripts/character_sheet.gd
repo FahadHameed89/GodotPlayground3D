@@ -92,8 +92,7 @@ var cha_add = 0
 
 
 func _ready():
-	#player.current_health = player.current_health
-	#player.current_mana = player.current_mana
+
 	#CalculateDerivedStats()
 	LoadStats()
 	available_points = player.stat_points
@@ -165,7 +164,8 @@ func CalculateDerivedStats():
 	player.minion_power = (player.charisma * 2) + (player.spirit * 1)
 	player.effect_duration = (player.charisma * 1/2)
 	player.cast_speed = 100 + (player.dexterity * 1) + (player.spirit * 1/2)
-
+	player.current_health = player.max_health - 1
+	player.current_mana += 1
 func _on_confirm_pressed():
 	if str_add + vit_add + dex_add + agi_add + spr_add + cha_add == 0:
 		print("You confirmed nothing!")
