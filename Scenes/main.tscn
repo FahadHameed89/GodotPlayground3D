@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=51 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
+[ext_resource type="PackedScene" uid="uid://h13e16p2l762" path="res://Objects/Interactable/sm_prop_knife_01.tscn" id="28_ufo35"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -511,7 +512,14 @@ transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, 0, 0, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
 
-[node name="SmPropKnife01" type="MeshInstance3D" parent="."]
+[node name="SM_Prop_Knife_01" parent="." instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0.284899, 5)
+
+[node name="SM_Prop_Knife_02" parent="." instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -1, 0.284899, 5)
+
+[node name="SM_Prop_Knife_03" parent="." instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -2, 0.284899, 5)
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
