@@ -1,8 +1,8 @@
-[gd_scene load_steps=61 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=50 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
-[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="2_5hthv"]
+[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Scenes/player.tscn" id="2_5hthv"]
 [ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="2_qohbf"]
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="3_60uc3"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
@@ -16,8 +16,7 @@
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
 [ext_resource type="Script" path="res://Scenes/FPSMeter.gd" id="11_g6352"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
-[ext_resource type="Shader" path="res://assets/ShaderSky/sky/stylized_sky.gdshader" id="12_oxrcb"]
-[ext_resource type="Texture2D" uid="uid://dvuwb0yce4sb7" path="res://assets/ShaderSky/sky/assets/shooting_star_sampler.png" id="13_mcs81"]
+[ext_resource type="Material" uid="uid://cilgg7vut5j71" path="res://assets/shaders/NightSky.tres" id="12_xyqr6"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
 [ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="16_hi1ld"]
@@ -28,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
-[ext_resource type="PackedScene" uid="uid://cn4rh33t3wkyi" path="res://imports/CityBlock/block1.gltf" id="28_cgmcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -58,66 +56,8 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="Gradient" id="Gradient_t8xr1"]
-offsets = PackedFloat32Array(0.58, 0.6)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_a0v4f"]
-gradient = SubResource("Gradient_t8xr1")
-width = 128
-height = 128
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-metadata/_snap_enabled = true
-
-[sub_resource type="Curve" id="Curve_qyfn5"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0620155, 0.978947), 0.0, 0.0, 0, 0, Vector2(0.97093, 0.726316), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_tsfo4"]
-texture_mode = 1
-curve = SubResource("Curve_qyfn5")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_l3dni"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xqybv"]
-seamless = true
-noise = SubResource("FastNoiseLite_l3dni")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_s4nbg"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0xcrg"]
-seamless = true
-seamless_blend_skirt = 1.0
-noise = SubResource("FastNoiseLite_s4nbg")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv8fv"]
-shader = ExtResource("12_oxrcb")
-shader_parameter/clouds_samples = 32
-shader_parameter/shadow_sample = 4
-shader_parameter/clouds_density = 0.4
-shader_parameter/clouds_scale = 1.0
-shader_parameter/clouds_smoothness = 0.05
-shader_parameter/clouds_light_color = Color(0.227451, 0.447059, 1, 1)
-shader_parameter/clouds_shadow_intensity = 8.0
-shader_parameter/cloud_shape_sampler = SubResource("NoiseTexture2D_0xcrg")
-shader_parameter/cloud_noise_sampler = SubResource("NoiseTexture2D_xqybv")
-shader_parameter/cloud_curves = SubResource("CurveTexture_tsfo4")
-shader_parameter/high_clouds_density = 0.0
-shader_parameter/top_color = Color(0.027451, 0.101961, 0.25098, 1)
-shader_parameter/bottom_color = Color(0.027451, 0.101961, 0.25098, 1)
-shader_parameter/sun_scatter = Color(0.12549, 0.0862745, 0.372549, 1)
-shader_parameter/astro_tint = Color(1, 1, 1, 1)
-shader_parameter/astro_scale = 6.0
-shader_parameter/astro_intensity = 1.2
-shader_parameter/astro_sampler = SubResource("GradientTexture2D_a0v4f")
-shader_parameter/stars_intensity = 5.0
-shader_parameter/shooting_stars_intensity = 4.0
-shader_parameter/shooting_star_tint = Color(1, 0.662745, 0.419608, 1)
-shader_parameter/shooting_star_sampler = ExtResource("13_mcs81")
-
 [sub_resource type="Sky" id="Sky_a3ljo"]
-sky_material = SubResource("ShaderMaterial_kv8fv")
+sky_material = ExtResource("12_xyqr6")
 
 [sub_resource type="Environment" id="Environment_r2xxn"]
 background_mode = 2
@@ -222,7 +162,7 @@ script = ExtResource("1_sgebs")
 
 [node name="player" parent="." instance=ExtResource("2_5hthv")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.503, 2, 4.332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.503, 0.25, 4.332)
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("3_60uc3")
@@ -450,31 +390,31 @@ shadow_enabled = true
 [node name="Interactable" type="Node3D" parent="Objects"]
 
 [node name="B Ball" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
 
 [node name="B Ball2" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 4)
 
 [node name="MetalBox" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.97723, -1.82215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, -1.82215)
 
 [node name="MetalBox2" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.97723, 0.17785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 0.17785)
 
 [node name="MetalBox3" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.97723, 2.17785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 2.17785)
 
 [node name="MetalBox5" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.97723, -1.82215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, -1.82215)
 
 [node name="MetalBox6" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.97723, 0.17785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 0.17785)
 
 [node name="MetalBox7" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.97723, 2.17785)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 2.17785)
 
 [node name="MetalBox4" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.97723, -1.82215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.75, -1.82215)
 
 [node name="Containers" type="Node3D" parent="Objects"]
 
@@ -567,12 +507,11 @@ text = "Some objects are very heavy and cannot be thrown very far... While other
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -90, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
-transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, -2414, -73.898, 0)
+transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, 0, 0, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
 
-[node name="block1" parent="." instance=ExtResource("28_cgmcn")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1341, 5, 69)
+[node name="SmPropKnife01" type="MeshInstance3D" parent="."]
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]

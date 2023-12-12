@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://vaufsje4b4d2"]
 
-[ext_resource type="Script" path="res://Player/player.gd" id="1_fu03a"]
-[ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="2_a6mf4"]
-[ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_jc7wv"]
-[ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_ojf7j"]
-[ext_resource type="Script" path="res://Player/Cursor.gd" id="3_wgfkm"]
-[ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="4_23ffn"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_lm5nn"]
+[ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_fxnaj"]
+[ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_wjycn"]
+[ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="4_0lufx"]
+[ext_resource type="Script" path="res://Player/Cursor.gd" id="5_m8ip6"]
+[ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="6_ucc2o"]
 
 [sub_resource type="Resource" id="Resource_7cf2m"]
-script = ExtResource("3_ojf7j")
+script = ExtResource("3_wjycn")
 slot_datas = Array[Resource("res://inventory/slot_data.gd")]([null, null, null, null, null, null, null, null, null, null])
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8gwa3"]
@@ -123,8 +123,8 @@ material = SubResource("StandardMaterial3D_fwpgf")
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
-script = ExtResource("1_fu03a")
-inventory_data = ExtResource("2_jc7wv")
+script = ExtResource("1_lm5nn")
+inventory_data = ExtResource("2_fxnaj")
 equip_inventory_data = SubResource("Resource_7cf2m")
 max_jumps = 3
 
@@ -196,7 +196,7 @@ transform = Transform3D(1, 0, 0, 0, 1, -1.19209e-06, 0, 0, 1, 0, 0, -0.51307)
 [node name="feet" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="feet"]
-stream = ExtResource("2_a6mf4")
+stream = ExtResource("4_0lufx")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -215,11 +215,11 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 color = Color(1, 0.290196, 0.211765, 1)
-script = ExtResource("3_wgfkm")
+script = ExtResource("5_m8ip6")
 
 [node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body", "hook_source")]
 process_physics_priority = 1
-script = ExtResource("4_23ffn")
+script = ExtResource("6_ucc2o")
 hook_raycast = NodePath("../neck/head/eyes/Camera3D/HookRay")
 player_body = NodePath("..")
 launch_action_name = "launch_hook"
