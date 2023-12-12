@@ -195,7 +195,16 @@ func _input(event):
 			rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
 			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
-	
+
+	if Input.is_action_just_pressed("dev_heal"):
+		heal(10)
+		mp_cost(10)
+
+	if Input.is_action_just_pressed("dev_hurt"):
+		damage(10)
+		mp_heal(5)
+		sp_cost(20)
+
 	if Input.is_action_just_pressed("dev_reset_scene"):
 		get_tree().reload_current_scene()
 	
@@ -413,7 +422,7 @@ func get_drop_position() -> Vector3:
 
 
 func heal(heal_value: int) -> void:
-	if current_health == max_health:
+	if current_health >= max_health:
 		pass
 	elif current_health + heal_value > max_health:
 		current_health = max_health
@@ -431,7 +440,7 @@ func damage(damage_value: int) -> void:
 	elif current_health - damage_value <= 0:
 		current_health = 0
 		print("HP dropped to critical...!")
-	else: 
+	elif current_health >0:
 		current_health -= damage_value
 
 func mp_heal(mp_heal_value: int) -> void:
@@ -528,3 +537,4 @@ func LevelUp():
 	stat_points += 3
 	skill_points += 1
 	experience_required = exp_base + (level*exp_alpha)
+

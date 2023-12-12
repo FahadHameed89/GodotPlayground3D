@@ -37,9 +37,14 @@ func _process(_delta):
 	UpdateHealth()
 
 func UpdateHealth():
+	hp_bar.max_value = player.max_health
 	hp_bar.value = player.current_health
+	mp_bar.max_value = player.max_mana
 	mp_bar.value = player.current_mana
+	sp_bar.max_value = player.max_stamina
 	sp_bar.value = player.current_stamina
+	bravery_bar.max_value = player.max_bravery
 	bravery_bar.value = player.current_bravery
+	fatigue_bar.max_value = player.max_fatigue
 	fatigue_bar.value = player.current_fatigue
 
