@@ -306,9 +306,7 @@ grow_vertical = 0
 layout_mode = 2
 theme_override_constants/outline_size = 0
 theme_override_styles/fill = SubResource("StyleBoxFlat_wo7he")
-max_value = 10.0
-step = 1.0
-value = 5.0
+value = 50.0
 show_percentage = false
 
 [node name="MPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]

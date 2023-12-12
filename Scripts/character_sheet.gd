@@ -54,31 +54,31 @@ var path_main_stats = "HBoxContainer/VBoxContainer/HBoxContainer/MainStats"
 
 
 # Placeholder References to Player varaibles in Player.gd -> these values initialize at 0 and are replaced with player vars in ready and load functions. 
-@export var player_strength_value = 0
-@export var player_vitality_value = 0
-@export var player_dexterity_value = 0
-@export var player_agility_value = 0
-@export var player_spirit_value = 0
-@export var player_charisma_value = 0
+@export var player_strength_value: int
+@export var player_vitality_value: int
+@export var player_dexterity_value: int
+@export var player_agility_value: int
+@export var player_spirit_value: int
+@export var player_charisma_value: int
 
-@export var player_health_value = 0
-@export var player_health_regen_value = 0
-@export var player_mana_value = 0
-@export var player_mana_regen_value = 0
-@export var player_stamina_value = 0
-@export var player_stamina_regen_value = 0
+@export var player_health_value: int
+@export var player_health_regen_value: int
+@export var player_mana_value: int
+@export var player_mana_regen_value: int
+@export var player_stamina_value: int
+@export var player_stamina_regen_value: int
 
-@export var player_physical_attack_value = 0
-@export var player_physical_defense_value = 0
-@export var player_critical_chance_value = 0
-@export var player_evasion_chance_value = 0
-@export var player_action_speed_value = 0
+@export var player_physical_attack_value: int
+@export var player_physical_defense_value: int
+@export var player_critical_chance_value: int
+@export var player_evasion_chance_value: int
+@export var player_action_speed_value: int
 
-@export var player_magic_attack_value = 0
-@export var player_magic_defense_value = 0
-@export var player_minion_power_value = 0
-@export var player_effect_duration_value = 0
-@export var player_cast_speed_value = 0
+@export var player_magic_attack_value: int
+@export var player_magic_defense_value: int
+@export var player_minion_power_value: int
+@export var player_effect_duration_value: int
+@export var player_cast_speed_value: int
 
 @onready var stat_points_label = $HBoxContainer/VBoxContainer/HBoxContainer/MainStats/HBoxContainer/StatPointsLabel
 var available_points = 5
@@ -149,10 +149,11 @@ func LoadStats():
 	cast_speed_value.set_text(str(player_cast_speed_value))
 
 func CalculateDerivedStats():
+	player.current_health = player.current_health
+	player.current_mana = player.current_mana
 	player.max_health = (player.vitality * 15) + (player.strength * 5)
 	player.max_mana = (player.spirit * 3) + (player.charisma * 1)
 	player.max_stamina = 100 + (player.agility * 2) + (player.dexterity * 1)
-
 	player.physical_attack = (player.strength * 2) + (player.dexterity * 1)
 	player.physical_defense = (player.vitality * 2) + (player.strength * 1) 
 	player.critical_chance = (player.dexterity * 1/4) + (player.strength * 1/5)
