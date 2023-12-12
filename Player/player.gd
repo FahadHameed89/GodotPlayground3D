@@ -114,6 +114,7 @@ var sprinting = false
 var crouching = false
 var free_looking = false
 var sliding = false
+var is_holding = false
 
 # Slide Variables
 
@@ -240,11 +241,13 @@ func _input(event):
 	if Input.is_action_just_pressed("grab_object"):
 		if picked_object == null:
 			pick_object()
+			is_holding = true
 		elif picked_object != null:
 			remove_object()
+			is_holding = false
 			
 	# Handle Object Rotation Inputs and lock out camera rotation during object rotation
-	if Input.is_action_pressed("rotate_object"):
+	if Input.is_action_pressed("rotate_object") and is_holding == true:
 		locked = true
 		rotate_object(event)
 	if Input.is_action_just_released("rotate_object"):
