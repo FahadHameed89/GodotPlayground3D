@@ -1,9 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5lw217n3pmxu"]
+[gd_scene load_steps=7 format=3 uid="uid://c5lw217n3pmxu"]
 
 [ext_resource type="PackedScene" uid="uid://j6880u6q7imo" path="res://Scenes/main.tscn" id="1_70btr"]
 [ext_resource type="PackedScene" uid="uid://cn4rh33t3wkyi" path="res://imports/CityBlock/block1.gltf" id="2_115lu"]
+[ext_resource type="Texture2D" uid="uid://631k4hydhy2b" path="res://assets/hdris/kloppenheim_02_puresky_8k.hdr" id="2_ldq57"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_i88ol"]
+panorama = ExtResource("2_ldq57")
+
+[sub_resource type="Sky" id="Sky_122iu"]
+sky_material = SubResource("PanoramaSkyMaterial_i88ol")
+
+[sub_resource type="Environment" id="Environment_57yor"]
+background_mode = 2
+sky = SubResource("Sky_122iu")
+ambient_light_source = 3
+ambient_light_color = Color(0.703808, 0.703808, 0.703808, 1)
+ambient_light_sky_contribution = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1035
+volumetric_fog_albedo = Color(0.184314, 0.184314, 0.184314, 1)
+volumetric_fog_emission_energy = 10.5
+volumetric_fog_gi_inject = 1.62
+adjustment_enabled = true
+adjustment_brightness = 0.29
 
 [node name="main" instance=ExtResource("1_70btr")]
 
+[node name="player" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.497, 15.6472, 4.332)
+
+[node name="WorldEnvironment" parent="Lighting" index="0"]
+environment = SubResource("Environment_57yor")
+
+[node name="Water" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -178, 0)
+
 [node name="block1" parent="." index="6" instance=ExtResource("2_115lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.8, -28)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
