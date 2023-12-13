@@ -68,6 +68,8 @@ Lots of what you see in this project is derived from the following sources, chec
 - https://www.youtube.com/@DevLogLogan (Inventory Mechanics)
 - https://www.youtube.com/@GameDevelopmentCenter (User Interface and RPG Mechanics) 
 - https://godotshaders.com/shader/stylized-sky/ (Sky shader)
+
+- https://www.cgtrader.com/free-3d-models/exterior/cityscape/futuristic-city-eevee-blender-cyberpunk-look (City level models)
 # Addons Used
 https://godotengine.org/asset-library/asset/2337 (Grappling Hook 3D)
 https://github.com/blackears/cyclopsLevelBuilder (Cyclops Level Builder)
