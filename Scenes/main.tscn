@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=52 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
 [ext_resource type="Script" path="res://Scenes/FPSMeter.gd" id="11_g6352"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
-[ext_resource type="Material" uid="uid://cilgg7vut5j71" path="res://assets/shaders/NightSky.tres" id="12_xyqr6"]
+[ext_resource type="Texture2D" uid="uid://631k4hydhy2b" path="res://assets/hdris/kloppenheim_02_puresky_8k.hdr" id="12_x0o1y"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
 [ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="16_hi1ld"]
@@ -57,17 +57,19 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[sub_resource type="Sky" id="Sky_a3ljo"]
-sky_material = ExtResource("12_xyqr6")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_i88ol"]
+panorama = ExtResource("12_x0o1y")
 
-[sub_resource type="Environment" id="Environment_r2xxn"]
+[sub_resource type="Sky" id="Sky_122iu"]
+sky_material = SubResource("PanoramaSkyMaterial_i88ol")
+
+[sub_resource type="Environment" id="Environment_31ixv"]
 background_mode = 2
-sky = SubResource("Sky_a3ljo")
-ambient_light_source = 2
-ambient_light_color = Color(0.45098, 0.333333, 0.309804, 1)
-ambient_light_energy = 0.5
-tonemap_mode = 2
-glow_enabled = true
+sky = SubResource("Sky_122iu")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm3cf"]
 atlas = ExtResource("20_j7jjs")
@@ -380,7 +382,7 @@ script = ExtResource("11_g6352")
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource("Environment_r2xxn")
+environment = SubResource("Environment_31ixv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)

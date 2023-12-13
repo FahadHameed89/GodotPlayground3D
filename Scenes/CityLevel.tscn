@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5lw217n3pmxu"]
-
-[ext_resource type="PackedScene" uid="uid://j6880u6q7imo" path="res://Scenes/main.tscn" id="1_70btr"]
-[ext_resource type="PackedScene" uid="uid://cn4rh33t3wkyi" path="res://imports/CityBlock/block1.gltf" id="2_115lu"]
-
-[node name="main" instance=ExtResource("1_70btr")]
-
-[node name="block1" parent="." index="6" instance=ExtResource("2_115lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, -0.8, -28)

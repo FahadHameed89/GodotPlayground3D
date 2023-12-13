@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://1h2122jpu8yq"]
+
+[ext_resource type="Material" uid="uid://cilgg7vut5j71" path="res://assets/shaders/NightSky.tres" id="1_iidmj"]
+
+[sub_resource type="Sky" id="Sky_a3ljo"]
+sky_material = ExtResource("1_iidmj")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_a3ljo")
+ambient_light_source = 2
+ambient_light_color = Color(0.45098, 0.333333, 0.309804, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 2
+glow_enabled = true
