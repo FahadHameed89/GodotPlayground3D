@@ -62,6 +62,7 @@ signal toggle_inventory()
 var inventory_visible = false
 @export var inventory_data: InventoryData
 
+
 # Equipment Variables and Signals
 
 @export var equip_inventory_data: InventoryDataEquip

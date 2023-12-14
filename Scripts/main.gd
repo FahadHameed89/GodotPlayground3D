@@ -6,7 +6,7 @@ const PickUp = preload("res://item/pickup/pickup.tscn")
 @onready var inventory_interface: Control = $UI/InventoryInterface
 @onready var hot_bar_inventory = $UI/HotbarInventory
 
-
+global_events.can_move = false
 
 func _ready() -> void:
 	player.toggle_inventory.connect(toggle_inventory_interface)
