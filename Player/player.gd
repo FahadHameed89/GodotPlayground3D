@@ -174,12 +174,16 @@ func pick_object():
 	if collider != null and collider is RigidBody3D:
 		print("Colliding with a rigid body")
 		picked_object = collider
+		print(picked_object)
 		joint.set_node_b(picked_object.get_path())
+		picked_object.collision_layer = 0
 
 func remove_object():
 	if picked_object != null:
+		picked_object.collision_layer = 1
 		picked_object = null
 		joint.set_node_b(joint.get_path())
+		
 
 func _ready():
 	PlayerManager.player = self
