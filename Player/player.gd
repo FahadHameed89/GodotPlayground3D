@@ -119,7 +119,7 @@ var free_looking = false
 var sliding = false
 var is_holding = false
 var locked = false # Prevents player LOOKING around when rotating object
-var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc.
+var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc. -> This has been disabled EVERYWHERE
 var dialogue_open = false
 
 # Slide Variables
@@ -202,7 +202,7 @@ func _ready():
 
 
 func _input(event):
-	if event is InputEventMouseMotion && !locked:
+	if event is InputEventMouseMotion && !locked && GlobalEvents.can_move == true:
 		#Free Looking Logic
 		if free_looking:
 			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens_h))
@@ -232,10 +232,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not has_node("CharacterSheet"):
 			var character_sheet = load("res://Scenes/character_sheet.tscn").instantiate()
 			add_child(character_sheet)
-			
+			GlobalEvents.can_move = false
 		else:
 			get_node("CharacterSheet").queue_free()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
+			GlobalEvents.can_move = true
 
 
 
@@ -258,11 +259,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			inventory_visible = false
 			locked = false
 			rooted = false
+			GlobalEvents.can_move = true
 		else:
 			toggle_inventory.emit()
 			inventory_visible = true
 			locked = true
 			rooted = false
+			GlobalEvents.can_move = false
 		
 
 	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding():
