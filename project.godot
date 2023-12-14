@@ -18,6 +18,7 @@ run/max_fps=120
 
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
 PlayerManager="*res://Player/player_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -29,7 +30,7 @@ project/assembly_name="3dplayground"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/grappling_hook_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/grappling_hook_3d/plugin.cfg")
 
 [filesystem]
 
