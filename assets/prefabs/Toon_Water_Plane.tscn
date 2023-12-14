@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbvdan1nmn6gn"]
+
+[ext_resource type="Shader" path="res://toon_water.gdshader" id="1_30dyf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_28oi8"]
+render_priority = 0
+shader = ExtResource("1_30dyf")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(10, 10)
+shader_parameter/wave_speed = 1.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6pdxk"]
+material = SubResource("ShaderMaterial_28oi8")
+size = Vector2(20, 20)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_6pdxk")
