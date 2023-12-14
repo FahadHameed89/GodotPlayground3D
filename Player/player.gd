@@ -115,6 +115,7 @@ var crouching = false
 var free_looking = false
 var sliding = false
 var is_holding = false
+var dialogue_open = false
 
 # Slide Variables
 
@@ -189,8 +190,20 @@ func _ready():
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 
+@onready var actionable_ray = $neck/head/eyes/Camera3D/ActionableRay
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("talk"):
+		dialogue_open = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/introduction.dialogue"), "start")
+		return
+
+
+
+
 func _input(event):
-	if event is InputEventMouseMotion && !locked:
+	if event is InputEventMouseMotion && !locked && !dialogue_open:
 		#Free Looking Logic
 		if free_looking:
 			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens_h))
@@ -224,7 +237,8 @@ func _input(event):
 			inventory_visible = true
 			locked = true
 			rooted = false
-	
+		
+
 	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding():
 		if inventory_visible == true:
 			interact()

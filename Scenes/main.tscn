@@ -456,12 +456,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 0.17785)
 [node name="MetalBox3" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 2.17785)
 
-[node name="MetalBox5" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, -1.82215)
-
-[node name="MetalBox6" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 0.17785)
-
 [node name="MetalBox7" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 2.17785)
 

@@ -1,4 +1,4 @@
-~ this_is_a_node_title
+~ start
 
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 Nathan: Here are some choices.
@@ -6,7 +6,7 @@ Nathan: Here are some choices.
 	Nathan: You picked the first one.
 - Second one
 	Nathan: You picked the second one.
-- Start again => this_is_a_node_title
+- Start again => start
 - End the conversation => END
 Nathan: For more information see the online documentation.
 

@@ -173,6 +173,10 @@ target_position = Vector3(0, 0, -30)
 target_position = Vector3(0, 0, -3)
 collision_mask = 4
 
+[node name="ActionableRay" type="RayCast3D" parent="neck/head/eyes/Camera3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 4
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes"]
 libraries = {
 "": SubResource("AnimationLibrary_xsvkv")

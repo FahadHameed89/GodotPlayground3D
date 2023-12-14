@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://x041s2g3ifk3"]
+[gd_scene load_steps=8 format=3 uid="uid://x041s2g3ifk3"]
 
 [ext_resource type="Texture2D" uid="uid://c1c8si8h0do0g" path="res://assets/textures/metal_box.png" id="1_y4qt5"]
+[ext_resource type="PackedScene" uid="uid://de5u11a4855dc" path="res://helpers/actionable.tscn" id="2_mb2fx"]
+[ext_resource type="Resource" uid="uid://dl3a3l5xsujwd" path="res://dialogue/introduction.dialogue" id="3_1nrxu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_afwid"]
 
@@ -11,8 +13,9 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_aia04"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_cykd3"]
+
 [node name="MetalBox" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3845, 3.94854, 2.88378)
 mass = 50.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -21,3 +24,10 @@ shape = SubResource("BoxShape3D_afwid")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_lq8xw")
 mesh = SubResource("BoxMesh_aia04")
+
+[node name="Actionable" parent="." instance=ExtResource("2_mb2fx")]
+dialogue_resource = ExtResource("3_1nrxu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Actionable"]
+transform = Transform3D(2.03, 0, 0, 0, 2.03, 0, 0, 0, 2.03, 0, 0, 0)
+shape = SubResource("SphereShape3D_cykd3")
