@@ -71,6 +71,14 @@ ambient_light_sky_contribution = 0.2
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
+albedo_texture = ExtResource("2_qohbf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
+albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
+metallic = 1.0
+roughness = 0.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm3cf"]
 atlas = ExtResource("20_j7jjs")
 region = Rect2(0, 288, 32, 32)
@@ -134,14 +142,6 @@ script = ExtResource("12_7qsfd")
 item_data = ExtResource("16_hi1ld")
 quantity = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
-albedo_texture = ExtResource("2_qohbf")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
-albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
-metallic = 1.0
-roughness = 0.0
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_811is"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t1ljn"]
@@ -190,14 +190,14 @@ offset_bottom = 50.0
 
 [node name="EquipInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -48.0
-offset_right = 50.0
-offset_bottom = -8.0
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -362.0
+offset_top = 20.0
+offset_right = -322.0
+offset_bottom = 60.0
+grow_horizontal = 0
 
 [node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
 visible = false
@@ -388,78 +388,6 @@ environment = SubResource("Environment_31ixv")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Objects" type="Node3D" parent="."]
-
-[node name="Interactable" type="Node3D" parent="Objects"]
-
-[node name="B Ball" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
-
-[node name="B Ball2" parent="Objects/Interactable" instance=ExtResource("16_fh2lt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 4)
-
-[node name="MetalBox" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, -1.82215)
-
-[node name="MetalBox2" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 0.17785)
-
-[node name="MetalBox3" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 2.17785)
-
-[node name="MetalBox5" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, -1.82215)
-
-[node name="MetalBox6" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 0.17785)
-
-[node name="MetalBox7" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 2.17785)
-
-[node name="MetalBox4" parent="Objects/Interactable" instance=ExtResource("23_g5ho4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.75, -1.82215)
-
-[node name="Containers" type="Node3D" parent="Objects"]
-
-[node name="Chest" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
-transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0.2, 1)
-collision_layer = 5
-collision_mask = 0
-script = ExtResource("17_kxtjv")
-inventory_data = SubResource("Resource_ly2l4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_vn05x")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("ConcavePolygonShape3D_sfb1n")
-
-[node name="Chest2" type="StaticBody3D" parent="Objects/Containers" groups=["external_inventory"]]
-transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
-collision_layer = 5
-collision_mask = 0
-script = ExtResource("17_kxtjv")
-inventory_data = SubResource("Resource_2m7pg")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Containers/Chest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_vn05x")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Containers/Chest2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("ConcavePolygonShape3D_sfb1n")
-
-[node name="Pickups" type="Node3D" parent="Objects"]
-
-[node name="Pickup" parent="Objects/Pickups" instance=ExtResource("14_5kcyl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
-slot_data = SubResource("Resource_enp0p")
-
-[node name="Apple_pickup" parent="Objects/Pickups" instance=ExtResource("17_vg1ko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
-
 [node name="Level" type="Node3D" parent="."]
 
 [node name="Floor" type="CSGBox3D" parent="Level"]
@@ -506,22 +434,94 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7199, 2.10669, 0)
 billboard = 1
 text = "Some objects are very heavy and cannot be thrown very far... While others are very light weight!"
 
-[node name="Water" type="Node3D" parent="."]
+[node name="Objects" type="Node3D" parent="Level"]
+
+[node name="Interactable" type="Node3D" parent="Level/Objects"]
+
+[node name="B Ball" parent="Level/Objects/Interactable" instance=ExtResource("16_fh2lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
+
+[node name="B Ball2" parent="Level/Objects/Interactable" instance=ExtResource("16_fh2lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 4)
+
+[node name="MetalBox" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, -1.82215)
+
+[node name="MetalBox2" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 0.17785)
+
+[node name="MetalBox3" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 2.17785)
+
+[node name="MetalBox5" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, -1.82215)
+
+[node name="MetalBox6" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 0.17785)
+
+[node name="MetalBox7" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 2.17785)
+
+[node name="MetalBox4" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.75, -1.82215)
+
+[node name="SM_Prop_Knife_01" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0.284899, 5)
+
+[node name="SM_Prop_Knife_02" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -1, 0.284899, 5)
+
+[node name="SM_Prop_Knife_03" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -2, 0.284899, 5)
+
+[node name="Containers" type="Node3D" parent="Level/Objects"]
+
+[node name="Chest" type="StaticBody3D" parent="Level/Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0.2, 1)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_ly2l4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
+
+[node name="Chest2" type="StaticBody3D" parent="Level/Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_2m7pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
+
+[node name="Pickups" type="Node3D" parent="Level/Objects"]
+
+[node name="Pickup" parent="Level/Objects/Pickups" instance=ExtResource("14_5kcyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
+slot_data = SubResource("Resource_enp0p")
+
+[node name="Apple_pickup" parent="Level/Objects/Pickups" instance=ExtResource("17_vg1ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
+
+[node name="Water" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -90, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Water"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Water"]
 transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, 0, 0, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
-
-[node name="SM_Prop_Knife_01" parent="." instance=ExtResource("28_ufo35")]
-transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0.284899, 5)
-
-[node name="SM_Prop_Knife_02" parent="." instance=ExtResource("28_ufo35")]
-transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -1, 0.284899, 5)
-
-[node name="SM_Prop_Knife_03" parent="." instance=ExtResource("28_ufo35")]
-transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -2, 0.284899, 5)
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]

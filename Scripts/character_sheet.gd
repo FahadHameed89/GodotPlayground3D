@@ -93,7 +93,7 @@ var cha_add = 0
 
 func _ready():
 
-	#CalculateDerivedStats()
+	CalculateDerivedStats()
 	LoadStats()
 	available_points = player.stat_points
 	stat_points_label.set_text(str(available_points))
