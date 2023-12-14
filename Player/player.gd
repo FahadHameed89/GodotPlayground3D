@@ -470,7 +470,7 @@ func mp_cost(mp_cost_value: int) -> void:
 func MPRegen(delta):
 	current_mana += mana_regen * delta
 	if current_mana > max_mana:
-		current_health = max_health
+		current_mana = max_mana
 
 func sp_heal(sp_heal_value: int) -> void:
 	if current_stamina == max_stamina:
