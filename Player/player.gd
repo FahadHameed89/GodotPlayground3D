@@ -119,7 +119,6 @@ var free_looking = false
 var sliding = false
 var is_holding = false
 var locked = false # Prevents player LOOKING around when rotating object
-var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc. -> This has been disabled EVERYWHERE
 var dialogue_open = false
 
 # Slide Variables
@@ -258,13 +257,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			toggle_inventory.emit()
 			inventory_visible = false
 			locked = false
-			rooted = false
+			
 			GlobalEvents.can_move = true
 		else:
 			toggle_inventory.emit()
 			inventory_visible = true
 			locked = true
-			rooted = false
+			
 			GlobalEvents.can_move = false
 		
 
@@ -273,16 +272,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			interact()
 			inventory_visible = false
 			locked = false
-			rooted = false
+			
+			GlobalEvents.can_move = true
 		else:
 			interact()
 			inventory_visible = true
 			locked = true
-			rooted = false
-	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding() == false:
+			
+			GlobalEvents.can_move = false
+	if hand_ray.is_colliding() == false:
 		inventory_visible = false
 		locked = false
-		rooted = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
+		GlobalEvents.can_move = true
 
 	# Handle Object Pickup 
 	if Input.is_action_just_pressed("grab_object"):
@@ -315,7 +317,7 @@ func _physics_process(delta):
 	FatigueDegen(delta)
 	# Getting movement input
 	var input_dir = Input.get_vector("left", "right", "forward", "backward")
-	if rooted:
+	if GlobalEvents.can_move == false:
 		input_dir = Vector2.ZERO
 	# Handle Movement State
 	
