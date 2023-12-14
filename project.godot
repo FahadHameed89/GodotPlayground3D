@@ -19,6 +19,11 @@ run/max_fps=120
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
 PlayerManager="*res://Player/player_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GlobalEvents="*res://helpers/global_events.gd"
+
+[dialogue_manager]
+
+general/states=["GlobalEvents"]
 
 [display]
 

@@ -217,10 +217,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			actionables[0].action()
-
 			return
-
-		
 
 	if event.is_action_pressed("character_sheet"):
 		if not has_node("CharacterSheet"):

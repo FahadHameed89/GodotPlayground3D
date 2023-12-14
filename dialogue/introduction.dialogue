@@ -1,5 +1,5 @@
 ~ start
-
+do can_move["false"] 
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 Nathan: Here are some choices.
 - First one
@@ -7,7 +7,8 @@ Nathan: Here are some choices.
 - Second one
 	Nathan: You picked the second one.
 - Start again => start
+do can_move["true"] 
 - End the conversation => END
 Nathan: For more information see the online documentation.
-
+do can_move["true"] 
 => END
