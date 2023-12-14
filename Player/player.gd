@@ -192,18 +192,11 @@ func _ready():
 
 @onready var actionable_ray = $neck/head/eyes/Camera3D/ActionableRay
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("talk"):
-		dialogue_open = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/introduction.dialogue"), "start")
-		return
-
 
 
 
 func _input(event):
-	if event is InputEventMouseMotion && !locked && !dialogue_open:
+	if event is InputEventMouseMotion && !locked:
 		#Free Looking Logic
 		if free_looking:
 			neck.rotate_y(deg_to_rad(-event.relative.x * mouse_sens_h))
@@ -213,6 +206,31 @@ func _input(event):
 			rotate_y(deg_to_rad(event.relative.x * -mouse_sens_h))
 			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("talk"):
+		if !dialogue_open:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #Locks mouse during gameplay 
+			dialogue_open = true
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/introduction.dialogue"), "start")
+			return
+		else:
+			dialogue_open = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
+			return
+		
+
+	if event.is_action_pressed("character_sheet"):
+		if not has_node("CharacterSheet"):
+			var character_sheet = load("res://Scenes/character_sheet.tscn").instantiate()
+			add_child(character_sheet)
+			
+		else:
+			get_node("CharacterSheet").queue_free()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
+
+
+
 
 	if Input.is_action_just_pressed("dev_heal"):
 		heal(10)

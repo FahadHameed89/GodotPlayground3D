@@ -1,0 +1,560 @@
+[gd_scene load_steps=52 format=3 uid="uid://j6880u6q7imo"]
+
+[ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
+[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Scenes/player.tscn" id="2_5hthv"]
+[ext_resource type="Texture2D" uid="uid://ci1t4vha7bplt" path="res://assets/textures/dev/grids/Orange/bball.png" id="2_qohbf"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="3_60uc3"]
+[ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="3_mrk2h"]
+[ext_resource type="Script" path="res://inventory/Inventory_Interface.gd" id="4_w80wx"]
+[ext_resource type="PackedScene" uid="uid://b1qoijhjsfreu" path="res://inventory/slot.tscn" id="6_ncy21"]
+[ext_resource type="Texture2D" uid="uid://jbpb1mq0kgsu" path="res://assets/ui/progress-bar-circle.png" id="7_2yekq"]
+[ext_resource type="Texture2D" uid="uid://cn4vbq8333s6h" path="res://assets/ui/progress-bar-frame.png" id="7_pgem7"]
+[ext_resource type="PackedScene" uid="uid://dtif53vi34get" path="res://inventory/hotbar_inventory.tscn" id="9_3ayl4"]
+[ext_resource type="PackedScene" uid="uid://behjvdp0ukhgl" path="res://assets/ui/parchment.tscn" id="9_hvvii"]
+[ext_resource type="Script" path="res://inventory/inventory_data.gd" id="10_qaor6"]
+[ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
+[ext_resource type="Script" path="res://Scenes/FPSMeter.gd" id="11_g6352"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
+[ext_resource type="Texture2D" uid="uid://631k4hydhy2b" path="res://assets/hdris/kloppenheim_02_puresky_8k.hdr" id="12_x0o1y"]
+[ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
+[ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
+[ext_resource type="Resource" uid="uid://d3dv2yymc1j7n" path="res://item/items/banana.tres" id="16_hi1ld"]
+[ext_resource type="Script" path="res://Objects/chest.gd" id="17_kxtjv"]
+[ext_resource type="PackedScene" uid="uid://b81m7lig5p8j8" path="res://item/pickup/apple_pickup.tscn" id="17_vg1ko"]
+[ext_resource type="Script" path="res://item/item_data_consumable.gd" id="19_fjmbf"]
+[ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="20_j7jjs"]
+[ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
+[ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
+[ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
+[ext_resource type="PackedScene" uid="uid://h13e16p2l762" path="res://Objects/Interactable/sm_prop_knife_01.tscn" id="28_ufo35"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
+bg_color = Color(0.776471, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qer0l"]
+bg_color = Color(0.0901961, 0.466667, 0.639216, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48upj"]
+bg_color = Color(0.184314, 0.537255, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c1md"]
+bg_color = Color(0.717647, 0.792157, 0.109804, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_i88ol"]
+panorama = ExtResource("12_x0o1y")
+
+[sub_resource type="Sky" id="Sky_122iu"]
+sky_material = SubResource("PanoramaSkyMaterial_i88ol")
+
+[sub_resource type="Environment" id="Environment_31ixv"]
+background_mode = 2
+sky = SubResource("Sky_122iu")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3c1v"]
+albedo_texture = ExtResource("2_qohbf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47dcr"]
+albedo_color = Color(0.129412, 0.027451, 0.0784314, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm3cf"]
+atlas = ExtResource("20_j7jjs")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="Resource" id="Resource_6mipr"]
+script = ExtResource("19_fjmbf")
+heal_value = 100
+damage_value = 0
+mp_heal_value = 0
+mp_cost_value = 0
+sp_heal_value = 0
+sp_cost_value = 0
+name = "Health Potion"
+description = "Restores 100 HP"
+stackable = true
+texture = SubResource("AtlasTexture_cm3cf")
+
+[sub_resource type="Resource" id="Resource_r0kal"]
+script = ExtResource("12_7qsfd")
+item_data = SubResource("Resource_6mipr")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_alhh0"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("16_hi1ld")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_ly2l4"]
+script = ExtResource("10_qaor6")
+slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_r0kal"), SubResource("Resource_alhh0"), null])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wp7m2"]
+albedo_texture = ExtResource("20_wpgpb")
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_vn05x"]
+lightmap_size_hint = Vector2i(12, 18)
+material = SubResource("StandardMaterial3D_wp7m2")
+uv2_padding = 1.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sfb1n"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Resource" id="Resource_vp653"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("11_2ifp3")
+quantity = 9
+
+[sub_resource type="Resource" id="Resource_gdeum"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("16_hi1ld")
+quantity = 25
+
+[sub_resource type="Resource" id="Resource_2m7pg"]
+script = ExtResource("10_qaor6")
+slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_vp653"), SubResource("Resource_gdeum"), null])
+
+[sub_resource type="Resource" id="Resource_enp0p"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("16_hi1ld")
+quantity = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_811is"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t1ljn"]
+render_priority = 0
+shader = ExtResource("23_yara4")
+shader_parameter/depth_fade_distance = 1.0
+shader_parameter/absorbance = 2.0
+shader_parameter/shallow_color = Color(0.22, 0.66, 1, 1)
+shader_parameter/deep_color = Color(0, 0.25, 0.45, 1)
+shader_parameter/foam_amount = 0.2
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.05
+shader_parameter/wave_scale = 4.0
+shader_parameter/height_scale = 0.15
+shader_parameter/wave_dir1 = Vector2(1, 0)
+shader_parameter/wave_dir2 = Vector2(0, 1)
+shader_parameter/wave_speed = 0.015
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_sgebs")
+
+[node name="player" parent="." instance=ExtResource("2_5hthv")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.503, 0.25, 4.332)
+max_health = 100
+current_health = 50
+health_regen = 0
+max_mana = 100
+current_mana = 50
+mana_regen = 0
+max_stamina = 100
+current_stamina = 50
+stamina_regen = 10
+max_bravery = 1000
+current_bravery = 1000
+bravery_degen = 1
+max_fatigue = 1000
+current_fatigue = 1000
+fatigue_degen = 10
+max_hunger = 3000
+current_hunger = 3000
+hunger_degen = 60
+max_thirst = 2000
+current_thirst = 2000
+thirst_degen = 80
+skill_points = 1
+stat_points = 12
+strength = 8
+vitality = 8
+dexterity = 8
+agility = 8
+spirit = 8
+charisma = 8
+walking_speed = 4.0
+sprinting_speed = 8.0
+crouching_speed = 1.5
+jump_velocity = 7.0
+base_jump_velocity = 7.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_60uc3")
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_w80wx")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="EquipInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -362.0
+offset_top = 10.0
+offset_right = -322.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="ExternalInventory" parent="UI/InventoryInterface" instance=ExtResource("1_qtbst")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GrabbedSlot" parent="UI/InventoryInterface" instance=ExtResource("6_ncy21")]
+visible = false
+modulate = Color(1, 1, 1, 0.498039)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="HotbarInventory" parent="UI" instance=ExtResource("9_3ayl4")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 90.0
+
+[node name="StatBars" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="VitalStats" type="VBoxContainer" parent="UI/StatBars"]
+custom_minimum_size = Vector2(10, 0)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -78.0
+offset_right = 150.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="HPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wo7he")
+value = 50.0
+show_percentage = false
+
+[node name="MPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_qer0l")
+value = 50.0
+show_percentage = false
+
+[node name="SPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_48upj")
+value = 100.0
+show_percentage = false
+
+[node name="RadialMeters" type="HBoxContainer" parent="UI/StatBars/VitalStats"]
+layout_direction = 2
+layout_mode = 2
+
+[node name="BraveryBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_2yekq")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(0.286275, 0.0235294, 0.921569, 1)
+
+[node name="FatigueBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_2yekq")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(0.2, 1, 0.211765, 1)
+
+[node name="HungerBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_2yekq")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(1, 0.356863, 0.243137, 1)
+
+[node name="ThirstBar" type="TextureProgressBar" parent="UI/StatBars/VitalStats/RadialMeters"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+value = 50.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_under = ExtResource("7_2yekq")
+texture_over = ExtResource("7_pgem7")
+texture_progress = ExtResource("7_2yekq")
+tint_under = Color(1, 1, 1, 0.27451)
+tint_progress = Color(0.0196078, 0.105882, 1, 1)
+
+[node name="XPBar" type="ProgressBar" parent="UI/StatBars/VitalStats"]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_5c1md")
+value = 5.0
+show_percentage = false
+
+[node name="GameMenu" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Parchment" parent="UI/GameMenu" instance=ExtResource("9_hvvii")]
+custom_minimum_size = Vector2(100, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 209.0
+offset_top = 117.0
+offset_right = 556.0
+offset_bottom = 317.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/GameMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -341.0
+offset_top = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="UI/GameMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PLACEHOLDER TEXT
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/GameMenu/VBoxContainer"]
+layout_mode = 2
+
+[node name="FPSMeter" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+script = ExtResource("11_g6352")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = SubResource("Environment_31ixv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Level"]
+rotation_edit_mode = 2
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(30, 0.5, 15)
+material = ExtResource("3_mrk2h")
+
+[node name="Backboard" type="CSGBox3D" parent="Level"]
+transform = Transform3D(-2.67821e-07, 1.74219, -3.02368e-07, 0, -7.61535e-08, -6.91738, -6.12702, -7.61535e-08, 1.3217e-14, 14.2362, 3.29269, 0)
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(1.85, 0.2, 1.2)
+material = ExtResource("3_mrk2h")
+
+[node name="Backboard2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(-2.67821e-07, 1.74219, -3.02368e-07, 0, -7.61535e-08, -6.91738, -6.12702, -7.61535e-08, 1.3217e-14, -14.7638, 3.29269, 0)
+material_override = SubResource("StandardMaterial3D_q3c1v")
+use_collision = true
+size = Vector3(1.85, 0.2, 1.2)
+material = ExtResource("3_mrk2h")
+
+[node name="Rim" type="CSGTorus3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 3, 0)
+use_collision = true
+outer_radius = 0.6
+sides = 12
+material = SubResource("StandardMaterial3D_47dcr")
+
+[node name="Label3D" type="Label3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2801, 7.10669, 0)
+billboard = 1
+text = "WASD to Move
+Shift to Run
+Ctrl to Crouch
+Space to (Double) Jump
+Alt to Free Look
+Left Click to Grab and Release Blocks
+R to Rotate grabbed blocks"
+
+[node name="Label3D2" type="Label3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7199, 2.10669, 0)
+billboard = 1
+text = "Some objects are very heavy and cannot be thrown very far... While others are very light weight!"
+
+[node name="Objects" type="Node3D" parent="Level"]
+
+[node name="Interactable" type="Node3D" parent="Level/Objects"]
+
+[node name="B Ball" parent="Level/Objects/Interactable" instance=ExtResource("16_fh2lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
+
+[node name="B Ball2" parent="Level/Objects/Interactable" instance=ExtResource("16_fh2lt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 4)
+
+[node name="MetalBox" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, -1.82215)
+
+[node name="MetalBox2" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 0.17785)
+
+[node name="MetalBox3" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 2.17785)
+
+[node name="MetalBox7" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 2.17785)
+
+[node name="MetalBox4" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.75, -1.82215)
+
+[node name="SM_Prop_Knife_01" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0.284899, 5)
+
+[node name="SM_Prop_Knife_02" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -1, 0.284899, 5)
+
+[node name="SM_Prop_Knife_03" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -2, 0.284899, 5)
+
+[node name="Containers" type="Node3D" parent="Level/Objects"]
+
+[node name="Chest" type="StaticBody3D" parent="Level/Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0.2, 1)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_ly2l4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Objects/Containers/Chest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
+
+[node name="Chest2" type="StaticBody3D" parent="Level/Objects/Containers" groups=["external_inventory"]]
+transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
+collision_layer = 5
+collision_mask = 0
+script = ExtResource("17_kxtjv")
+inventory_data = SubResource("Resource_2m7pg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_vn05x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Objects/Containers/Chest2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConcavePolygonShape3D_sfb1n")
+
+[node name="Pickups" type="Node3D" parent="Level/Objects"]
+
+[node name="Pickup" parent="Level/Objects/Pickups" instance=ExtResource("14_5kcyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
+slot_data = SubResource("Resource_enp0p")
+
+[node name="Apple_pickup" parent="Level/Objects/Pickups" instance=ExtResource("17_vg1ko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
+
+[node name="Water2" type="Node3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -90, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Water2"]
+transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, 0, 0, 0)
+mesh = SubResource("PlaneMesh_811is")
+surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
+
+[connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
+[connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]
+[connection signal="visibility_changed" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_visibility_changed"]
