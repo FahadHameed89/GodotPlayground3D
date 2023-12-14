@@ -1,6 +1,6 @@
 ~ start
 do can_move["false"] 
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue. 
 Nathan: Here are some choices.
 - First one
 	Nathan: You picked the first one.

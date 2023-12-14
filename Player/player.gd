@@ -99,8 +99,7 @@ var inventory_visible = false
 var picked_object 
 var pull_force = 4 # Adjust this to pull objects with more force
 var rotation_force = 0.25 # Force of object rotation
-var locked = false # Prevents player LOOKING around when rotating object
-var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc.
+
 var throw_force = 10 #How much force is applied when throwing the object 
 
 
@@ -118,6 +117,8 @@ var crouching = false
 var free_looking = false
 var sliding = false
 var is_holding = false
+var locked = false # Prevents player LOOKING around when rotating object
+var rooted = false # Prevents player WALKING around when interacting with chests/inventory etc.
 var dialogue_open = false
 
 # Slide Variables
@@ -211,6 +212,13 @@ func _input(event):
 			head.rotate_x(deg_to_rad(event.relative.y * -mouse_sens_v))
 			head.rotation.x = clamp(head.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
+	# Handle Object Rotation Inputs and lock out camera rotation during object rotation
+	if Input.is_action_pressed("rotate_object") and is_holding == true:
+		locked = true
+		rotate_object(event)
+	if Input.is_action_just_released("rotate_object"):
+		locked = false
+
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("talk"):
 		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/introduction.dialogue"), "start")
@@ -281,12 +289,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			remove_object()
 			is_holding = false
 			
-	# Handle Object Rotation Inputs and lock out camera rotation during object rotation
-	if Input.is_action_pressed("rotate_object") and is_holding == true:
-		locked = true
-		rotate_object(event)
-	if Input.is_action_just_released("rotate_object"):
-		locked = false
+
 		
 	if Input.is_action_just_pressed("throw_object") and is_holding == true:
 		if picked_object != null:
