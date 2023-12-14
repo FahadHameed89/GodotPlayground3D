@@ -91,6 +91,9 @@ var inventory_visible = false
 @onready var interaction_ray = $neck/head/eyes/Camera3D/InteractionRay # For interacting with objects that can be picked up and held in hand
 @onready var hand_ray = $neck/head/eyes/Camera3D/HandRay # For opening doors, chests, and things like that. 
 
+# Actionable Finder
+@onready var actionable_finder = $neck/head/eyes/ActionableFinder
+
 # Grab Mechanic Variables
 
 var picked_object 
@@ -190,7 +193,8 @@ func _ready():
 	PlayerManager.player = self
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 
-@onready var actionable_ray = $neck/head/eyes/Camera3D/ActionableRay
+
+
 
 
 
@@ -209,15 +213,13 @@ func _input(event):
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("talk"):
-		if !dialogue_open:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #Locks mouse during gameplay 
-			dialogue_open = true
-			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/introduction.dialogue"), "start")
+		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/introduction.dialogue"), "start")
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+
 			return
-		else:
-			dialogue_open = false
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
-			return
+
 		
 
 	if event.is_action_pressed("character_sheet"):
