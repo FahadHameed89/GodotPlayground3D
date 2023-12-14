@@ -9,8 +9,7 @@ const PickUp = preload("res://item/pickup/pickup.tscn")
 
 func _ready() -> void:
 	print(GlobalEvents.can_move)
-	GlobalEvents.can_move = false
-	print(GlobalEvents.can_move)
+
 	player.toggle_inventory.connect(toggle_inventory_interface)
 	inventory_interface.set_player_inventory_data(player.inventory_data)
 	inventory_interface.set_equip_inventory_data(player.equip_inventory_data)

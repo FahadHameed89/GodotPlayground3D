@@ -23,7 +23,7 @@ GlobalEvents="*res://helpers/global_events.gd"
 
 [dialogue_manager]
 
-general/states=["GlobalEvents"]
+general/states=["GlobalEvents", "PlayerManager"]
 
 [display]
 

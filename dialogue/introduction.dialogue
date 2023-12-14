@@ -1,14 +1,20 @@
 ~ start
-do can_move["false"] 
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue. 
 Nathan: Here are some choices.
+Also, if someone were to ask if you could move, I'd say that were {{get_movement_state()}}
 - First one
 	Nathan: You picked the first one.
 - Second one
 	Nathan: You picked the second one.
 - Start again => start
-do can_move["true"] 
-- End the conversation => END
+
+- End the conversation
+	set GlobalEvents.can_move[true] 
+	I've tried to set t he global events to true here...
+	=> END
 Nathan: For more information see the online documentation.
-do can_move["true"] 
+do move_freed()
+set can_move[true] 
+
+Hmm, what about now??
 => END

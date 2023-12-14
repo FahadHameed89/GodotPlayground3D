@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=53 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://bv1rumgddoqov" path="res://item/items/apple.tres" id="11_2ifp3"]
 [ext_resource type="Script" path="res://Scenes/FPSMeter.gd" id="11_g6352"]
 [ext_resource type="Script" path="res://inventory/slot_data.gd" id="12_7qsfd"]
+[ext_resource type="Script" path="res://Scripts/DebugVariable.gd" id="12_8vq61"]
 [ext_resource type="Texture2D" uid="uid://631k4hydhy2b" path="res://assets/hdris/kloppenheim_02_puresky_8k.hdr" id="12_x0o1y"]
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="14_5kcyl"]
 [ext_resource type="PackedScene" uid="uid://cgg85lnhjj7p5" path="res://Objects/Interactable/b_ball.tscn" id="16_fh2lt"]
@@ -381,6 +382,16 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 script = ExtResource("11_g6352")
+
+[node name="DebugVariable" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 30.0
+offset_bottom = 53.0
+grow_horizontal = 0
+script = ExtResource("12_8vq61")
 
 [node name="Lighting" type="Node3D" parent="."]
 
