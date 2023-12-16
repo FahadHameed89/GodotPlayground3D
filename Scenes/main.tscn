@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=62 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://h13e16p2l762" path="res://Objects/Interactable/sm_prop_knife_01.tscn" id="28_ufo35"]
 [ext_resource type="Resource" uid="uid://c2isev48iphv8" path="res://item/items/herb_2.tres" id="28_y7pta"]
 [ext_resource type="Resource" uid="uid://dal2yluy3em7y" path="res://item/items/health_potion.tres" id="29_5jffp"]
+[ext_resource type="PackedScene" uid="uid://cnyr6xvs0d4xt" path="res://Objects/Platforms/marble.tscn" id="33_ckgmm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -72,6 +73,7 @@ background_mode = 2
 sky = SubResource("Sky_122iu")
 ambient_light_source = 3
 ambient_light_sky_contribution = 0.2
+tonemap_mode = 2
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.03
 
@@ -551,6 +553,12 @@ slot_data = SubResource("Resource_enp0p")
 
 [node name="Apple_pickup" parent="Level/Objects/Pickups" instance=ExtResource("17_vg1ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level/Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+
+[node name="Node3D" parent="Level/Objects" instance=ExtResource("33_ckgmm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="Water2" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -90, 0)

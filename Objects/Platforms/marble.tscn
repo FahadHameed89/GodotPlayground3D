@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnyr6xvs0d4xt"]
+
+[ext_resource type="Texture2D" uid="uid://crxbw3o67kvrc" path="res://imports/Tiles077_1K-JPG/Tiles077_1K-JPG_Color.jpg" id="1_4n3p1"]
+[ext_resource type="Texture2D" uid="uid://cirjsn5ixgkry" path="res://imports/Tiles077_1K-JPG/Tiles077_1K-JPG_NormalGL.jpg" id="2_a7tog"]
+[ext_resource type="Texture2D" uid="uid://dktiwxk3idy7x" path="res://imports/Tiles077_1K-JPG/Tiles077_1K-JPG_Roughness.jpg" id="3_n60qp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmnva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olaf6"]
+albedo_texture = ExtResource("1_4n3p1")
+roughness_texture = ExtResource("3_n60qp")
+normal_enabled = true
+normal_texture = ExtResource("2_a7tog")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4pryu"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_dmnva")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_olaf6")
+mesh = SubResource("BoxMesh_4pryu")
+skeleton = NodePath("../../..")
