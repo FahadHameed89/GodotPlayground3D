@@ -10,6 +10,7 @@ albedo_texture = ExtResource("2_j8v77")
 
 [node name="SM_Prop_Knife_01" instance=ExtResource("1_pjt5b")]
 mass = 0.5
+continuous_cd = true
 
 [node name="Mesh" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_f6wxx")
