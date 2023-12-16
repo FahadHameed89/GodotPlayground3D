@@ -15,6 +15,7 @@ mp_heal_value = 0
 mp_cost_value = 0
 sp_heal_value = 0
 sp_cost_value = 0
+stat_point_value = 0
 name = "Banana"
 description = "A bright  yellow banana. Tasty and nutritious. 
 Restores 1 HP"

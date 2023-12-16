@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=61 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -28,7 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://d2uo6oqd3e3q4" path="res://assets/textures/alex-downham-low-poly-crate-diffuse.jpg" id="20_wpgpb"]
 [ext_resource type="PackedScene" uid="uid://x041s2g3ifk3" path="res://Objects/Interactable/metal_box.tscn" id="23_g5ho4"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="23_yara4"]
+[ext_resource type="Resource" uid="uid://bkq4qbd61wcv5" path="res://item/items/ability_potion.tres" id="27_spwwt"]
 [ext_resource type="PackedScene" uid="uid://h13e16p2l762" path="res://Objects/Interactable/sm_prop_knife_01.tscn" id="28_ufo35"]
+[ext_resource type="Resource" uid="uid://c2isev48iphv8" path="res://item/items/herb_2.tres" id="28_y7pta"]
+[ext_resource type="Resource" uid="uid://dal2yluy3em7y" path="res://item/items/health_potion.tres" id="29_5jffp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -135,9 +138,34 @@ script = ExtResource("12_7qsfd")
 item_data = ExtResource("16_hi1ld")
 quantity = 25
 
+[sub_resource type="Resource" id="Resource_mhq5o"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("27_spwwt")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_thy4w"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("28_y7pta")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_blu8l"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("29_5jffp")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_6fcxr"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("16_hi1ld")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_76s74"]
+script = ExtResource("12_7qsfd")
+item_data = ExtResource("11_2ifp3")
+quantity = 1
+
 [sub_resource type="Resource" id="Resource_2m7pg"]
 script = ExtResource("10_qaor6")
-slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_vp653"), SubResource("Resource_gdeum"), null])
+slot_datas = Array[ExtResource("12_7qsfd")]([SubResource("Resource_vp653"), SubResource("Resource_gdeum"), SubResource("Resource_mhq5o"), SubResource("Resource_thy4w"), SubResource("Resource_blu8l"), SubResource("Resource_6fcxr"), SubResource("Resource_76s74")])
 
 [sub_resource type="Resource" id="Resource_enp0p"]
 script = ExtResource("12_7qsfd")

@@ -15,6 +15,7 @@ mp_heal_value = 15
 mp_cost_value = 0
 sp_heal_value = 0
 sp_cost_value = 0
+stat_point_value = 0
 name = "Red Herb"
 description = "A spicy red herb! "
 stackable = true
