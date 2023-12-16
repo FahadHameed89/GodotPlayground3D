@@ -7,6 +7,7 @@ class_name ItemDataConsumable
 @export var mp_cost_value: int
 @export var sp_heal_value: int
 @export var sp_cost_value: int
+@export var stat_point_value: int
 
 func use(target) -> void:
 	if heal_value != 0:
@@ -22,3 +23,5 @@ func use(target) -> void:
 		target.mp_cost(mp_cost_value)
 	if mp_cost_value != 0:
 		target.sp_cost(sp_cost_value)
+	if stat_point_value != 0:
+		target.stat_point_gain(stat_point_value)
