@@ -260,12 +260,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			locked = false
 			rooted = false
 			GlobalEvents.can_move = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
 		else:
 			toggle_inventory.emit()
 			inventory_visible = true
 			locked = true
 			rooted = false
 			GlobalEvents.can_move = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #Locks mouse during gameplay 
 		
 
 	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding():

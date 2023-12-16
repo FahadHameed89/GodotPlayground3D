@@ -14,9 +14,11 @@ func _input(event):
 			var character_sheet = load("res://Scenes/character_sheet.tscn").instantiate()
 			add_child(character_sheet)
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #Locks mouse during gameplay 
+			GlobalEvents.can_move = false
 		else:
 			get_node("CharacterSheet").queue_free()
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #Locks mouse during gameplay 
+			GlobalEvents.can_move = true
 
 
 # Called when the node enters the scene tree for the first time.
