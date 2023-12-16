@@ -587,3 +587,8 @@ func LevelUp():
 	skill_points += 1
 	experience_required = exp_base + (level*exp_alpha)
 
+func stat_point_gain(stat_point_value: int) -> void:
+	if stat_points >= 999:
+		pass
+	else:
+		stat_points += stat_point_value
