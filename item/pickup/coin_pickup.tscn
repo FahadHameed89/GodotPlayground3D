@@ -1,14 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://ofwkr54kdyqf"]
+[gd_scene load_steps=8 format=3 uid="uid://ofwkr54kdyqf"]
 
 [ext_resource type="PackedScene" uid="uid://da8xorsq8752x" path="res://item/pickup/skull_pickup.tscn" id="1_5ja5j"]
 [ext_resource type="ArrayMesh" uid="uid://bw25x0nti4p8h" path="res://imports/Synty/OBJ/SM_Icon_Coin_01.obj" id="2_0lrok"]
+[ext_resource type="Resource" uid="uid://c2isev48iphv8" path="res://item/items/herb_2.tres" id="2_iudoq"]
+[ext_resource type="Script" path="res://inventory/slot_data.gd" id="3_1jsv4"]
 [ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="3_xo8gy"]
+
+[sub_resource type="Resource" id="Resource_pilk6"]
+script = ExtResource("3_1jsv4")
+item_data = ExtResource("2_iudoq")
+quantity = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lcf2"]
 atlas = ExtResource("3_xo8gy")
 region = Rect2(-64, 256, 32, 32)
 
 [node name="coin_pickup" instance=ExtResource("1_5ja5j")]
+slot_data = SubResource("Resource_pilk6")
 coins_added = 1
 
 [node name="MeshInstance3D" parent="." index="0"]

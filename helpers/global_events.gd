@@ -6,7 +6,7 @@ extends Node
 
 @export var current_gold = 100
 
-func get_movement_state(state):
+func get_movement_state(_state):
 	return can_move
 
 func move_locked():
