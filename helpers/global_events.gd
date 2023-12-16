@@ -4,6 +4,8 @@ extends Node
 
 @export var can_move = true
 
+@export var current_gold = 100
+
 func get_movement_state(state):
 	return can_move
 
