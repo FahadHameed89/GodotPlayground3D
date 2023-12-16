@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 @export var slot_data: SlotData
-@export var coins_added = 1
+@export var coins_added = 0
 @onready var sprite_3d: Sprite3D = $Sprite3D
 var rotation_speed = 2.0
 
