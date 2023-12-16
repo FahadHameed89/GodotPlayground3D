@@ -92,6 +92,7 @@ mp_heal_value = 0
 mp_cost_value = 0
 sp_heal_value = 0
 sp_cost_value = 0
+stat_point_value = 0
 name = "Health Potion"
 description = "Restores 100 HP"
 stackable = true
