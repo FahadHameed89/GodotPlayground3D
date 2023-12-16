@@ -412,7 +412,7 @@ size = Vector3(30, 0.5, 15)
 material = ExtResource("3_mrk2h")
 
 [node name="Backboard" type="CSGBox3D" parent="Level"]
-transform = Transform3D(-2.67821e-07, 1.74219, -3.02368e-07, 0, -7.61535e-08, -6.91738, -6.12702, -7.61535e-08, 1.3217e-14, 14.2362, 3.29269, 0)
+transform = Transform3D(-2.67821e-07, 8.71095, -3.02368e-07, 0, -3.80767e-07, -6.91738, -6.12702, -3.80767e-07, 1.3217e-14, 14.2362, 3.29269, 0)
 material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
 size = Vector3(1.85, 0.2, 1.2)

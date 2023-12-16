@@ -6,14 +6,14 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6wxx"]
 albedo_texture = ExtResource("2_j8v77")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yhpfu"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wkph2"]
 
 [node name="SM_Prop_Knife_01" instance=ExtResource("1_pjt5b")]
-mass = 0.25
+mass = 0.5
 
 [node name="Mesh" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_f6wxx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(0.06, 0, 0, 0, 0.084, 0, 0, 0, 0.753851, 0, -0.0196005, 0.228236)
-shape = SubResource("BoxShape3D_yhpfu")
+transform = Transform3D(0.0789413, 0, 0, 0, -1.74846e-08, -0.2, 0, 0.4, -8.74228e-09, 0, 0, 0.229269)
+shape = SubResource("CapsuleShape3D_wkph2")
