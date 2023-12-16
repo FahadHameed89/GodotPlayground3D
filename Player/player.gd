@@ -270,21 +270,24 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #Locks mouse during gameplay 
 		
 
-	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding():
+	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding() and inventory_visible == false:
 		if inventory_visible == true:
 			interact()
 			inventory_visible = false
 			locked = false
 			rooted = false
+			
 		else:
 			interact()
 			inventory_visible = true
 			locked = true
 			rooted = false
-	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding() == false:
+			
+	if Input.is_action_just_pressed("interact") && hand_ray.is_colliding() == false and inventory_visible == false:
 		inventory_visible = false
 		locked = false
 		rooted = false
+		
 
 	# Handle Object Pickup 
 	if Input.is_action_just_pressed("grab_object"):
