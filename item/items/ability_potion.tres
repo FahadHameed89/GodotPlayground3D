@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="ItemDataConsumable" load_steps=4 format=3 uid="uid://bkq4qbd61wcv5"]
+
+[ext_resource type="Script" path="res://item/item_data_consumable.gd" id="1_ayv6x"]
+[ext_resource type="Texture2D" uid="uid://c6q24ke1efmph" path="res://item/#1 - Transparent Icons.png" id="2_tbuea"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0t56"]
+atlas = ExtResource("2_tbuea")
+region = Rect2(448, 288, 32, 32)
+
+[resource]
+script = ExtResource("1_ayv6x")
+heal_value = 0
+damage_value = 0
+mp_heal_value = 0
+mp_cost_value = 0
+sp_heal_value = 0
+sp_cost_value = 0
+stat_point_value = 5
+name = "Ability Potion"
+description = "Grants 5 stat points when consumed. "
+stackable = true
+texture = SubResource("AtlasTexture_n0t56")
