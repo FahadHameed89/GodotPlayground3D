@@ -5,6 +5,11 @@
  This project uses Godot 4.1.3 (stable). 
  Feel free to use any of the features or code found within, or make suggestions on how to improve the architecture or on features you want to see. 
  
+# Trello
+https://trello.com/b/c6wr1nx6/fps-rpg-game
+
+The trello board has the most updated list of mechanics and progress. 
+
 # How to Install
  1. Download the project files from this repository
  2. Download and Install Godot 4.1.3 (stable) from https://godotengine.org/download/archive/4.1.3-stable/
