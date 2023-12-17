@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://da8xorsq8752x"]
+[gd_scene load_steps=13 format=3 uid="uid://da8xorsq8752x"]
 
 [ext_resource type="PackedScene" uid="uid://e46xstoukamg" path="res://item/pickup/pickup.tscn" id="1_pyllg"]
 [ext_resource type="Texture2D" uid="uid://c7ye54tn708ff" path="res://imports/Synty/Textures/PolygonPrototype_Texture_01.png" id="2_kpujl"]
@@ -14,7 +14,17 @@ item_data = ExtResource("2_s20nb")
 quantity = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_teuxg"]
+albedo_color = Color(0.654902, 0.847059, 0.870588, 1)
 albedo_texture = ExtResource("2_kpujl")
+metallic = 1.0
+roughness = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovjim"]
+albedo_color = Color(0.568627, 0.568627, 0, 1)
+emission_enabled = true
+emission = Color(0.592157, 0.501961, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ix3ko"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w443f"]
 atlas = ExtResource("6_ibe15")
@@ -29,6 +39,11 @@ transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_teuxg")
 mesh = ExtResource("3_3afyl")
 script = ExtResource("6_oq5gh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" index="0"]
+transform = Transform3D(28.0711, 0, 0, 0, 6.20958, 0, 0, 0, 1, 0, 3.67357, 12.4624)
+material_override = SubResource("StandardMaterial3D_ovjim")
+mesh = SubResource("BoxMesh_ix3ko")
 
 [node name="Sprite3D" parent="." index="1"]
 texture = SubResource("AtlasTexture_w443f")
