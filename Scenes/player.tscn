@@ -497,3 +497,5 @@ launch_action_name = "launch_hook"
 retract_action_name = "retract_hook"
 pull_speed = 0.4
 hook_source = NodePath("../righthand/Hookshot/Hook Source")
+
+[connection signal="animation_finished" from="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig/WeaponAnimationPlayer" to="neck/head/eyes/Camera3D/Weapons_Manager" method="_on_weapon_animation_player_animation_finished"]
