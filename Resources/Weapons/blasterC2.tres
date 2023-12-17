@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Weapon_Resource" load_steps=2 format=3 uid="uid://bb87u7b26hue3"]
+
+[ext_resource type="Script" path="res://Scripts/weapon_resource.gd" id="1_q21j3"]
+
+[resource]
+script = ExtResource("1_q21j3")
+Weapon_Name = "blasterC2"
+Activate_Anim = "BlasterC Activate"
+Shoot_Anim = "BlasterC Shoot"
+Reload_Anim = "BlasterC Reload"
+Deactivate_Anim = "BlasterC Deactivate"
+Out_Of_Ammo_Anim = "BlasterC OOA"
+Current_Ammo = 30
+Reserve_Ammo = 30
+Magazine = 30
+Max_Ammo = 300
+Auto_Fire = true

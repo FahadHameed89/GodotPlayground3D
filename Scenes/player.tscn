@@ -1,13 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=31 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_lm5nn"]
 [ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_fxnaj"]
 [ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_wjycn"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="4_0lufx"]
+[ext_resource type="Script" path="res://Scripts/Weapons_Manager.gd" id="4_6lrf8"]
 [ext_resource type="PackedScene" uid="uid://dnp00pwqyfras" path="res://assets/weapon_assets/Kenney_guns/blasterC.glb" id="4_ykk2p"]
 [ext_resource type="PackedScene" uid="uid://i0daalfj6hx0" path="res://assets/weapon_assets/Kenney_guns/blasterI.glb" id="5_gusyo"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="5_m8ip6"]
+[ext_resource type="Resource" uid="uid://b20lpdo1g7tk4" path="res://Resources/Weapons/blasterC.tres" id="5_x7t84"]
 [ext_resource type="PackedScene" uid="uid://cyjllse0krde3" path="res://assets/weapon_assets/Kenney_guns/blasterM.glb" id="6_3xdly"]
+[ext_resource type="Resource" uid="uid://bb87u7b26hue3" path="res://Resources/Weapons/blasterC2.tres" id="6_i1ec2"]
 [ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="6_ucc2o"]
 
 [sub_resource type="Resource" id="Resource_7cf2m"]
@@ -410,6 +413,9 @@ target_position = Vector3(0, 0, -3)
 collision_mask = 4
 
 [node name="Weapons_Manager" type="Node3D" parent="neck/head/eyes/Camera3D"]
+script = ExtResource("4_6lrf8")
+_weapon_resources = Array[Resource("res://Scripts/weapon_resource.gd")]([ExtResource("5_x7t84"), ExtResource("6_i1ec2")])
+Start_Weapons = Array[String](["blasterC", "blasterC2"])
 
 [node name="FPS_Rig" type="Node3D" parent="neck/head/eyes/Camera3D/Weapons_Manager"]
 
@@ -425,6 +431,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 visible = false
 
 [node name="WeaponAnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig"]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_dl1x6")
 }
