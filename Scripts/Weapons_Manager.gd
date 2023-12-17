@@ -24,11 +24,14 @@ func Initialize(_start_weapons: Array):
 		Weapon_List[weapon.Weapon_Name] = weapon
 		
 	for i in _start_weapons:
-		Weapon_Stack.push_back(i) # Add out start weapons
+		Weapon_Stack.push_back(i) # Add starting weapons
+	
+	Current_Weapon = Weapon_List[Weapon_Stack[0]]
+	enter()
 	
 func enter():
 	# When we enter into a weapon state
-	pass
+	weapon_animation_player.queue(Current_Weapon.Activate_Anim)
 	
 	
 func exit():
