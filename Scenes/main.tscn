@@ -599,6 +599,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -3)
 [node name="Coin5" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -4)
 
+[node name="Coin12" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 0)
+
+[node name="Coin13" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -1)
+
+[node name="Coin14" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -2)
+
+[node name="Coin15" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -3)
+
+[node name="Coin16" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -4)
+
+[node name="Coin17" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0)
+
+[node name="Coin18" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -1)
+
+[node name="Coin19" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -2)
+
+[node name="Coin20" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -3)
+
+[node name="Coin21" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -4)
+
 [node name="Coin6" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 
