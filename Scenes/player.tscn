@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=28 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_lm5nn"]
 [ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_fxnaj"]
@@ -21,6 +21,8 @@ height = 1.2
 
 [sub_resource type="Animation" id="Animation_mms83"]
 resource_name = "BlasterC Activate"
+length = 0.4
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -28,7 +30,7 @@ tracks/0/path = NodePath("blasterC:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -1, 0), Vector3(0.3, -0.33, -0.4)]
@@ -40,7 +42,7 @@ tracks/1/path = NodePath("blasterC:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -52,10 +54,10 @@ tracks/2/path = NodePath("blasterC:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 1),
-"transitions": PackedFloat32Array(2.63902, 1),
+"times": PackedFloat32Array(0.1, 0.36, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0)]
+"values": [Vector3(0, 3.14159, 0), Vector3(0.689405, 3.14159, 0), Vector3(0, 3.14159, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_sqaod"]
@@ -205,10 +207,40 @@ tracks/1/keys = {
 "values": [Vector3(0, 3.14159, 0), Vector3(6.28319, 3.14159, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ervs5"]
+resource_name = "BlasterC OOA"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blasterC:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.3, -0.33, -0.4), Vector3(0.3, -0.33, -0.355945), Vector3(0.3, -0.33, -0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("blasterC:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.28319, 3.14159, 0), Vector3(6.28319, 3.14159, 0.174533), Vector3(6.28319, 3.14159, -0.174533), Vector3(6.28319, 3.14159, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dl1x6"]
 _data = {
 "BlasterC Activate": SubResource("Animation_mms83"),
 "BlasterC Deactivate": SubResource("Animation_xqdxa"),
+"BlasterC OOA": SubResource("Animation_ervs5"),
 "BlasterC Reload": SubResource("Animation_n1krv"),
 "BlasterC Shoot": SubResource("Animation_y5yg4"),
 "RESET": SubResource("Animation_sqaod")
