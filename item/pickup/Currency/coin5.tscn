@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://qlpia5vkaxgb"]
+[gd_scene load_steps=5 format=3 uid="uid://brpb6q2gahu4g"]
 
-[ext_resource type="Script" path="res://item/pickup/Currency/coin.gd" id="1_exhq0"]
-[ext_resource type="ArrayMesh" uid="uid://bw25x0nti4p8h" path="res://imports/Synty/OBJ/SM_Icon_Coin_01.obj" id="2_swej7"]
+[ext_resource type="Script" path="res://item/pickup/Currency/coin.gd" id="1_rkba7"]
+[ext_resource type="ArrayMesh" uid="uid://cx2ukbb7lo0i8" path="res://imports/Synty/OBJ/SM_Icon_Coin_02.obj" id="3_x51qv"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ut4r1"]
-albedo_color = Color(0.803922, 0.498039, 0.196078, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa4k7"]
+albedo_color = Color(0.313726, 0.784314, 0.470588, 1)
 metallic = 1.0
+metallic_specular = 0.24
 roughness = 0.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ckyyj"]
@@ -13,12 +14,13 @@ roughness = 0.5
 [node name="Coin" type="RigidBody3D"]
 gravity_scale = 0.0
 lock_rotation = true
-script = ExtResource("1_exhq0")
+script = ExtResource("1_rkba7")
+coins_added = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_ut4r1")
-mesh = ExtResource("2_swej7")
+material_override = SubResource("StandardMaterial3D_oa4k7")
+mesh = ExtResource("3_x51qv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_ckyyj")

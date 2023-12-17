@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=67 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -35,6 +35,8 @@
 [ext_resource type="Resource" uid="uid://dal2yluy3em7y" path="res://item/items/health_potion.tres" id="29_5jffp"]
 [ext_resource type="PackedScene" uid="uid://da8xorsq8752x" path="res://item/pickup/skull_pickup.tscn" id="32_svrhv"]
 [ext_resource type="PackedScene" uid="uid://cnyr6xvs0d4xt" path="res://Objects/Platforms/marble.tscn" id="33_ckgmm"]
+[ext_resource type="PackedScene" uid="uid://brpb6q2gahu4g" path="res://item/pickup/Currency/coin5.tscn" id="35_lj7im"]
+[ext_resource type="PackedScene" uid="uid://bu0wk5nkwk20l" path="res://item/pickup/Currency/coin100.tscn" id="36_xpb5w"]
 [ext_resource type="PackedScene" uid="uid://qlpia5vkaxgb" path="res://item/pickup/Currency/coin.tscn" id="36_ypkjl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
@@ -583,7 +585,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 13, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 0)
 
 [node name="Coin" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 0)
+
+[node name="Coin2" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -1)
+
+[node name="Coin3" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -2)
+
+[node name="Coin4" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -3)
+
+[node name="Coin5" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -4)
+
+[node name="Coin6" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="Coin7" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 0)
+
+[node name="Coin8" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 0)
+
+[node name="Coin9" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
+
+[node name="Coin10" parent="Level/Objects/Pickups" instance=ExtResource("36_xpb5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+
+[node name="Coin11" parent="Level/Objects/Pickups" instance=ExtResource("36_xpb5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level/Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
