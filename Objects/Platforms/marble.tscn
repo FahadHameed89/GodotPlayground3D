@@ -13,16 +13,20 @@ normal_enabled = true
 normal_texture = ExtResource("2_a7tog")
 uv1_triplanar = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_4pryu"]
+[sub_resource type="BoxMesh" id="BoxMesh_ceagp"]
+flip_faces = true
 
 [node name="Node3D" type="Node3D"]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mass = 10.0
+gravity_scale = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("BoxShape3D_dmnva")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
 material_override = SubResource("StandardMaterial3D_olaf6")
-mesh = SubResource("BoxMesh_4pryu")
+mesh = SubResource("BoxMesh_ceagp")
 skeleton = NodePath("../../..")
