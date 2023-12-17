@@ -16,6 +16,7 @@ atlas = ExtResource("3_xo8gy")
 region = Rect2(-64, 256, 32, 32)
 
 [node name="coin_pickup" instance=ExtResource("1_5ja5j")]
+collision_mask = 2
 slot_data = SubResource("Resource_pilk6")
 coins_added = 1
 

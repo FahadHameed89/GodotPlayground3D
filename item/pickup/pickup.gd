@@ -6,10 +6,8 @@ extends RigidBody3D
 var rotation_speed = 2.0
 
 func _ready() -> void:
-	if sprite_3d.texture:
 		sprite_3d.texture = slot_data.item_data.texture
-	else:
-		pass
+
 func _physics_process(delta: float) -> void:
 	sprite_3d.rotate_y(delta * rotation_speed)
 
