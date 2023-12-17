@@ -1,5 +1,9 @@
 extends Node3D
 
+signal Weapon_Changed
+signal Update_Ammo
+signal Update_Weapon_Stack
+
 @onready var weapon_animation_player = get_node("%WeaponAnimationPlayer")
 
 var Current_Weapon = null
@@ -42,11 +46,14 @@ func Initialize(_start_weapons: Array):
 		Weapon_Stack.push_back(i) # Add starting weapons
 	
 	Current_Weapon = Weapon_List[Weapon_Stack[0]]
+	emit_signal("Update_Weapon_Stack", Weapon_Stack)
 	enter()
 	
 func enter():
 	# When we enter into a weapon state
 	weapon_animation_player.queue(Current_Weapon.Activate_Anim)
+	emit_signal("Weapon_Changed", Current_Weapon.Weapon_Name)
+	emit_signal("Update_Ammo", [Current_Weapon.Current_Ammo, Current_Weapon.Reserve_Ammo])
 	
 	
 func exit(_next_weapon: String):

@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=32 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_lm5nn"]
 [ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_fxnaj"]
 [ext_resource type="Script" path="res://inventory/inventory_data_equip.gd" id="3_wjycn"]
 [ext_resource type="AudioStream" uid="uid://cm2qh6rnenp8l" path="res://assets/audio/footsteps/Steps_floor-002.ogg" id="4_0lufx"]
 [ext_resource type="Script" path="res://Scripts/Weapons_Manager.gd" id="4_6lrf8"]
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="4_vi8af"]
 [ext_resource type="PackedScene" uid="uid://dnp00pwqyfras" path="res://assets/weapon_assets/Kenney_guns/blasterC.glb" id="4_ykk2p"]
 [ext_resource type="PackedScene" uid="uid://i0daalfj6hx0" path="res://assets/weapon_assets/Kenney_guns/blasterI.glb" id="5_gusyo"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="5_m8ip6"]
@@ -363,6 +364,69 @@ inventory_data = ExtResource("2_fxnaj")
 equip_inventory_data = SubResource("Resource_7cf2m")
 max_jumps = 3
 
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_vi8af")
+
+[node name="Cursor" type="ColorRect" parent="HUD"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.5
+offset_top = -1.5
+offset_right = 1.5
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+color = Color(1, 0.290196, 0.211765, 1)
+script = ExtResource("5_m8ip6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -86.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Current Weapon:"
+
+[node name="CurrentWeapon" type="Label" parent="HUD/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Ammo:
+"
+
+[node name="CurrentAmmo" type="Label" parent="HUD/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HUD/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HUD/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Weapon Stack: 
+"
+
+[node name="WeaponStack" type="Label" parent="HUD/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
 [node name="standing_collision_shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_8gwa3")
@@ -469,25 +533,6 @@ transform = Transform3D(1, 0, 0, 0, 1, -1.19209e-06, 0, 0, 1, 0, 0, -0.51307)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="feet"]
 stream = ExtResource("4_0lufx")
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="Cursor" type="ColorRect" parent="HUD"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1.5
-offset_top = -1.5
-offset_right = 1.5
-offset_bottom = 1.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-color = Color(1, 0.290196, 0.211765, 1)
-script = ExtResource("5_m8ip6")
-
 [node name="HookController" type="Node" parent="." node_paths=PackedStringArray("hook_raycast", "player_body", "hook_source")]
 process_physics_priority = 1
 script = ExtResource("6_ucc2o")
@@ -498,4 +543,7 @@ retract_action_name = "retract_hook"
 pull_speed = 0.4
 hook_source = NodePath("../righthand/Hookshot/Hook Source")
 
+[connection signal="Update_Ammo" from="neck/head/eyes/Camera3D/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_ammo"]
+[connection signal="Update_Weapon_Stack" from="neck/head/eyes/Camera3D/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_weapon_stack"]
+[connection signal="Weapon_Changed" from="neck/head/eyes/Camera3D/Weapons_Manager" to="HUD" method="_on_weapons_manager_weapon_changed"]
 [connection signal="animation_finished" from="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig/WeaponAnimationPlayer" to="neck/head/eyes/Camera3D/Weapons_Manager" method="_on_weapon_animation_player_animation_finished"]
