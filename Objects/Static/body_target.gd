@@ -1,6 +1,6 @@
-extends RigidBody3D
+extends StaticBody3D
 
-var Health = 100
+var Health = 1
 
 func Hit_Successful(Damage, _Direction:= Vector3.ZERO, _Position:= Vector3.ZERO):
 
@@ -11,5 +11,3 @@ func Hit_Successful(Damage, _Direction:= Vector3.ZERO, _Position:= Vector3.ZERO)
 	if Health <= 0:
 		queue_free()
 
-	if _Direction != Vector3.ZERO:
-		apply_impulse((_Direction*Damage),Hit_Position)

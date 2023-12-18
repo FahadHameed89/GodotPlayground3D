@@ -1,21 +1,32 @@
 [remap]
 
-importer="wavefront_obj"
+importer="scene"
 importer_version=1
-type="Mesh"
+type="PackedScene"
 uid="uid://cstj3xb74xf08"
-path="res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh"
+path="res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.scn"
 
 [deps]
 
-files=["res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh"]
-
 source_file="res://imports/Synty/OBJ/SM_Prop_Target_01.obj"
-dest_files=["res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh", "res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.mesh"]
+dest_files=["res://.godot/imported/SM_Prop_Target_01.obj-b29cd37711e1eae0f25f93bfc9f6450a.scn"]
 
 [params]
 
-generate_tangents=true
-scale_mesh=Vector3(1, 1, 1)
-offset_mesh=Vector3(0, 0, 0)
-optimize_mesh=true
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={}
+gltf/embedded_image_handling=2

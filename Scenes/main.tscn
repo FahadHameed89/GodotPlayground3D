@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=68 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0wk5nkwk20l" path="res://item/pickup/Currency/coin100.tscn" id="36_xpb5w"]
 [ext_resource type="PackedScene" uid="uid://qlpia5vkaxgb" path="res://item/pickup/Currency/coin.tscn" id="36_ypkjl"]
 [ext_resource type="PackedScene" uid="uid://b4uho0078l2m2" path="res://item/pickup/Currency/coin10.tscn" id="37_1p4ht"]
+[ext_resource type="PackedScene" uid="uid://btpxdcwaxfp46" path="res://Objects/Static/body_target.tscn" id="40_1a53v"]
 [ext_resource type="PackedScene" uid="uid://c4vl1hlri74e1" path="res://imports/GLBs/FOREST_5.glb" id="40_y6frs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
@@ -684,6 +685,62 @@ visible = false
 transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, 0, 0, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
+
+[node name="StaticTargets" type="Node3D" parent="Level"]
+
+[node name="BodyTarget" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 0)
+
+[node name="BodyTarget2" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 1)
+
+[node name="BodyTarget3" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 2)
+
+[node name="BodyTarget4" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 3)
+
+[node name="BodyTarget5" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 4)
+
+[node name="BodyTarget6" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 5)
+
+[node name="BodyTarget7" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 0)
+
+[node name="BodyTarget8" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 1)
+
+[node name="BodyTarget9" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 2)
+
+[node name="BodyTarget10" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 3)
+
+[node name="BodyTarget11" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 4)
+
+[node name="BodyTarget12" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 5)
+
+[node name="BodyTarget13" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 0)
+
+[node name="BodyTarget14" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 1)
+
+[node name="BodyTarget15" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 2)
+
+[node name="BodyTarget16" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 3)
+
+[node name="BodyTarget17" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 4)
+
+[node name="BodyTarget18" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 5)
 
 [node name="FOREST_5" parent="." instance=ExtResource("40_y6frs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
