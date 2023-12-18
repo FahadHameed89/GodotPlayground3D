@@ -7,6 +7,8 @@ signal Update_Weapon_Stack
 @onready var weapon_animation_player = get_node("%WeaponAnimationPlayer")
 @onready var bullet_point = get_node("%Bullet_Point")
 
+var Debug_Bullet = preload("res://Resources/debug/bullet_debug.tscn")
+
 var Current_Weapon = null
 
 var Weapon_Stack = [] # An array of weapons currently held by the player
@@ -134,6 +136,10 @@ func Hit_Scan_Collision(Collision_Point):
 	var Bullet_Collision = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
 	
 	if Bullet_Collision:
+		var Hit_Indicator = Debug_Bullet.instantiate()
+		var world = get_tree().get_root().get_child(0) # This makes the hit indicators spawn in the first child of the scene (the global autoload)
+		world.add_child(Hit_Indicator)
+		Hit_Indicator.global_translate(Bullet_Collision.position)
 		Hit_Scan_Damage(Bullet_Collision.collider)
 	
 func Hit_Scan_Damage(Collider):
