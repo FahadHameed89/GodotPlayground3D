@@ -538,6 +538,7 @@ libraries = {
 }
 
 [node name="Bullet_Point" type="Marker3D" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.315, -0.65)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes"]

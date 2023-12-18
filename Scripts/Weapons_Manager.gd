@@ -5,6 +5,7 @@ signal Update_Ammo
 signal Update_Weapon_Stack
 
 @onready var weapon_animation_player = get_node("%WeaponAnimationPlayer")
+@onready var bullet_point = get_node("%Bullet_Point")
 
 var Current_Weapon = null
 
@@ -19,6 +20,8 @@ var Weapon_List = {}
 @export var _weapon_resources: Array[Weapon_Resource]
 
 @export var Start_Weapons: Array[String]
+
+enum {NULL, HITSCAN, PROJECTILE}
 
 func _ready():
 	Initialize(Start_Weapons) # Enter the state machine
@@ -83,6 +86,13 @@ func shoot():
 			weapon_animation_player.play(Current_Weapon.Shoot_Anim)
 			Current_Weapon.Current_Ammo -= 1
 			emit_signal("Update_Ammo", [Current_Weapon.Current_Ammo, Current_Weapon.Reserve_Ammo])
+			match Current_Weapon.Type:
+				NULL:
+					print("Weapon type is NULL!")
+				HITSCAN:
+					pass # Hitscan code
+				PROJECTILE:
+					pass # Projectile code
 
 func reload():
 	if Current_Weapon.Current_Ammo == Current_Weapon.Magazine:
