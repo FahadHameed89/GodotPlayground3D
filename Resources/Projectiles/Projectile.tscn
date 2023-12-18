@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5kem14pk017f"]
+
+[ext_resource type="Script" path="res://Resources/Projectiles/Projectile.gd" id="1_10co1"]
+[ext_resource type="PackedScene" uid="uid://y0cc7ukf4hdf" path="res://Resources/Projectiles/Fireball.tscn" id="1_jnko2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ory3h"]
+
+[node name="Projectile" type="RigidBody3D"]
+transform = Transform3D(0.459839, 0, 0, 0, 0.309074, 0, 0, 0, 0.498082, 0, 0, 0)
+top_level = true
+collision_layer = 4
+collision_mask = 5
+mass = 0.1
+continuous_cd = true
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_10co1")
+
+[node name="Fireball" parent="." instance=ExtResource("1_jnko2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+shape = SubResource("SphereShape3D_ory3h")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
