@@ -143,11 +143,11 @@ func Hit_Scan_Collision(Collision_Point):
 		var world = get_tree().get_root().get_child(0) # This makes the hit indicators spawn in the first child of the scene (the global autoload)
 		world.add_child(Hit_Indicator)
 		Hit_Indicator.global_translate(Bullet_Collision.position)
-		Hit_Scan_Damage(Bullet_Collision.collider)
+		Hit_Scan_Damage(Bullet_Collision.collider, Bullet_Direction, Bullet_Collision.position)
 	
-func Hit_Scan_Damage(Collider):
+func Hit_Scan_Damage(Collider, Direction, Position):
 		if Collider.is_in_group("Target") and Collider.has_method("Hit_Successful"):
-			Collider.Hit_Successful(Current_Weapon.Damage)
+			Collider.Hit_Successful(Current_Weapon.Damage, Direction, Position)
 
 func Launch_Projectile(Point: Vector3):
 	var Direction = (Point - bullet_point.get_global_transform().origin).normalized()
