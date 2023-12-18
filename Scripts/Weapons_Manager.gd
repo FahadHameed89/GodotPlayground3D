@@ -25,6 +25,8 @@ var Weapon_List = {}
 
 enum {NULL, HITSCAN, PROJECTILE}
 
+var Collision_Exclusion = []
+
 func _ready():
 	Initialize(Start_Weapons) # Enter the state machine
 	
@@ -121,6 +123,7 @@ func Get_Camera_Collision()->Vector3:
 	var Ray_End = Ray_Origin + camera.project_ray_normal(viewport/2)*Current_Weapon.Weapon_Range
 	
 	var New_Intersection = PhysicsRayQueryParameters3D.create(Ray_Origin, Ray_End)
+	New_Intersection.set_exclude(Collision_Exclusion)
 	var Intersection = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
 	
 	if not Intersection.is_empty():
@@ -132,7 +135,7 @@ func Get_Camera_Collision()->Vector3:
 func Hit_Scan_Collision(Collision_Point):
 	var Bullet_Direction = (Collision_Point - bullet_point.get_global_transform().origin).normalized()
 	var New_Intersection = PhysicsRayQueryParameters3D.create(bullet_point.get_global_transform().origin,Collision_Point+Bullet_Direction*2)
-	
+	New_Intersection.set_exclude(Collision_Exclusion)
 	var Bullet_Collision = get_world_3d().direct_space_state.intersect_ray(New_Intersection)
 	
 	if Bullet_Collision:
@@ -149,7 +152,15 @@ func Hit_Scan_Damage(Collider):
 func Launch_Projectile(Point: Vector3):
 	var Direction = (Point - bullet_point.get_global_transform().origin).normalized()
 	var Projectile = Current_Weapon.Projectile_To_Load.instantiate()
+	
+	var Projectile_RID = Projectile.get_rid()
+	Collision_Exclusion.push_front(Projectile_RID)
+	Projectile.tree_exited.connect(Remove_Exclusion.bind(Projectile.get_rid()))
 
 	bullet_point.add_child(Projectile)
 	Projectile.Damage = Current_Weapon.Damage # Can modify the damage formula here
 	Projectile.set_linear_velocity(Direction*Current_Weapon.Projectile_Velocity)
+
+func Remove_Exclusion(projectile_rid):
+	Collision_Exclusion.erase(projectile_rid)
+
