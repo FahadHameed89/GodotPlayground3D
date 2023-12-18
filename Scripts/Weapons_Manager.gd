@@ -72,6 +72,10 @@ func Change_Weapon(weapon_name: String):
 func _on_weapon_animation_player_animation_finished(anim_name):
 	if anim_name == Current_Weapon.Deactivate_Anim:
 		Change_Weapon(Next_Weapon)
+		
+	if anim_name == Current_Weapon.Shoot_Anim and Current_Weapon.Auto_Fire == true:
+		if Input.is_action_pressed("shoot"):
+			shoot()
 
 func shoot():
 	if Current_Weapon.Current_Ammo != 0:
