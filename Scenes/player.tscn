@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://vaufsje4b4d2"]
+[gd_scene load_steps=27 format=3 uid="uid://vaufsje4b4d2"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_lm5nn"]
 [ext_resource type="Resource" uid="uid://bmpbkkix1edef" path="res://inventory/starting_inventory_default.tres" id="2_fxnaj"]
@@ -7,10 +7,8 @@
 [ext_resource type="Script" path="res://Scripts/Weapons_Manager.gd" id="4_6lrf8"]
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="4_vi8af"]
 [ext_resource type="PackedScene" uid="uid://dnp00pwqyfras" path="res://assets/weapon_assets/Kenney_guns/blasterC.glb" id="4_ykk2p"]
-[ext_resource type="PackedScene" uid="uid://i0daalfj6hx0" path="res://assets/weapon_assets/Kenney_guns/blasterI.glb" id="5_gusyo"]
 [ext_resource type="Script" path="res://Player/Cursor.gd" id="5_m8ip6"]
 [ext_resource type="Resource" uid="uid://b20lpdo1g7tk4" path="res://Resources/Weapons/blasterC.tres" id="5_x7t84"]
-[ext_resource type="PackedScene" uid="uid://cyjllse0krde3" path="res://assets/weapon_assets/Kenney_guns/blasterM.glb" id="6_3xdly"]
 [ext_resource type="Resource" uid="uid://bb87u7b26hue3" path="res://Resources/Weapons/blasterC2.tres" id="6_i1ec2"]
 [ext_resource type="Script" path="res://addons/grappling_hook_3d/src/hook_controller.gd" id="6_ucc2o"]
 
@@ -22,6 +20,98 @@ slot_datas = Array[Resource("res://inventory/slot_data.gd")]([null, null, null, 
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2picw"]
 height = 1.2
+
+[sub_resource type="Animation" id="Animation_tfg0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_su1cs"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0523599, 0, 0.0349066), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nyre7"]
+resource_name = "landing"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0174533, 0, -0.0174533), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsvkv"]
+_data = {
+"RESET": SubResource("Animation_tfg0l"),
+"jump": SubResource("Animation_su1cs"),
+"landing": SubResource("Animation_nyre7")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yp8la"]
 
 [sub_resource type="Animation" id="Animation_mms83"]
 resource_name = "BlasterC Activate"
@@ -287,113 +377,6 @@ _data = {
 "RESET": SubResource("Animation_sqaod")
 }
 
-[sub_resource type="Animation" id="Animation_tfg0l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_su1cs"]
-resource_name = "jump"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.0523599, 0, 0.0349066), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_nyre7"]
-resource_name = "landing"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.0174533, 0, -0.0174533), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.05, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xsvkv"]
-_data = {
-"RESET": SubResource("Animation_tfg0l"),
-"jump": SubResource("Animation_su1cs"),
-"landing": SubResource("Animation_nyre7")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yp8la"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xjwa5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwpgf"]
-albedo_color = Color(0.0980392, 0.0705882, 0.231373, 1)
-albedo_texture = SubResource("NoiseTexture2D_xjwa5")
-metallic = 0.65
-metallic_specular = 0.39
-roughness = 0.57
-emission_enabled = true
-emission = Color(0.054902, 0.054902, 0.054902, 1)
-emission_energy_multiplier = 0.17
-
-[sub_resource type="BoxMesh" id="BoxMesh_ml6ou"]
-material = SubResource("StandardMaterial3D_fwpgf")
-
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_lm5nn")
@@ -513,34 +496,6 @@ collision_mask = 4
 target_position = Vector3(0, 0, -3)
 collision_mask = 4
 
-[node name="Weapons_Manager" type="Node3D" parent="neck/head/eyes/Camera3D"]
-script = ExtResource("4_6lrf8")
-_weapon_resources = Array[Resource("res://Scripts/weapon_resource.gd")]([ExtResource("5_x7t84"), ExtResource("6_i1ec2")])
-Start_Weapons = Array[String](["blasterC", "blasterC2"])
-
-[node name="FPS_Rig" type="Node3D" parent="neck/head/eyes/Camera3D/Weapons_Manager"]
-
-[node name="blasterC" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig" instance=ExtResource("4_ykk2p")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0)
-
-[node name="blasterI" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig" instance=ExtResource("5_gusyo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-visible = false
-
-[node name="blasterM" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig" instance=ExtResource("6_3xdly")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-visible = false
-
-[node name="WeaponAnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig"]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_dl1x6")
-}
-
-[node name="Bullet_Point" type="Marker3D" parent="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig"]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.315, -0.65)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="neck/head/eyes"]
 libraries = {
 "": SubResource("AnimationLibrary_xsvkv")
@@ -564,10 +519,30 @@ transform = Transform3D(1, 0, 0, 0, 0.925871, -0.377841, 0, 0.377841, 0.925871, 
 
 [node name="Hookshot" type="MeshInstance3D" parent="righthand"]
 transform = Transform3D(0.0451027, 0, 0, 0, 0.0586046, -0.0130937, 0, 0.00125419, 0.611826, -0.0128663, 0.00757194, 0.120996)
-mesh = SubResource("BoxMesh_ml6ou")
 
 [node name="Hook Source" type="Marker3D" parent="righthand/Hookshot"]
 transform = Transform3D(1, 0, 0, 0, 1, -1.19209e-06, 0, 0, 1, 0, 0, -0.51307)
+
+[node name="Weapons_Manager" type="Node3D" parent="righthand"]
+transform = Transform3D(1, 0, 0, 0, 0.92587, 0.377841, 0, -0.377841, 0.92587, -0.5, 0.525587, 0.229266)
+script = ExtResource("4_6lrf8")
+_weapon_resources = Array[Resource("res://Scripts/weapon_resource.gd")]([ExtResource("5_x7t84"), ExtResource("6_i1ec2")])
+Start_Weapons = Array[String](["blasterC", "blasterC2"])
+
+[node name="FPS_Rig" type="Node3D" parent="righthand/Weapons_Manager"]
+
+[node name="blasterC" parent="righthand/Weapons_Manager/FPS_Rig" instance=ExtResource("4_ykk2p")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1, 0)
+
+[node name="WeaponAnimationPlayer" type="AnimationPlayer" parent="righthand/Weapons_Manager/FPS_Rig"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_dl1x6")
+}
+
+[node name="Bullet_Point" type="Marker3D" parent="righthand/Weapons_Manager/FPS_Rig"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.315, -0.65)
 
 [node name="feet" type="Node3D" parent="."]
 
@@ -584,7 +559,7 @@ retract_action_name = "retract_hook"
 pull_speed = 0.4
 hook_source = NodePath("../righthand/Hookshot/Hook Source")
 
-[connection signal="Update_Ammo" from="neck/head/eyes/Camera3D/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_ammo"]
-[connection signal="Update_Weapon_Stack" from="neck/head/eyes/Camera3D/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_weapon_stack"]
-[connection signal="Weapon_Changed" from="neck/head/eyes/Camera3D/Weapons_Manager" to="HUD" method="_on_weapons_manager_weapon_changed"]
-[connection signal="animation_finished" from="neck/head/eyes/Camera3D/Weapons_Manager/FPS_Rig/WeaponAnimationPlayer" to="neck/head/eyes/Camera3D/Weapons_Manager" method="_on_weapon_animation_player_animation_finished"]
+[connection signal="Update_Ammo" from="righthand/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_ammo"]
+[connection signal="Update_Weapon_Stack" from="righthand/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_weapon_stack"]
+[connection signal="Weapon_Changed" from="righthand/Weapons_Manager" to="HUD" method="_on_weapons_manager_weapon_changed"]
+[connection signal="animation_finished" from="righthand/Weapons_Manager/FPS_Rig/WeaponAnimationPlayer" to="righthand/Weapons_Manager" method="_on_weapon_animation_player_animation_finished"]
