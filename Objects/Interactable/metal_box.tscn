@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://x041s2g3ifk3"]
+[gd_scene load_steps=9 format=3 uid="uid://x041s2g3ifk3"]
 
+[ext_resource type="Script" path="res://Objects/physics_target.gd" id="1_xtbfs"]
 [ext_resource type="Texture2D" uid="uid://c1c8si8h0do0g" path="res://assets/textures/metal_box.png" id="1_y4qt5"]
 [ext_resource type="PackedScene" uid="uid://de5u11a4855dc" path="res://helpers/actionable.tscn" id="2_mb2fx"]
 [ext_resource type="Resource" uid="uid://dl3a3l5xsujwd" path="res://dialogue/introduction.dialogue" id="3_1nrxu"]
@@ -15,8 +16,9 @@ uv1_triplanar = true
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_cykd3"]
 
-[node name="MetalBox" type="RigidBody3D"]
+[node name="MetalBox" type="RigidBody3D" groups=["Target"]]
 mass = 50.0
+script = ExtResource("1_xtbfs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_afwid")
