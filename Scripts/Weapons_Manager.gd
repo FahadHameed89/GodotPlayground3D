@@ -85,4 +85,17 @@ func shoot():
 			emit_signal("Update_Ammo", [Current_Weapon.Current_Ammo, Current_Weapon.Reserve_Ammo])
 
 func reload():
-	weapon_animation_player.play(Current_Weapon.Reload_Anim)
+	if Current_Weapon.Current_Ammo == Current_Weapon.Magazine:
+		return
+	elif !weapon_animation_player.is_playing():
+		if Current_Weapon.Reserve_Ammo != 0: # Alternatively, we can check for a global variable if we want to use MP instead of reserve ammo
+			weapon_animation_player.play(Current_Weapon.Reload_Anim)
+			var Reload_Amount = min(Current_Weapon.Magazine - Current_Weapon.Current_Ammo, Current_Weapon.Magazine, Current_Weapon.Reserve_Ammo) # This checks the lowest of the 3 variables here, so using MP we should reference a global MP variable instead of reserve ammo
+
+			Current_Weapon.Current_Ammo = Current_Weapon.Current_Ammo + Reload_Amount
+			Current_Weapon.Reserve_Ammo = Current_Weapon.Reserve_Ammo - Reload_Amount
+			
+			emit_signal("Update_Ammo", [Current_Weapon.Current_Ammo, Current_Weapon.Reserve_Ammo])
+		
+		else: 
+			weapon_animation_player.play(Current_Weapon.Out_Of_Ammo_Anim)
