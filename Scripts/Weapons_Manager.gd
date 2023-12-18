@@ -74,7 +74,11 @@ func _on_weapon_animation_player_animation_finished(anim_name):
 		Change_Weapon(Next_Weapon)
 
 func shoot():
-	weapon_animation_player.play(Current_Weapon.Shoot_Anim)
+	if Current_Weapon.Current_Ammo != 0:
+		if !weapon_animation_player.is_playing(): # Locks fire rate to that of the animation
+			weapon_animation_player.play(Current_Weapon.Shoot_Anim)
+			Current_Weapon.Current_Ammo -= 1
+			emit_signal("Update_Ammo", [Current_Weapon.Current_Ammo, Current_Weapon.Reserve_Ammo])
 
 func reload():
 	weapon_animation_player.play(Current_Weapon.Reload_Anim)
