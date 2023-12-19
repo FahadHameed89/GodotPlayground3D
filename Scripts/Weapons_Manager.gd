@@ -85,7 +85,7 @@ func _on_weapon_animation_player_animation_finished(anim_name):
 			shoot()
 
 func shoot():
-	if Current_Weapon.Current_Ammo != 0:
+	if Current_Weapon.Current_Ammo != 0 and GlobalEvents.can_shoot == true:
 		if !weapon_animation_player.is_playing(): # Locks fire rate to that of the animation
 			weapon_animation_player.play(Current_Weapon.Shoot_Anim)
 			Current_Weapon.Current_Ammo -= 1
