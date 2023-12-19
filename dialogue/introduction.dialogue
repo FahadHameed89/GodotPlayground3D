@@ -9,14 +9,16 @@ Also, if someone were to ask if you could move, I'd say that were {{get_movement
 - Start again => start
 
 - End the conversation
-	set GlobalEvents.can_move[true] 
 	I've tried to set t he global events to true here...
+	set GlobalEvents.can_move[false] 
+	set GlobalEvents.can_shoot[true] 
 	set Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	=> END
 Nathan: For more information see the online documentation.
-do move_freed()
-set can_move[true] 
-set can_shoot[true]
+
+set GlobalEvents.can_move[false] 
+set can_shoot[true] 
+set GlobalEvents.can_shoot[true] 
 set Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 Hmm, what about now??
 => END

@@ -6,5 +6,5 @@ extends Area3D
 func action() -> void:
 
 	GlobalEvents.can_move = false
-
+	GlobalEvents.can_shoot = false
 	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

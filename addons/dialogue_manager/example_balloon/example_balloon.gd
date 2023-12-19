@@ -26,6 +26,7 @@ var dialogue_line: DialogueLine:
 		# The dialogue has finished so close the balloon
 		if not next_dialogue_line:
 			GlobalEvents.can_move = true
+			GlobalEvents.can_shoot = true
 			
 			queue_free()
 			return

@@ -226,7 +226,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var actionables = actionable_finder.get_overlapping_areas()
 		if actionables.size() > 0:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			GlobalEvents.can_shoot = false
+			
 			actionables[0].action()
 			return
 
