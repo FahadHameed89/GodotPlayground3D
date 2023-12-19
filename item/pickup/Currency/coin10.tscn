@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4uho0078l2m2"]
+[gd_scene load_steps=7 format=3 uid="uid://b4uho0078l2m2"]
 
 [ext_resource type="Script" path="res://item/pickup/Currency/coin.gd" id="1_as6vr"]
 [ext_resource type="ArrayMesh" uid="uid://cx2ukbb7lo0i8" path="res://imports/Synty/OBJ/SM_Icon_Coin_02.obj" id="2_m8ymw"]
+[ext_resource type="Shader" path="res://item/pickup/Currency/coin.gdshader" id="2_uwtgh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7hap"]
+render_priority = 0
+shader = ExtResource("2_uwtgh")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/cycle_interval = 1.0
+shader_parameter/shine_speed = 3.0
+shader_parameter/shine_width = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa4k7"]
+next_pass = SubResource("ShaderMaterial_g7hap")
 albedo_color = Color(0.0588235, 0.321569, 0.729412, 1)
 metallic = 1.0
 metallic_specular = 0.24
