@@ -164,3 +164,7 @@ func Launch_Projectile(Point: Vector3):
 func Remove_Exclusion(projectile_rid):
 	Collision_Exclusion.erase(projectile_rid)
 
+
+
+func _on_actionable_finder_body_entered(body):
+	print(body.weapon_name)

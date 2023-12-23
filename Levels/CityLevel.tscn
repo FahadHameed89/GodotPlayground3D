@@ -1,19 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5lw217n3pmxu"]
+[gd_scene load_steps=3 format=3 uid="uid://c5lw217n3pmxu"]
 
 [ext_resource type="PackedScene" uid="uid://j6880u6q7imo" path="res://Scenes/main.tscn" id="1_70btr"]
 [ext_resource type="PackedScene" uid="uid://cn4rh33t3wkyi" path="res://imports/CityBlock/block1.gltf" id="2_115lu"]
-[ext_resource type="Environment" uid="uid://1h2122jpu8yq" path="res://Resources/Skies/NightSky.tres" id="2_twq4w"]
 
 [node name="main" instance=ExtResource("1_70btr")]
 
 [node name="player" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.497, 15.6472, 4.332)
 
-[node name="WorldEnvironment" parent="Lighting" index="0"]
-environment = ExtResource("2_twq4w")
-
-[node name="Water" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -178, 0)
-
-[node name="block1" parent="." index="6" instance=ExtResource("2_115lu")]
+[node name="block1" parent="." index="5" instance=ExtResource("2_115lu")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

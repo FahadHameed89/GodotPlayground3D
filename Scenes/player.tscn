@@ -504,7 +504,7 @@ libraries = {
 [node name="ActionableFinder" type="Area3D" parent="neck/head/eyes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -1.04685)
 collision_layer = 0
-collision_mask = 1024
+collision_mask = 1032
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="neck/head/eyes/ActionableFinder"]
 shape = SubResource("BoxShape3D_yp8la")
@@ -559,6 +559,7 @@ retract_action_name = "retract_hook"
 pull_speed = 0.4
 hook_source = NodePath("../righthand/Hookshot/Hook Source")
 
+[connection signal="body_entered" from="neck/head/eyes/ActionableFinder" to="neck/head/Weapons_Manager" method="_on_actionable_finder_body_entered"]
 [connection signal="Update_Ammo" from="neck/head/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_ammo"]
 [connection signal="Update_Weapon_Stack" from="neck/head/Weapons_Manager" to="HUD" method="_on_weapons_manager_update_weapon_stack"]
 [connection signal="Weapon_Changed" from="neck/head/Weapons_Manager" to="HUD" method="_on_weapons_manager_weapon_changed"]

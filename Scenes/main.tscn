@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=69 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0wk5nkwk20l" path="res://item/pickup/Currency/coin100.tscn" id="36_xpb5w"]
 [ext_resource type="PackedScene" uid="uid://qlpia5vkaxgb" path="res://item/pickup/Currency/coin.tscn" id="36_ypkjl"]
 [ext_resource type="PackedScene" uid="uid://b4uho0078l2m2" path="res://item/pickup/Currency/coin10.tscn" id="37_1p4ht"]
+[ext_resource type="PackedScene" uid="uid://b6wflh5gap0ls" path="res://item/pickup/Weapons/blaster_c_pickup.tscn" id="39_js1d3"]
 [ext_resource type="PackedScene" uid="uid://btpxdcwaxfp46" path="res://Objects/Static/body_target.tscn" id="40_1a53v"]
 [ext_resource type="PackedScene" uid="uid://c4vl1hlri74e1" path="res://imports/GLBs/FOREST_5.glb" id="40_y6frs"]
 
@@ -676,6 +677,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -7)
 
 [node name="Coin34" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -7)
+
+[node name="Weapons" type="Node3D" parent="Level/Objects/Pickups"]
+
+[node name="BlasterC" parent="Level/Objects/Pickups/Weapons" instance=ExtResource("39_js1d3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 2, -3)
 
 [node name="Water2" type="Node3D" parent="Level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -90, 0)
