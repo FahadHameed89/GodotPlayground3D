@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/nodes/cyclops_convex_block.gd" id="2_f3c5t"]
 [ext_resource type="Texture2D" uid="uid://d1nwmgddgyc1s" path="res://assets/hdris/beautiful-shining-stars-night-sky.jpg" id="2_m4snh"]
 [ext_resource type="Script" path="res://addons/cyclops_level_builder/resources/convex_block_data.gd" id="3_w2pvm"]
-[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Player/player.tscn" id="4_72tie"]
+[ext_resource type="PackedScene" uid="uid://vaufsje4b4d2" path="res://Scenes/player.tscn" id="4_72tie"]
 [ext_resource type="Material" uid="uid://4nvn6gr8y1ky" path="res://assets/textures/dev/space-cruiser/space.tres" id="4_tt7wj"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="8_c3spl"]
 
