@@ -34,7 +34,7 @@ grow = true
 offsets = PackedFloat32Array(0, 0.412371, 1)
 colors = PackedColorArray(0.462745, 0, 0, 1, 0.921569, 0.243137, 0.243137, 1, 1, 0.509804, 0.235294, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wcnex"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fpimq"]
 gradient = SubResource("Gradient_r3ov7")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vj7y0"]
@@ -42,16 +42,16 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 particle_flag_align_y = true
 particle_flag_rotate_y = true
-direction = Vector3(0, 1, 0)
+direction = Vector3(0, 0, -1)
 spread = 10.0
-gravity = Vector3(0, 10, 0)
-initial_velocity_min = -5.0
+gravity = Vector3(0, 1, 0)
+initial_velocity_min = -15.0
 angular_velocity_min = -5.0
 damping_min = 1.785
 damping_max = 1.785
 angle_min = -84.0
 angle_max = 308.0
-color_ramp = SubResource("GradientTexture1D_wcnex")
+color_ramp = SubResource("GradientTexture1D_fpimq")
 
 [sub_resource type="QuadMesh" id="QuadMesh_sqvvq"]
 
@@ -61,13 +61,11 @@ color_ramp = SubResource("GradientTexture1D_wcnex")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_fq0s6")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D"]
+[node name="FlameTrail" type="GPUParticles3D" parent="MeshInstance3D"]
 material_override = SubResource("StandardMaterial3D_o87xu")
-amount = 641
+amount = 300
 lifetime = 3.0
 explosiveness = 0.24
-interpolate = false
-fract_delta = false
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_vj7y0")
 draw_pass_1 = SubResource("QuadMesh_sqvvq")

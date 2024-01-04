@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://87xyi586itna"]
+
+[ext_resource type="Texture2D" uid="uid://c1c8si8h0do0g" path="res://assets/textures/metal_box.png" id="1_t8or3"]
+[ext_resource type="Texture2D" uid="uid://bvka11jyxfcpr" path="res://assets/particles/spark_02.png" id="2_0vj5n"]
+[ext_resource type="Texture2D" uid="uid://nogbcmey3nro" path="res://assets/particles/spark_05.png" id="3_tvgrt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rai3j"]
+albedo_texture = ExtResource("1_t8or3")
+metallic = 0.8
+roughness = 0.2
+emission_energy_multiplier = 0.1
+
+[sub_resource type="SphereMesh" id="SphereMesh_ahqh3"]
+material = SubResource("StandardMaterial3D_rai3j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fuvec"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+blend_mode = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("2_0vj5n")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_fqn61"]
+offsets = PackedFloat32Array(0, 0.295533, 0.539519, 1)
+colors = PackedColorArray(0.604138, 0.481657, 0.0922502, 1, 0.0901961, 0.0235294, 0.831373, 1, 0.70425, 0.491843, 0.188799, 1, 0.231373, 0.141176, 0.941176, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j4yn8"]
+gradient = SubResource("Gradient_fqn61")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2lcmw"]
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 0, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -5.8
+radial_accel_min = -97.11
+angle_max = 360.0
+color_ramp = SubResource("GradientTexture1D_j4yn8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_eea68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ubs6"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_tvgrt")
+metallic = 1.0
+roughness = 0.2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g88w1"]
+lifetime_randomness = 0.25
+emission_shape = 1
+emission_sphere_radius = 1.0
+particle_flag_align_y = true
+direction = Vector3(0, 0, 1)
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -5.8
+radial_accel_min = -97.11
+angle_max = 360.0
+color_ramp = SubResource("GradientTexture1D_j4yn8")
+
+[node name="ElecBall" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ahqh3")
+
+[node name="Shocks" type="GPUParticles3D" parent="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_fuvec")
+amount = 80
+process_material = SubResource("ParticleProcessMaterial_2lcmw")
+draw_pass_1 = SubResource("QuadMesh_eea68")
+
+[node name="Spikes" type="GPUParticles3D" parent="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_2ubs6")
+amount = 190
+speed_scale = 0.5
+process_material = SubResource("ParticleProcessMaterial_g88w1")
+draw_pass_1 = SubResource("QuadMesh_eea68")
