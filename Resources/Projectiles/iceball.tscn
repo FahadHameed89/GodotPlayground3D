@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://eywacc5at44s"]
+
+[ext_resource type="Texture2D" uid="uid://wmchhxrcvw4d" path="res://assets/textures/fire_rock.jpg" id="1_e4j0x"]
+[ext_resource type="Texture2D" uid="uid://dh1pvr34sedax" path="res://assets/particles/star_01.png" id="2_ob43m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1bcl"]
+albedo_color = Color(0.101961, 0.184314, 1, 1)
+albedo_texture = ExtResource("1_e4j0x")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxrch"]
+material = SubResource("StandardMaterial3D_l1bcl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qanct"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_ob43m")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_fdvgb"]
+offsets = PackedFloat32Array(0, 0.443299, 1)
+colors = PackedColorArray(0, 0, 0.415686, 1, 0.207843, 0.87451, 0.886275, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gn3by"]
+gradient = SubResource("Gradient_fdvgb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t2qxx"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_gn3by")
+
+[sub_resource type="QuadMesh" id="QuadMesh_i8f68"]
+
+[node name="Iceball" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kxrch")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_qanct")
+amount = 173
+process_material = SubResource("ParticleProcessMaterial_t2qxx")
+draw_pass_1 = SubResource("QuadMesh_i8f68")

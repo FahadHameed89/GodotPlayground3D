@@ -19,6 +19,9 @@ cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_lusrm")
 albedo_texture_force_srgb = true
+emission_enabled = true
+emission = Color(0.537255, 0, 0, 1)
+emission_energy_multiplier = 10.0
 backlight_enabled = true
 backlight = Color(0.745098, 0, 0, 1)
 billboard_mode = 3
@@ -60,7 +63,7 @@ mesh = SubResource("SphereMesh_fq0s6")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="MeshInstance3D"]
 material_override = SubResource("StandardMaterial3D_o87xu")
-amount = 90
+amount = 641
 lifetime = 3.0
 explosiveness = 0.24
 interpolate = false
