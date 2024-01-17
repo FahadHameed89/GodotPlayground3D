@@ -6,11 +6,16 @@
 sky_material = ExtResource("1_iidmj")
 
 [resource]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.0784314, 0.054902, 0.305882, 1)
+background_energy_multiplier = 2.25
 sky = SubResource("Sky_a3ljo")
-sky_rotation = Vector3(3.14159, 0, 0)
 ambient_light_source = 2
 ambient_light_color = Color(0.45098, 0.333333, 0.309804, 1)
 ambient_light_energy = 0.5
-tonemap_mode = 2
+tonemap_mode = 3
 glow_enabled = true
+fog_light_color = Color(0.368627, 0.431373, 0.529412, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.835294, 0.835294, 0.835294, 1)
+volumetric_fog_sky_affect = 0.885

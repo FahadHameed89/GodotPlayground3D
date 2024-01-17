@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://j6880u6q7imo"]
+[gd_scene load_steps=70 format=3 uid="uid://j6880u6q7imo"]
 
 [ext_resource type="PackedScene" uid="uid://b1jucqkcy5i56" path="res://inventory/inventory.tscn" id="1_qtbst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_sgebs"]
@@ -41,7 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://b4uho0078l2m2" path="res://item/pickup/Currency/coin10.tscn" id="37_1p4ht"]
 [ext_resource type="PackedScene" uid="uid://b6wflh5gap0ls" path="res://item/pickup/Weapons/blaster_c_pickup.tscn" id="39_js1d3"]
 [ext_resource type="PackedScene" uid="uid://btpxdcwaxfp46" path="res://Objects/Static/body_target.tscn" id="40_1a53v"]
-[ext_resource type="PackedScene" uid="uid://c4vl1hlri74e1" path="res://imports/GLBs/FOREST_5.glb" id="40_y6frs"]
+[ext_resource type="Texture2D" uid="uid://ien1rsl43rvh" path="res://assets/textures/dev/grids/Orange/texture_05.png" id="42_dyfro"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wo7he"]
 bg_color = Color(0.776471, 0, 0, 1)
@@ -188,6 +188,10 @@ shader_parameter/height_scale = 0.15
 shader_parameter/wave_dir1 = Vector2(1, 0)
 shader_parameter/wave_dir2 = Vector2(0, 1)
 shader_parameter/wave_speed = 0.015
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxjuu"]
+albedo_texture = ExtResource("42_dyfro")
+uv1_triplanar = true
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_sgebs")
@@ -440,37 +444,37 @@ environment = ExtResource("14_icyqs")
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Level" type="Node3D" parent="."]
+[node name="TestLevel" type="Node3D" parent="."]
 
-[node name="Floor" type="CSGBox3D" parent="Level"]
+[node name="Floor" type="CSGBox3D" parent="TestLevel"]
 rotation_edit_mode = 2
 material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
 size = Vector3(30, 0.5, 15)
 material = ExtResource("3_mrk2h")
 
-[node name="Backboard" type="CSGBox3D" parent="Level"]
+[node name="Backboard" type="CSGBox3D" parent="TestLevel"]
 transform = Transform3D(-2.67821e-07, 21.7774, -3.02368e-07, 0, -9.51919e-07, -6.91738, -6.12702, -9.51919e-07, 1.3217e-14, 15.2362, 3.29269, 0)
 material_override = SubResource("StandardMaterial3D_nlqcv")
 use_collision = true
 size = Vector3(1.85, 0.2, 1.2)
 material = ExtResource("3_mrk2h")
 
-[node name="Backboard2" type="CSGBox3D" parent="Level"]
+[node name="Backboard2" type="CSGBox3D" parent="TestLevel"]
 transform = Transform3D(-2.67821e-07, 1.74219, -3.02368e-07, 0, -7.61535e-08, -6.91738, -6.12702, -7.61535e-08, 1.3217e-14, -14.7638, 3.29269, 0)
 material_override = SubResource("StandardMaterial3D_q3c1v")
 use_collision = true
 size = Vector3(1.85, 0.2, 1.2)
 material = ExtResource("3_mrk2h")
 
-[node name="Rim" type="CSGTorus3D" parent="Level"]
+[node name="Rim" type="CSGTorus3D" parent="TestLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.496, 3, 0)
 use_collision = true
 outer_radius = 0.6
 sides = 12
 material = SubResource("StandardMaterial3D_47dcr")
 
-[node name="Label3D" type="Label3D" parent="Level"]
+[node name="Label3D" type="Label3D" parent="TestLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2801, 7.10669, 0)
 billboard = 1
 text = "WASD to Move
@@ -481,275 +485,308 @@ Alt to Free Look
 Left Click to Grab and Release Blocks
 R to Rotate grabbed blocks"
 
-[node name="Label3D2" type="Label3D" parent="Level"]
+[node name="Label3D2" type="Label3D" parent="TestLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7199, 2.10669, 0)
 billboard = 1
 text = "Some objects are very heavy and cannot be thrown very far... While others are very light weight!"
 
-[node name="Objects" type="Node3D" parent="Level"]
+[node name="Objects" type="Node3D" parent="TestLevel"]
 
-[node name="Interactable" type="Node3D" parent="Level/Objects"]
+[node name="Interactable" type="Node3D" parent="TestLevel/Objects"]
 
-[node name="B Ball" parent="Level/Objects/Interactable" instance=ExtResource("16_fh2lt")]
+[node name="B Ball" parent="TestLevel/Objects/Interactable" instance=ExtResource("16_fh2lt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 4)
 
-[node name="B Ball2" parent="Level/Objects/Interactable" instance=ExtResource("16_fh2lt")]
+[node name="B Ball2" parent="TestLevel/Objects/Interactable" instance=ExtResource("16_fh2lt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, 4)
 
-[node name="MetalBox" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+[node name="MetalBox" parent="TestLevel/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, -1.82215)
 
-[node name="MetalBox2" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+[node name="MetalBox2" parent="TestLevel/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 0.17785)
 
-[node name="MetalBox3" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+[node name="MetalBox3" parent="TestLevel/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1252, 7.94312, 2.17785)
 
-[node name="MetalBox7" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+[node name="MetalBox7" parent="TestLevel/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8748, 0.75, 2.17785)
 
-[node name="MetalBox4" parent="Level/Objects/Interactable" instance=ExtResource("23_g5ho4")]
+[node name="MetalBox4" parent="TestLevel/Objects/Interactable" instance=ExtResource("23_g5ho4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1252, 0.75, -1.82215)
 
-[node name="SM_Prop_Knife_01" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+[node name="SM_Prop_Knife_01" parent="TestLevel/Objects/Interactable" instance=ExtResource("28_ufo35")]
 transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0, 0.284899, 5)
 
-[node name="SM_Prop_Knife_02" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+[node name="SM_Prop_Knife_02" parent="TestLevel/Objects/Interactable" instance=ExtResource("28_ufo35")]
 transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -1, 0.284899, 5)
 
-[node name="SM_Prop_Knife_03" parent="Level/Objects/Interactable" instance=ExtResource("28_ufo35")]
+[node name="SM_Prop_Knife_03" parent="TestLevel/Objects/Interactable" instance=ExtResource("28_ufo35")]
 transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, -2, 0.284899, 5)
 
-[node name="Containers" type="Node3D" parent="Level/Objects"]
+[node name="Containers" type="Node3D" parent="TestLevel/Objects"]
 
-[node name="Chest" type="StaticBody3D" parent="Level/Objects/Containers" groups=["external_inventory"]]
+[node name="Chest" type="StaticBody3D" parent="TestLevel/Objects/Containers" groups=["external_inventory"]]
 transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, 0, 0.2, 1)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("17_kxtjv")
 inventory_data = SubResource("Resource_ly2l4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Objects/Containers/Chest"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestLevel/Objects/Containers/Chest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_vn05x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Objects/Containers/Chest"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestLevel/Objects/Containers/Chest"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("ConcavePolygonShape3D_sfb1n")
 
-[node name="Chest2" type="StaticBody3D" parent="Level/Objects/Containers" groups=["external_inventory"]]
+[node name="Chest2" type="StaticBody3D" parent="TestLevel/Objects/Containers" groups=["external_inventory"]]
 transform = Transform3D(0.7796, 0, -0.626277, 0, 1, 0, 0.626277, 0, 0.7796, 6.21283, 0.189826, -4.40419)
 collision_layer = 5
 collision_mask = 0
 script = ExtResource("17_kxtjv")
 inventory_data = SubResource("Resource_2m7pg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Objects/Containers/Chest2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestLevel/Objects/Containers/Chest2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_vn05x")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Objects/Containers/Chest2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestLevel/Objects/Containers/Chest2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("ConcavePolygonShape3D_sfb1n")
 
-[node name="Pickups" type="Node3D" parent="Level/Objects"]
+[node name="Pickups" type="Node3D" parent="TestLevel/Objects"]
 
-[node name="Pickup" parent="Level/Objects/Pickups" instance=ExtResource("14_5kcyl")]
+[node name="Pickup" parent="TestLevel/Objects/Pickups" instance=ExtResource("14_5kcyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254087, 2.5626, -4.31277)
 slot_data = SubResource("Resource_enp0p")
 
-[node name="Apple_pickup" parent="Level/Objects/Pickups" instance=ExtResource("17_vg1ko")]
+[node name="Apple_pickup" parent="TestLevel/Objects/Pickups" instance=ExtResource("17_vg1ko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -3)
 
-[node name="skull_pickup" parent="Level/Objects/Pickups" instance=ExtResource("32_svrhv")]
+[node name="skull_pickup" parent="TestLevel/Objects/Pickups" instance=ExtResource("32_svrhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13, 1)
 
-[node name="skull_pickup2" parent="Level/Objects/Pickups" instance=ExtResource("32_svrhv")]
+[node name="skull_pickup2" parent="TestLevel/Objects/Pickups" instance=ExtResource("32_svrhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 13, 1)
 
-[node name="skull_pickup3" parent="Level/Objects/Pickups" instance=ExtResource("32_svrhv")]
+[node name="skull_pickup3" parent="TestLevel/Objects/Pickups" instance=ExtResource("32_svrhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 13, 1)
 
-[node name="skull_pickup4" parent="Level/Objects/Pickups" instance=ExtResource("32_svrhv")]
+[node name="skull_pickup4" parent="TestLevel/Objects/Pickups" instance=ExtResource("32_svrhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 13, 1)
 
-[node name="skull_pickup5" parent="Level/Objects/Pickups" instance=ExtResource("32_svrhv")]
+[node name="skull_pickup5" parent="TestLevel/Objects/Pickups" instance=ExtResource("32_svrhv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, 0)
 
-[node name="Coin" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -3)
 
-[node name="Coin2" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin2" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -4)
 
-[node name="Coin3" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin3" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -5)
 
-[node name="Coin4" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin4" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -6)
 
-[node name="Coin5" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin5" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -7)
 
-[node name="Coin12" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin12" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -3)
 
-[node name="Coin13" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin13" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -4)
 
-[node name="Coin14" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin14" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
 
-[node name="Coin15" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin15" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -6)
 
-[node name="Coin16" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin16" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -7)
 
-[node name="Coin17" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin17" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3)
 
-[node name="Coin18" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin18" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -4)
 
-[node name="Coin19" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin19" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -5)
 
-[node name="Coin20" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin20" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -6)
 
-[node name="Coin21" parent="Level/Objects/Pickups" instance=ExtResource("36_ypkjl")]
+[node name="Coin21" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_ypkjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -7)
 
-[node name="Coin6" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+[node name="Coin6" parent="TestLevel/Objects/Pickups" instance=ExtResource("35_lj7im")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 
-[node name="Coin7" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+[node name="Coin7" parent="TestLevel/Objects/Pickups" instance=ExtResource("35_lj7im")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 8, 0)
 
-[node name="Coin8" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+[node name="Coin8" parent="TestLevel/Objects/Pickups" instance=ExtResource("35_lj7im")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 8, 0)
 
-[node name="Coin9" parent="Level/Objects/Pickups" instance=ExtResource("35_lj7im")]
+[node name="Coin9" parent="TestLevel/Objects/Pickups" instance=ExtResource("35_lj7im")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8, 0)
 
-[node name="Coin10" parent="Level/Objects/Pickups" instance=ExtResource("36_xpb5w")]
+[node name="Coin10" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_xpb5w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 
-[node name="Coin11" parent="Level/Objects/Pickups" instance=ExtResource("36_xpb5w")]
+[node name="Coin11" parent="TestLevel/Objects/Pickups" instance=ExtResource("36_xpb5w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0)
 
-[node name="Coin22" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin22" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)
 
-[node name="Coin23" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin23" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -7)
 
-[node name="Coin24" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin24" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -7)
 
-[node name="Coin25" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin25" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -7)
 
-[node name="Coin26" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin26" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -7)
 
-[node name="Coin27" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin27" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -7)
 
-[node name="Coin28" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin28" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -7)
 
-[node name="Coin29" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin29" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, -7)
 
-[node name="Coin30" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin30" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, -7)
 
-[node name="Coin31" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin31" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -7)
 
-[node name="Coin32" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin32" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -7)
 
-[node name="Coin33" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin33" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -7)
 
-[node name="Coin34" parent="Level/Objects/Pickups" instance=ExtResource("37_1p4ht")]
+[node name="Coin34" parent="TestLevel/Objects/Pickups" instance=ExtResource("37_1p4ht")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -7)
 
-[node name="Weapons" type="Node3D" parent="Level/Objects/Pickups"]
+[node name="Weapons" type="Node3D" parent="TestLevel/Objects/Pickups"]
 
-[node name="BlasterC" parent="Level/Objects/Pickups/Weapons" instance=ExtResource("39_js1d3")]
+[node name="BlasterC" parent="TestLevel/Objects/Pickups/Weapons" instance=ExtResource("39_js1d3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 2, -3)
 
-[node name="Water2" type="Node3D" parent="Level"]
+[node name="Water2" type="Node3D" parent="TestLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217, -90, 0)
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Water2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestLevel/Water2"]
 transform = Transform3D(3230, 0, 0, 0, 500, 0, 0, 0, 2000, 0, 0, 0)
 mesh = SubResource("PlaneMesh_811is")
 surface_material_override/0 = SubResource("ShaderMaterial_t1ljn")
 
-[node name="StaticTargets" type="Node3D" parent="Level"]
+[node name="StaticTargets" type="Node3D" parent="TestLevel"]
 
-[node name="BodyTarget" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 0)
 
-[node name="BodyTarget2" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget2" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 1)
 
-[node name="BodyTarget3" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget3" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 2)
 
-[node name="BodyTarget4" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget4" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 3)
 
-[node name="BodyTarget5" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget5" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 4)
 
-[node name="BodyTarget6" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget6" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 2, 5)
 
-[node name="BodyTarget7" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget7" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 0)
 
-[node name="BodyTarget8" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget8" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 1)
 
-[node name="BodyTarget9" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget9" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 2)
 
-[node name="BodyTarget10" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget10" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 3)
 
-[node name="BodyTarget11" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget11" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 4)
 
-[node name="BodyTarget12" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget12" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 4, 5)
 
-[node name="BodyTarget13" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget13" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 0)
 
-[node name="BodyTarget14" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget14" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 1)
 
-[node name="BodyTarget15" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget15" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 2)
 
-[node name="BodyTarget16" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget16" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 3)
 
-[node name="BodyTarget17" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget17" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 4)
 
-[node name="BodyTarget18" parent="Level/StaticTargets" instance=ExtResource("40_1a53v")]
+[node name="BodyTarget18" parent="TestLevel/StaticTargets" instance=ExtResource("40_1a53v")]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, -14.6, 6, 5)
 
-[node name="FOREST_5" parent="." instance=ExtResource("40_y6frs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+[node name="BlockOut" type="Node3D" parent="TestLevel"]
+
+[node name="1-4 Floor" type="CSGBox3D" parent="TestLevel/BlockOut"]
+use_collision = true
+size = Vector3(10, 1, 40)
+material = SubResource("StandardMaterial3D_nxjuu")
+
+[node name="1-5" type="CSGBox3D" parent="TestLevel/BlockOut"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 15.84, 5, -0.0481728, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_nxjuu")
+
+[node name="2-4" type="CSGBox3D" parent="TestLevel/BlockOut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+use_collision = true
+size = Vector3(20, 1, 40)
+material = SubResource("StandardMaterial3D_nxjuu")
+
+[node name="2-5" type="CSGBox3D" parent="TestLevel/BlockOut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -80)
+use_collision = true
+size = Vector3(20, 1, 40)
+material = SubResource("StandardMaterial3D_nxjuu")
+
+[node name="2-6" type="CSGBox3D" parent="TestLevel/BlockOut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -120)
+use_collision = true
+size = Vector3(20, 1, 40)
+material = SubResource("StandardMaterial3D_nxjuu")
+
+[node name="2-7" type="CSGBox3D" parent="TestLevel/BlockOut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -160)
+use_collision = true
+size = Vector3(30, 1, 40)
+material = SubResource("StandardMaterial3D_nxjuu")
 
 [connection signal="drop_slot_data" from="UI/InventoryInterface" to="." method="_on_inventory_interface_drop_slot_data"]
 [connection signal="gui_input" from="UI/InventoryInterface" to="UI/InventoryInterface" method="_on_gui_input"]

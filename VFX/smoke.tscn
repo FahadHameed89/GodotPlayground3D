@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://x4s0b7xu5vb3"]
+
+[ext_resource type="Shader" uid="uid://dmsixkrl7gfpf" path="res://VFX/Shaders/basic_material.tres" id="1_8tmiv"]
+[ext_resource type="Texture2D" uid="uid://brprkhbijwgis" path="res://assets/particles/flame_01.png" id="2_reakj"]
+[ext_resource type="Material" uid="uid://da5lcnjy3xpfl" path="res://VFX/smoke_particles.tres" id="3_bp8ec"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f0hq8"]
+render_priority = 0
+shader = ExtResource("1_8tmiv")
+shader_parameter/Texture2DParameter = ExtResource("2_reakj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a8ad8"]
+
+[node name="Smoke" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_f0hq8")
+process_material = ExtResource("3_bp8ec")
+draw_pass_1 = SubResource("QuadMesh_a8ad8")
